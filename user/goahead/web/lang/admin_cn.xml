@@ -1,0 +1,216 @@
+﻿<po>
+	<message msgid="menuFrame status" msgstr="运行状态" />
+	<message msgid="menuFrame opmode" msgstr="运行模式" />
+	
+	<message msgid="menuFrame internet" msgstr="网络配置" />
+	<message msgid="menuFrame wan" msgstr="WAN口配置" />
+	<message msgid="menuFrame lan" msgstr="LAN口配置" />
+	<message msgid="menuFrame dhcpcliinfo" msgstr="DHCP客户端列表" />
+	<message msgid="menuFrame routing" msgstr="高级路由配置" />
+	<message msgid="menuFrame snmp" msgstr="SNMP" />
+	
+	<message msgid="menuFrame VPN" msgstr="VPN" />
+	<message msgid="menuFrame ipsecVpn" msgstr="Ipsec" />
+	<message msgid="menuFrame pptp" msgstr="PPTP" />
+	<message msgid="menuFrame l2tp" msgstr="L2TP" />
+	<message msgid="menuFrame dtu" msgstr="DTU" />
+	<message msgid="menuFrame linkbackup" msgstr="路由备份" />
+	
+	<message msgid="menuFrame wire_less" msgstr="无线设置" />
+	<message msgid="menuFrame basic" msgstr="基本设置" />
+	<message msgid="menuFrame security" msgstr="无线安全设置" />
+	<message msgid="menuFrame advanced" msgstr="无线高级设置" />
+	<message msgid="menuFrame wds" msgstr="WDS" />
+	<message msgid="menuFrame stainfo" msgstr="主机状态" />
+	
+	<message msgid="menuFrame firewall" msgstr="防火墙" />
+	<message msgid="menuFrame port_filtering" msgstr="过滤" />
+	<message msgid="menuFrame port_forward" msgstr="虚拟服务器" />
+	<message msgid="menuFrame DMZ" msgstr="DMZ主机" />
+	<message msgid="menuFrame system_firewall" msgstr="系统安全设置" />
+	
+	<message msgid="menuFrame admin" msgstr="系统配置" />
+	<message msgid="menuFrame management" msgstr="管理" />
+	<message msgid="menuFrame upload_firmware" msgstr="软件升级" />
+	<message msgid="menuFrame settings" msgstr="参数管理" />
+	<message msgid="menuFrame reboot" msgstr="重启路由器" />
+	<message msgid="menuFrame ICMP" msgstr="ICMP重启" />
+	<message msgid="menuFrame restart" msgstr="定时和立即重启" />
+	<message msgid="menuFrame statistic" msgstr="流量统计" />
+	<message msgid="menuFrame syslog" msgstr="系统日志" />
+	<message msgid="menuFrame yinghua" msgstr="盈华科技其他产品" />
+	
+	
+	
+	<message msgid="ICMP Reboot" msgstr="ICMP重启" />
+  <message msgid="admin disable" msgstr="停用" />
+  <message msgid="admin enable" msgstr="启用" />
+  <message msgid="admin apply" msgstr="确定" />
+  <message msgid="admin cancel" msgstr="取消" />
+  <message msgid="admin reset" msgstr="重设" />
+  <message msgid="admin scan" msgstr="搜寻" />
+
+  <message msgid="man title" msgstr="系统管理" />
+  <message msgid="man introduction" msgstr="您可以在此设置系统的管理者及口令、网络时间、动态域名服务。" />
+  <message msgid="man language setting" msgstr="语言设置" />
+  <message msgid="man select language" msgstr="选择语言" />
+  <message msgid="man admin setting" msgstr="管理者设置" />
+  <message msgid="man admin account" msgstr="帐号" />
+  <message msgid="man admin passwd" msgstr="口令" />
+  <message msgid="man ntp setting" msgstr="网络时间设置" />
+  <message msgid="man ntp timezone" msgstr="时区：" />
+  <message msgid="man ntp mid island" msgstr="(GMT-11:00) 中途岛、萨摩亚" />
+  <message msgid="man ntp hawaii" msgstr="(GMT-10:00) 夏威夷" />
+  <message msgid="man ntp alaska" msgstr="(GMT-09:00) 阿拉斯加" />
+  <message msgid="man ntp pacific" msgstr="(GMT-08:00) 太平洋标准时间" />
+  <message msgid="man ntp mountain" msgstr="(GMT-07:00) 落矶山区时间" />
+  <message msgid="man ntp arizona" msgstr="(GMT-07:00) 亚利桑那" />
+  <message msgid="man ntp central" msgstr="(GMT-06:00) 中央时间" />
+  <message msgid="man ntp mid us" msgstr="(GMT-06:00) 中美洲" />
+  <message msgid="man ntp indiana east" msgstr="(GMT-05:00) 印第安纳州（东部）、哥伦比亚" />
+  <message msgid="man ntp eastern" msgstr="(GMT-05:00) 东部时区" />
+  <message msgid="man ntp atlantic" msgstr="(GMT-04:00) 大西洋标准时间、西巴西" />
+  <message msgid="man ntp bolivia" msgstr="(GMT-04:00) 玻利维亚、委内瑞拉" />
+  <message msgid="man ntp guyana" msgstr="(GMT-03:00) 盖亚纳" />
+  <message msgid="man ntp brazil east" msgstr="(GMT-03:00) 东巴西、格陵兰" />
+  <message msgid="man ntp mid atlantic" msgstr="(GMT-02:00) 中大西洋" />
+  <message msgid="man ntp azores islands" msgstr="(GMT-01:00) 亚速尔群岛" />
+  <message msgid="man ntp gambia" msgstr="(GMT) 甘比亚，赖比瑞亚、摩洛哥" />
+  <message msgid="man ntp england" msgstr="(GMT) 英格兰" />
+  <message msgid="man ntp czech republic" msgstr="(GMT+01:00) 捷克、N" />
+  <message msgid="man ntp germany" msgstr="(GMT+01:00) 德国" />
+  <message msgid="man ntp tunisia" msgstr="(GMT+01:00) 突尼西亚" />
+  <message msgid="man ntp greece" msgstr="(GMT+02:00) 希腊、乌克兰、土耳其" />
+  <message msgid="man ntp south africa" msgstr="(GMT+02:00) 南非" />
+  <message msgid="man ntp iraq" msgstr="(GMT+03:00) 伊拉克、约旦、科威特" />
+  <message msgid="man ntp moscow winter" msgstr="(GMT+03:00) 莫斯科冬令时间" />
+  <message msgid="man ntp armenia" msgstr="(GMT+04:00) 亚美尼亚" />
+  <message msgid="man ntp pakistan" msgstr="(GMT+05:00) 巴基斯坦、俄罗斯" />
+  <message msgid="man ntp bangladesh" msgstr="(GMT+06:00) 孟加拉、俄罗斯" />
+  <message msgid="man ntp thailand" msgstr="(GMT+07:00) 泰国、俄罗斯" />
+  <message msgid="man ntp chinacoast" msgstr="(GMT+08:00) 中国沿岸、香港" />
+  <message msgid="man ntp taipei" msgstr="(GMT+08:00) 台北" />
+  <message msgid="man ntp singapore" msgstr="(GMT+08:00) 新加坡" />
+  <message msgid="man ntp australia wa" msgstr="(GMT+08:00) 西澳洲" />
+  <message msgid="man ntp japan" msgstr="(GMT+09:00) 日本、韩国" />
+  <message msgid="man ntp korean" msgstr="(GMT+09:00) 朝鲜时区" />
+  <message msgid="man ntp guam" msgstr="(GMT+10:00) 关岛、俄罗斯" />
+  <message msgid="man ntp australia qld" msgstr="(GMT+10:00) 澳洲" />
+  <message msgid="man ntp solomon islands" msgstr="(GMT+11:00) 索罗门群岛" />
+  <message msgid="man ntp fiji" msgstr="(GMT+12:00) 斐济" />
+  <message msgid="man ntp newzealand" msgstr="(GMT+12:00) 新西兰" />
+  <message msgid="man ntp server" msgstr="网络时间服务器" />
+  <message msgid="man ntp sync" msgstr="网络时间校准(小时)" />
+  <message msgid="man ntp current time" msgstr="当前时间" />
+  <message msgid="man ntp sync with host" msgstr="主机同步" />
+  <message msgid="man gap title" msgstr="Green AP" />
+  <message msgid="man gap time" msgstr="启用期间" />
+  <message msgid="man gap action" msgstr="执行项目" />
+  <message msgid="man ddns setting" msgstr="动态域名服务设置" />
+  <message msgid="man ddns provider" msgstr="动态域名服务提供商" />
+  <message msgid="man ddns none" msgstr="无" />
+  <message msgid="man ddns account" msgstr="帐号" />
+  <message msgid="man ddns passwd" msgstr="口令" />
+  <message msgid="man ddns" msgstr="动态域名服务" />
+
+  <message msgid="upload title" msgstr="固件更新" />
+  <message msgid="upload introduction1" msgstr="" />
+  <message msgid="upload introduction2" msgstr="软件更新需要大约2分钟，在此期间请不要断电和其他操作" />
+  <message msgid="upload firmware" msgstr="软件升级" />
+  <message msgid="upload firmware location" msgstr="位置：" />
+  <message msgid="upload bootloader" msgstr="启动boot程序更新" />
+  <message msgid="upload bootloader location" msgstr="位置：" />
+  <message msgid="upload firmware from usb" msgstr="由USB Disk更新固件" />
+  <message msgid="upload firmware force upgrade via mem" msgstr="強迫使用内存更新固件" />
+  <message msgid="upload firmware force" msgstr="強迫是否:" />
+  
+  <message msgid="setman title" msgstr="设置管理" />
+  <message msgid="setman introduction" msgstr="您可以藉由导出设置档来保存系统的设置、或藉由导入的设置档来恢复系统设置、甚至可以重设回系统默认值。" />
+  <message msgid="setman export setting" msgstr="导出设置" />
+  <message msgid="setman export setting button" msgstr="导出按钮" />
+  <message msgid="setman export setting export" msgstr="导出" />
+  <message msgid="setman import setting" msgstr="导入设置" />
+  <message msgid="setman import setting file location" msgstr="导入文件路径" />
+  <message msgid="setman import setting import" msgstr="导入" />
+  <message msgid="setman load factory default" msgstr="恢复出厂值" />
+  <message msgid="setman load factory default button" msgstr="恢复出厂值按钮" />
+  <message msgid="setman load default" msgstr="恢复出厂值" />
+
+  <message msgid="status title" msgstr="系统状态" />
+  <message msgid="status introduction" msgstr=" " />
+  <message msgid="status product model" msgstr="路由器型号" />
+  <message msgid="status system information" msgstr="系统信息" />
+  <message msgid="status hrdw version" msgstr="硬件版本" />
+  <message msgid="router S/N" msgstr="路由器S/N" />
+  <message msgid="status sdk version" msgstr="软件版本" />
+  <message msgid="status system up time" msgstr="系统运行时间" />
+  <message msgid="status system platform" msgstr="系统平台" />
+  <message msgid="status operate mode" msgstr="运行模式" />
+  <message msgid="status internet config" msgstr="广域网信息" />
+  <message msgid="status connect type" msgstr="网络名称" />
+  <message msgid="status wan ipaddr" msgstr="广域网络IP地址" />
+  <message msgid="status subnet mask" msgstr="子网掩码" />
+  <message msgid="status default gateway" msgstr="默认网关" />
+  <message msgid="status primary dns" msgstr="主要域名服务器" />
+  <message msgid="status secondary dns" msgstr="次要域名服务器" />
+  <message msgid="status local network" msgstr="局域网" />
+  <message msgid="status lan ipaddr" msgstr="本地IP地址" />
+  <message msgid="status local netmask" msgstr="本地子网掩码" />
+  <message msgid="status lanmac" msgstr="局域网MAC地址" />
+  <message msgid="status wanmac" msgstr="广域网MAC地址" />
+  <message msgid="status ethernet port status" msgstr="以太网络端口状态" />
+  
+  <message msgid="status 3g info" msgstr="3G 模块信息" />
+  <message msgid="status 3g signal" msgstr="信号强度" />
+  <message msgid="status 3g attach" msgstr="SIM状态" />
+
+  <message msgid="statistic title" msgstr="统计资料" />
+  <message msgid="statistic introduction" msgstr="查看系统数据流量。" />
+  <message msgid="statistic memory" msgstr="内存" />
+  <message msgid="statistic memory total" msgstr="内存总容量：" />
+  <message msgid="statistic memory left" msgstr="内存剩余量：" />
+  <message msgid="statistic wanlan" msgstr="广域网络/局域网" />
+  <message msgid="statistic wan rx pkt" msgstr="广域网络接收的数据包数：" />
+  <message msgid="statistic wan rx bytes" msgstr="广域网络接收的数据流量(bytes)：" />
+  <message msgid="statistic wan tx pkt" msgstr="广域网络传送的数据包数：" />
+  <message msgid="statistic wan tx bytes" msgstr="广域网络传送的数据流量(bytes)：" />
+  <message msgid="statistic lan rx pkt" msgstr="局域网接收的数据包数：" />
+  <message msgid="statistic lan rx bytes" msgstr="局域网接收的数据流量(bytes)：" />
+  <message msgid="statistic lan tx pkt" msgstr="局域网传送的数据包数：" />
+  <message msgid="statistic lan tx bytes" msgstr="局域网传送的数据流量(bytes)：" />
+  <message msgid="statistic all interface" msgstr="所有界面" />
+
+  <message msgid="syscommand title" msgstr="系统指令" />
+  <message msgid="syscommand introduction" msgstr="以root的身分执行一个系统指令。" />
+  <message msgid="syscommand system command" msgstr="系统指令：" />
+  <message msgid="syscommand command" msgstr="指令：" />
+
+  <message msgid="syslog title" msgstr="系统日志" />
+  <message msgid="syslog introduction" msgstr=" 系统日志:" />
+  <message msgid="syslog system log" msgstr="系统记录" />
+  <message msgid="syslog clear" msgstr="清除" />
+  <message msgid="syslog refresh" msgstr="刷新" />  
+
+
+  <message msgid="id_rb_settings" msgstr="路由器重启功能设置" />
+  <message msgid="id_rb_timer_settings" msgstr="定时重启功能设置" />
+  <message msgid="id_rb_when_timeout" msgstr="定时重启" />
+  <message msgid="id_rb_timer_str" msgstr="设置重启时间 (分钟)" />
+  <message msgid="id_rb_timer_apply" msgstr="确定" />
+  <message msgid="id_rb_reboot_system" msgstr="立即重启功能设置" />
+  <message msgid="id_rb_reboot_now" msgstr="立即重启" />
+  <message msgid="id_rb_reboot" msgstr="重启" />
+
+  <message msgid="id_rb_network_settings" msgstr="ICMP网络检测重启" />
+    <message msgid="id_rb_network_error" msgstr="网络检测重启功能" />
+      <message msgid="id_rb_network_check_method" msgstr="检测方法(PING)" />
+        <message msgid="id_rb_network_option_ping_ip" msgstr="Ping域名或IP" />
+          <message msgid="id_rb_network_check_interval_time_str" msgstr="检测间隔时间(秒)" />
+            <message msgid="id_rb_network_check_count" msgstr="检测计数" />
+              <message msgid="id_rb_network_comment" msgstr="注: 此功能只用于3G永久连线及按时拨号模式,其他状态自动关闭! " />
+                <message msgid="id_rb_network_apply" msgstr="确定" />
+                <message msgid="id_rb_check_host_ip" msgstr="测试" />
+     <message msgid="id_rb_network_sleep_count" msgstr="检测功能进入休眠态前重启计数" />
+     <message msgid="id_rb_network_sleep_time" msgstr="检测功能休眠时间(分钟)" />
+
+</po>

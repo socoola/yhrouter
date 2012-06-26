@@ -1,0 +1,1 @@
+../html/wps_inic.asp

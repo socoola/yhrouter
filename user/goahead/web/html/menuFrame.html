@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>menuFrame</title>
+		<meta name="author" content="Administrator" />
+		<!-- Date: 2012-04-23 -->
+		<link rel="stylesheet" type="text/css" href="../css/menuFrame.css" />
+		<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../js/menuFrame.js"></script>
+	</head>
+	<body>
+		<div id="menu">
+			<a class="dot" href="status.asp" target="mainFrame">运行状态</a>
+			
+			<a class="dot" href="opmode.asp" target="mainFrame">运作模式</a>
+			
+			<a class="plus" href="WAN_CONFIG.html" target="mainFrame">网络配置</a>
+			<div class="subMenu">
+				<a href="wan.asp" target="mainFrame">WAN口配置</a>
+				<a href="lan.asp" target="mainFrame">LAN口配置</a>
+				<a href="dhcpcliinfo.asp" target="mainFrame">DHCP客户端列表</a>
+				<a href="routing.asp" target="mainFrame">高级路由配置</a>
+				<a href="snmp.asp" target="mainFrame">SNMP</a>
+			</div><!--end of submenu-->
+			
+			<a class="plus" href="VPN.html" target="mainFrame">VPN</a>
+			<div class=" subMenu">
+				<a href="ipsecVpn.asp" target="mainFrame">Ipsec</a>
+				<a href="pptp.asp" target="mainFrame">PPTP</a>
+				<a href="l2tp.asp" target="mainFrame">L2TP</a>
+			</div>
+						
+			<a class="dot" href="dtu.asp" target="mainFrame">DTU</a>
+				
+			<a class="dot" href="linkbackup.asp" target="mainFrame">路由备份</a>	
+			
+			<a class="plus" href="BASIC_CONFIG.html" target="mainFrame">无线设置</a>	
+			<div class="subMenu">
+				<a href="basic.asp" target="mainFrame">基本设置</a>
+				<a href="security.asp" target="mainFrame">无线安全设置</a>
+				<a href="advanced.asp" target="mainFrame">无线高级设置</a>
+				<a href="wds.asp" target="mainFrame">WDS</a>
+				<a href="stainfo.asp" target="mainFrame">主机状态</a>
+			</div><!--end of submenu-->	
+			
+			<a class="plus" href="FILTER.html" target="mainFrame">防火墙</a>	
+			<div class="subMenu">
+				<a href="port_filtering.asp" target="mainFrame">过滤</a>
+				<a href="port_forward.asp" target="mainFrame">虚拟服务器</a>
+				<a href="DMZ.asp" target="mainFrame">DMZ主机</a>
+				<a href="system_firewall.asp" target="mainFrame">系统安全设置</a>
+			</div><!--end of submenu-->	
+			
+			<a class="plus" href="#" target="mainFrame">系统配置</a>	
+			<div class="subMenu">
+				<a href="management.asp" target="mainFrame">管理</a>
+				<a href="upload_firmware.asp" target="mainFrame">软件升级</a>
+				<a href="settings.asp" target="mainFrame">参数管理</a>
+
+				<a 	style="padding-left:13px;
+					background: url('../image/plus.gif') no-repeat left;"
+				 	id="reboot" class="plus" href="RESTART_ROUTER.html" 
+				 	target="mainFrame">重启路由器</a>
+				<div class="subMenu" style="padding-left: 10px">
+				<a href="ICMP.asp" target="mainFrame">ICMP重启</a>
+				<a href="restart.asp" target="mainFrame">定时和立即重启</a>
+				</div><!--end of reboot-->	
+
+                <a href="statistic.asp" target="mainFrame">流量统计</a>
+                <a href="syslog.asp" target="mainFrame">系统日志</a>
+                <a href="http://www.yinghuatn.com" target="_blank">盈华科技其他产品</a>
+			</div><!--end of submenu-->	
+		</div><!--end of menu-->
+	</body>
+</html>

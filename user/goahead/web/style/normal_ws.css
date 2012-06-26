@@ -1,0 +1,114 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+  width: 530px;
+  margin-left: 10px;
+}
+
+p {
+  font-size: 9pt; 
+  margin-left: 10px;
+  font-family: Arial, Helvetica, sans-serif; color: #333333
+}
+
+h1 {
+  font-size: 14pt; font-weight: bold;
+  margin-left: 10px;
+  font-family: Arial, Helvetica, sans-serif; color: #255E89
+}
+
+h2 {
+	font-size: 12pt; font-weight: bold;
+; margin-left: 10px
+; font-family: Arial, Helvetica, sans-serif; color: #255E89
+}
+
+h3 {
+  font-size: 10pt; font-weight: bold;
+  margin-left: 10px;
+  font-family: Arial, Helvetica, sans-serif; color: #255E89
+}
+
+h4 {
+  font-size: 9pt; font-weight: bold; ; margin-left: 10px ; font-family: Arial, Helvetica, sans-serif; color: #255E89
+}
+
+pre {
+  line-height: normal;
+  color: #0A0A8C;
+font-family: "Courier New", Courier, mono; font-size: 9pt; margin-left: 10px; background-color: #EEEEEE; padding-left: 20px
+; padding-top: 5px; padding-bottom: 5px; padding-right: 20px
+}
+
+table {
+  border: 0px;
+}
+
+table.body {
+  border: 0px;
+  width: 530px;
+}
+
+td.title {
+  margin-left: 5px;
+  background-color: #255E89;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #FFFFFF
+}
+
+td.subtitle {
+  background-color: #3C6EB4;
+  font-style: italic;
+  color: #FFFFFF
+}
+
+td.head {
+  width: 40%;
+  font-size: 9pt; 
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #E8F8FF;
+  white-space: nowrap;
+  color: #333333
+}
+
+td.head1 {
+  width: 20%;
+  font-size: 9pt; 
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FFF8E8;
+  white-space: nowrap;
+  color: #333333
+}
+
+td.head2 {
+  width: 25%;
+  font-size: 9pt; 
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #E8F8FF;
+  white-space: nowrap;
+  color: #333333
+}
+
+td.head_filter {
+  width: 5%;
+  font-size: 9pt; 
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #E8F8FF;
+  color: #333333
+}
+
+td {
+  font-size: 9pt; 
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333
+}
+
+ol {
+  margin-left: 40px; color: #333333; font-family: Arial, Helvetica, sans-serif; font-size: 9pt
+}
+
+ul {
+  font-size: 9pt; ; margin-left: 30px; font-family: Arial, Helvetica, sans-serif; color: #333333
+}
+

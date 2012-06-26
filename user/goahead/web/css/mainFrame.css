@@ -1,0 +1,38 @@
+body {
+	margin:0;
+	padding:0;
+	font:12px sans-serif,Times;
+	color:#FFFFFF;
+}
+#boxes{
+	margin:40px 30px;
+}
+#box1{
+	width:500px;
+	height:auto;
+}
+#head1{
+	line-height: 25px;
+	text-align: left;
+	padding-left:8px;
+	background: url('../image/head-bg.gif') no-repeat left top #6699FF;
+}
+#content1{
+	color:#003399;
+	padding:15px 15px;
+	background:#F5F5F5;
+	border-right:#FF9933 solid 1px;
+	border-bottom:#FF9933 solid 1px;
+	border-left:#FF9933 solid 1px;
+}
+table{
+	text-align:left;
+	width:420px;
+}
+.tdWidth1{
+	width:130px;
+}
+.tdWidth2{
+	width:290px;
+}
+

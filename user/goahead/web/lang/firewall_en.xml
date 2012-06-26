@@ -1,0 +1,176 @@
+<po>
+  <message msgid="Ipsec Current Rule" msgstr="IPSEC Vpn List" />
+  <message msgid="firewall disable" msgstr="Disable" />
+  <message msgid="firewall enable" msgstr="Enable" />
+  <message msgid="firewall apply" msgstr="Apply" />
+  <message msgid="firewall reset" msgstr="Reset" />
+  <message msgid="firewall cancel" msgstr="Cancel" />
+  <message msgid="firewall del select" msgstr="Delete Selected" />
+  <message msgid="firewall no" msgstr=" No." />
+  <message msgid="firewall protocol" msgstr="Protocol" />
+  <message msgid="firewall comment" msgstr="Comment" />
+  <message msgid="firewall default drop" msgstr="Others would be dropped" />
+  <message msgid="firewall default accept" msgstr="Others would be accepted" />
+  <message msgid="firewall del" msgstr="Delete" />
+
+  <message msgid="port title" msgstr="MAC/IP/Port Filtering Settings " />
+  <message msgid="port introduction" msgstr=" You may setup firewall rules to protect your network from virus,worm and malicious activity on the Internet." />
+  <message msgid="port basic setting" msgstr="Basic Settings" />
+  <message msgid="port basic filter" msgstr="MAC/IP/Port Filtering" />
+  <message msgid="port basic default policy" msgstr="Default Policy -- The packet that don't match with any rules would be:" />
+  <message msgid="port basic default policy accepted" msgstr="Accepted" />
+  <message msgid="port basic default policy dropped" msgstr="Dropped" />
+  <message msgid="port filter setting" msgstr="MAC/IP/Port Filter Settings" />
+  <message msgid="port filter macaddr" msgstr="MAC address" />
+  <message msgid="port filter source ipaddr" msgstr="Source IP Address" />
+  <message msgid="port filter port range" msgstr="Port Range" />
+  <message msgid="port filter dest ipaddr" msgstr="Dest IP Address" />
+  <message msgid="port filter action" msgstr="Action" />
+  <message msgid="port filter action drop" msgstr="Drop" />
+  <message msgid="port filter action accept" msgstr="Accept" />
+  <message msgid="port current filter" msgstr="Current MAC/IP/Port filtering rules in system: " />
+  <message msgid="port filter source port range" msgstr="Source Port Range" />
+  <message msgid="port filter dest port range" msgstr="Dest Port Range" />
+  <message msgid="port filter packetcount" msgstr="Pkt Cnt" />
+
+  <message msgid="forward title" msgstr="Virtual Server  Settings " />
+  <message msgid="forward introduction" msgstr=" You may setup Virtual Servers to provide services on Internet." />
+  <message msgid="forward virtual server" msgstr="Virtual Server Settings" />
+  <message msgid="forward virtual server setting" msgstr="Virtual Server Settings" />
+  <message msgid="forward virtual server ipaddr" msgstr="IP Address" />
+  <message msgid="forward virtual server port range" msgstr="Port Range" />
+  <message msgid="forward current virtual server" msgstr="Current Virtual Servers in system: " />
+
+  <message msgid="dmz title" msgstr=" DMZ Settings " />
+  <message msgid="dmz introduction" msgstr=" You may setup a De-militarized Zone(DMZ) to separate internal network and Internet." />
+  <message msgid="dmz setting" msgstr="DMZ Settings" />
+  <message msgid="dmz ipaddr" msgstr="DMZ IP Address" />
+
+  <message msgid="content filter title" msgstr="Content Filter Settings" />
+  <message msgid="content filter introduction" msgstr="You can setup Content Filter to restrict the improper content access." />
+  <message msgid="content filter webs content filter" msgstr="Webs Content Filter" />
+  <message msgid="content filter webs content filter filter" msgstr="Filters:" />
+  <message msgid="content filter webs content filter apply" msgstr="Apply" />
+  <message msgid="content filter webs content filter reset" msgstr="Reset" />
+  <message msgid="content filter webs URL filter title" msgstr="Webs URL Filter Settings" />
+  <message msgid="content filter webs url filter current" msgstr="Current Webs URL Filters:" />
+  <message msgid="content filter webs url fitler No" msgstr="No" />
+  <message msgid="content filter webs url fitler url" msgstr="URL" />
+  <message msgid="content filter webs url fitler del" msgstr="Delete" />
+  <message msgid="content filter webs url fitler reset" msgstr="Reset" />
+  <message msgid="content filter webs url fitler add title" msgstr="Add a URL filter:" />
+  <message msgid="content filter webs url fitler add" msgstr="Add" />
+  <message msgid="content filter webs url fitler reset" msgstr="Reset" />
+  <message msgid="content filter webs host fitler title" msgstr="Webs Host Filter Settings" />
+  <message msgid="content filter webs host fitler current" msgstr="Current Website Host Filters:" />
+  <message msgid="content filter webs host fitler no" msgstr="No" />
+  <message msgid="content filter webs host fitler host" msgstr="Host(Keyword)" />
+  <message msgid="content filter webs host fitler del" msgstr="Delete" />
+  <message msgid="content filter webs host fitler reset" msgstr="Reset" />
+  <message msgid="content filter webs host fitler add title" msgstr="Add a Host(keyword) Filter:" />
+  <message msgid="content filter webs host fitler keyword" msgstr="Keyword" />
+  <message msgid="content filter webs host fitler add" msgstr="Add" />
+  <message msgid="content filter webs host fitler reset" msgstr="Reset" />
+
+  <message msgid="sysfw title" msgstr="System Security Settings" />
+  <message msgid="sysfw introduction" msgstr="You may configure the system firewall to protect AP/Router itself from attacking." />
+  <message msgid="sysfw remote management title" msgstr="Remote management" />
+  <message msgid="sysfw remote management head" msgstr="Remote management (via WAN)" />
+  <message msgid="sysfw allow" msgstr="Allow" />
+  <message msgid="sysfw deny" msgstr="Deny" />
+  <message msgid="sysfw wanping title" msgstr="Ping form WAN Filter" />
+  <message msgid="sysfw wanping head" msgstr="Ping form WAN Filter" />
+  <message msgid="sysfw spi title" msgstr="Stateful Packet Inspection (SPI)" />
+  <message msgid="sysfw spi head" msgstr="SPI Firewall" />
+  <message msgid="sysfw apply" msgstr="Apply" />
+  <message msgid="sysfw reset" msgstr="Reset" />
+
+  <message msgid="button edit" msgstr="Edit" />  
+  <message msgid="option client" msgstr="client" />  
+  <message msgid="option service" msgstr="service" />  
+  <message msgid="Ipseccfg servicesel" msgstr="service mode" />  
+  <message msgid="Ipsec title" msgstr="Ipsec VPN" />  
+  <message msgid="Ipsec introduction" msgstr="Using IPSec protocol to achieve remote access." />  
+  <message msgid="IPSEC states" msgstr="State" />  
+  <message msgid="IPSEC name" msgstr="Name" />  
+  <message msgid="IPSEC remotgw" msgstr="Remote Gateway" />  
+  <message msgid="IPSEC localAdd" msgstr="Local Address" />  
+  <message msgid="IPSEC remoteAdd" msgstr="Remote Address" />  
+  <message msgid="Ipsec append" msgstr="Add Application" />  
+  <message msgid="Ipseccfg title" msgstr="Ipsec VPN Setting" />  
+  <message msgid="Ipseccfg introduction" msgstr="Here you can configurate the new connection." />  
+  <message msgid="Ipseccfg connName" msgstr="IPSec connect name" />  
+  <message msgid="Ipseccfg remoteGWAddr" msgstr="Remote IPSec gateway" />  
+  <message msgid="Ipseccfg localIPMode" msgstr="Local IP address" />  
+  <message msgid="Ipseccfg localIP" msgstr="VPN IP address" />    
+  <message msgid="Ipseccfg localMask" msgstr="IP subnet mask" />  
+  <message msgid="Ipseccfg remoteIPMode" msgstr="Remote IP address" />  
+  <message msgid="Ipseccfg remoteIP" msgstr="VPN IP address" />  
+  <message msgid="Ipseccfg remoteMask" msgstr="IP subnet mask" />  
+  <message msgid="Ipseccfg keyExM" msgstr="Key Exchange Method" />  
+  <message msgid="Ipseccfg authM" msgstr="Authentication" />      
+  <message msgid="Ipseccfg psk" msgstr="Pre-Shared Key" />  
+  <message msgid="Ipseccfg perfectFSEn" msgstr="Perfect Forward Secrecy" />  
+  <message msgid="Ipseccfg certificateName" msgstr="Certificates" />  
+  <message msgid="Ipseccfg advSWButton" msgstr="Advanced IKE Settings" />  
+  <message msgid="Ipseccfg hide" msgstr="Hide Advanced Settings" />  
+  <message msgid="Ipseccfg show" msgstr="Show Advanced Settings" />      
+  <message msgid="Ipseccfg manualEncryptionAlgo" msgstr="Encryption" />  
+  <message msgid="Ipseccfg manualEncryptionKey" msgstr="Encryption Key" />  
+  <message msgid="Ipseccfg manualAuthAlgo" msgstr="Authentication" />  
+  <message msgid="Ipseccfg manualAuthKey" msgstr="Authentication key" />  
+  <message msgid="Ipseccfg ph1Mode" msgstr="Mode" />  
+  <message msgid="Ipseccfg ph1EncryptionAlgo" msgstr="Encryption" />      
+  <message msgid="Ipseccfg ph1IntegrityAlgo" msgstr="Integrity Algorithm" />  
+  <message msgid="Ipseccfg ph1DHGroup" msgstr="Select Diffie-Hellman Group for Key Exchange" />  
+  <message msgid="Ipseccfg ph1KeyTime" msgstr="Key Lifetime" />  
+  <message msgid="connection name can not be empty" msgstr="Connection name can not be empty!" />  
+  <message msgid="invalid connection name" msgstr="Invalid connection name!" />  
+  <message msgid="invalid remoteGWAddr" msgstr="Invalid remote IPSec gateway address!" />      
+  <message msgid="invalid localIP" msgstr="Invalid local VPN IP address!" />  
+  <message msgid="invalid localMask" msgstr="Invalid local IP subnet mask!" />  
+  <message msgid="invalid remoteIP" msgstr="Invalid remote VPN IP address!" />  
+  <message msgid="invalid remoteMask" msgstr="Invalid remote IP subnet mask!" />  
+  <message msgid="invalid ph1KeyTime" msgstr="Invalid Phase 1 Key Lifetime!" />  
+  <message msgid="invalid ph2KeyTime" msgstr="Invalid Phase 2 Key Lifetime!" />      
+  <message msgid="invalid certificateName" msgstr="No certificate avaiable for authentication. Use Certificate menu to add certificates or choose another autentication method!" />     
+  <message msgid="invalid manualEncryptionKey" msgstr="Invalid Manual encryption keys!" />  
+  <message msgid="invalid manualAuthKey" msgstr="Manual Invalid authentication key!" />     
+  <message msgid="invalid rules_num" msgstr="The connect number is exceeded" />     
+  <message msgid="vpn_status_disable_display" msgstr="Disabled" />     
+  <message msgid="vpn_status_enable_display" msgstr="Enabled" />     
+  <message msgid="vpn name help1" msgstr="you can input DEV+DeviceID+[...] to bind device" />     
+  <message msgid="vpn name help2" msgstr="example:DEV281250D52F2A1452.vpn1.com" />     
+  <message msgid="id policies remote lan" msgstr="remote lan for policies" />
+
+
+  <message msgid="id l2tp settings" msgstr="L2TP VPN Settings" />     
+  <message msgid="id l2tp active" msgstr="L2TP VPN Active" />     
+  <message msgid="id l2tp user" msgstr="L2TP User" />     
+  <message msgid="id l2tp password" msgstr="L2TP Password" />     
+  <message msgid="id l2tp server" msgstr="L2TP Server" />     
+  <message msgid="id l2tp lan mask" msgstr="Remote Lan/Mask" />     
+  <message msgid="id l2tp option dhcp" msgstr="DHCP IP" />
+  <message msgid="id l2tp option static" msgstr="STATIC IP" />
+  <message msgid="id l2tp local ip" msgstr="Local L2TP IP" />     
+  <message msgid="id l2tp mppe encryption" msgstr="MPPE Encryption" />     
+  <message msgid="id l2tp mppe 40" msgstr="40 Bit Encryption(Default is 128 Bit)" />     
+  <message msgid="id l2tp refuse stateless" msgstr="Refuse Stateless Encryption" />     
+  <message msgid="id l2tp apply" msgstr="Apply" />     
+
+
+  <message msgid="id pptp settings" msgstr="PPTP VPN Settings" />     
+  <message msgid="id pptp active" msgstr="PPTP VPN Active" />     
+  <message msgid="id pptp user" msgstr="PPTP User" />     
+  <message msgid="id pptp password" msgstr="PPTP Password" />     
+  <message msgid="id pptp server" msgstr="PPTP Server" />     
+  <message msgid="id pptp lan mask" msgstr="Remote Lan/Mask" />     
+  <message msgid="id pptp option dhcp" msgstr="DHCP IP" />
+  <message msgid="id pptp option static" msgstr="STATIC IP" />
+  <message msgid="id pptp local ip" msgstr="Local PPTP IP" />     
+  <message msgid="id pptp mppe encryption" msgstr="MPPE Encryption" />     
+  <message msgid="id pptp mppe 40" msgstr="40 Bit Encryption(Default is 128 Bit)" />     
+  <message msgid="id pptp refuse stateless" msgstr="Refuse Stateless Encryption" />     
+  <message msgid="id pptp apply" msgstr="Apply" />     
+
+</po>

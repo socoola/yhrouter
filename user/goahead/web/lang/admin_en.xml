@@ -1,0 +1,220 @@
+<po>
+	<message msgid="menuFrame status" msgstr="Status" />
+	<message msgid="menuFrame opmode" msgstr="Operation Mode" />
+	
+	<message msgid="menuFrame internet" msgstr="Internet Settings" />
+	<message msgid="menuFrame wan" msgstr="WAN" />
+	<message msgid="menuFrame lan" msgstr="LAN" />
+	<message msgid="menuFrame dhcpcliinfo" msgstr="DHCP clients" />
+	<message msgid="menuFrame routing" msgstr="Advanced Routing Settings" />
+	<message msgid="menuFrame snmp" msgstr="SNMP" />
+	
+	<message msgid="menuFrame VPN" msgstr="VPN" />
+	<message msgid="menuFrame ipsecVpn" msgstr="Ipsec" />
+	<message msgid="menuFrame pptp" msgstr="PPTP" />
+	<message msgid="menuFrame l2tp" msgstr="L2TP" />
+	<message msgid="menuFrame dtu" msgstr="DTU" />
+	<message msgid="menuFrame linkbackup" msgstr="Link Backup" />
+	
+	<message msgid="menuFrame wire_less" msgstr="Wireless Settings" />
+	<message msgid="menuFrame basic" msgstr="Basic" />
+	<message msgid="menuFrame security" msgstr="Security" />
+	<message msgid="menuFrame advanced" msgstr="Advanced" />
+	<message msgid="menuFrame wds" msgstr="WDS" />
+	<message msgid="menuFrame stainfo" msgstr="StaInfo" />
+	
+	<message msgid="menuFrame firewall" msgstr="Firewall" />
+	<message msgid="menuFrame port_filtering" msgstr="Port Filtering" />
+	<message msgid="menuFrame port_forward" msgstr="Port Forward" />
+	<message msgid="menuFrame DMZ" msgstr="DMZ" />
+	<message msgid="menuFrame system_firewall" msgstr="System Security" />
+	
+	<message msgid="menuFrame admin" msgstr="Administration" />
+	<message msgid="menuFrame management" msgstr="Management" />
+	<message msgid="menuFrame upload_firmware" msgstr="Upload Firmware" />
+	<message msgid="menuFrame settings" msgstr="Settings Manage" />
+	<message msgid="menuFrame reboot" msgstr="Reboot" />
+	<message msgid="menuFrame ICMP" msgstr="ICMP Reboot" />
+	<message msgid="menuFrame restart" msgstr="Restart" />
+	<message msgid="menuFrame statistic" msgstr="Statistics" />
+	<message msgid="menuFrame syslog" msgstr="System Log" />
+	<message msgid="menuFrame yinghua" msgstr="Other Products of YingHua Tech" />
+	
+	
+	
+	<message msgid="menuFrame status" msgstr="Working status" />
+  <message msgid="admin disable" msgstr="Disable" />
+  <message msgid="admin enable" msgstr="Enable" />
+  <message msgid="admin apply" msgstr="Apply" />
+  <message msgid="admin cancel" msgstr="Cancel" />
+  <message msgid="admin reset" msgstr="Reset" />
+  <message msgid="admin scan" msgstr="Scan" />
+
+  <message msgid="man title" msgstr="System Management" />
+  <message msgid="man introduction" msgstr="You may configure administrator account and password, NTP settings, and Dynamic DNS settings here." />
+  <message msgid="man language setting" msgstr="Language Settings" />
+  <message msgid="man select language" msgstr="Select Language" />
+  <message msgid="man admin setting" msgstr="Adminstrator Settings" />
+  <message msgid="man admin account" msgstr="Account" />
+  <message msgid="man admin passwd" msgstr="Password" />
+  <message msgid="man ntp setting" msgstr="NTP Settings" />
+  <message msgid="man ntp timezone" msgstr="Time Zone:" />
+  <message msgid="man ntp mid island" msgstr="(GMT-11:00) Midway Island, Samoa" />
+  <message msgid="man ntp hawaii" msgstr="(GMT-10:00) Hawaii" />
+  <message msgid="man ntp alaska" msgstr="(GMT-09:00) Alaska" />
+  <message msgid="man ntp pacific" msgstr="(GMT-08:00) Pacific Time" />
+  <message msgid="man ntp mountain" msgstr="(GMT-07:00) Mountain Time" />
+  <message msgid="man ntp arizona" msgstr="(GMT-07:00) Arizona" />
+  <message msgid="man ntp central" msgstr="(GMT-06:00) Central Time" />
+  <message msgid="man ntp mid us" msgstr="(GMT-06:00) Middle America" />
+  <message msgid="man ntp indiana east" msgstr="(GMT-05:00) Indiana East, Colombia" />
+  <message msgid="man ntp eastern" msgstr="(GMT-05:00) Eastern Time" />
+  <message msgid="man ntp atlantic" msgstr="(GMT-04:00) Atlantic Time, Brazil West" />
+  <message msgid="man ntp bolivia" msgstr="(GMT-04:00) Bolivia, Venezuela" />
+  <message msgid="man ntp guyana" msgstr="(GMT-03:00) Guyana" />
+  <message msgid="man ntp brazil east" msgstr="(GMT-03:00) Brazil East, Greenland" />
+  <message msgid="man ntp mid atlantic" msgstr="(GMT-02:00) Mid-Atlantic" />
+  <message msgid="man ntp azores islands" msgstr="(GMT-01:00) Azores Islands" />
+  <message msgid="man ntp gambia" msgstr="(GMT) Gambia, Liberia, Morocco" />
+  <message msgid="man ntp england" msgstr="(GMT) England" />
+  <message msgid="man ntp czech republic" msgstr="(GMT+01:00) Czech Republic, N" />
+  <message msgid="man ntp germany" msgstr="(GMT+01:00) Germany" />
+  <message msgid="man ntp tunisia" msgstr="(GMT+01:00) Tunisia" />
+  <message msgid="man ntp greece" msgstr="(GMT+02:00) Greece, Ukraine, Turkey" />
+  <message msgid="man ntp south africa" msgstr="(GMT+02:00) South Africa" />
+  <message msgid="man ntp iraq" msgstr="(GMT+03:00) Iraq, Jordan, Kuwait" />
+  <message msgid="man ntp moscow winter" msgstr="(GMT+03:00) Moscow Winter Time" />
+  <message msgid="man ntp armenia" msgstr="(GMT+04:00) Armenia" />
+  <message msgid="man ntp pakistan" msgstr="(GMT+05:00) Pakistan, Russia" />
+  <message msgid="man ntp bangladesh" msgstr="(GMT+06:00) Bangladesh, Russia" />
+  <message msgid="man ntp thailand" msgstr="(GMT+07:00) Thailand, Russia" />
+  <message msgid="man ntp chinacoast" msgstr="(GMT+08:00) China Coast, Hong Kong" />
+  <message msgid="man ntp taipei" msgstr="(GMT+08:00) Taipei" />
+  <message msgid="man ntp singapore" msgstr="(GMT+08:00) Singapore" />
+  <message msgid="man ntp australia wa" msgstr="(GMT+08:00) Australia (WA)" />
+  <message msgid="man ntp japan" msgstr="(GMT+09:00) Japan, Korea" />
+  <message msgid="man ntp korean" msgstr="(GMT+09:00) Korean" />
+  <message msgid="man ntp guam" msgstr="(GMT+10:00) Guam, Russia" />
+  <message msgid="man ntp australia qld" msgstr="(GMT+10:00) Australia (QLD, TAS,NSW,ACT,VIC)" />
+  <message msgid="man ntp solomon islands" msgstr="(GMT+11:00) Solomon Islands" />
+  <message msgid="man ntp fiji" msgstr="(GMT+12:00) Fiji" />
+  <message msgid="man ntp newzealand" msgstr="(GMT+12:00) New Zealand" />
+  <message msgid="man ntp server" msgstr="NTP Server" />
+  <message msgid="man ntp sync" msgstr="NTP synchronization(hours)" />
+  <message msgid="man ntp current time" msgstr="Current Time" />
+  <message msgid="man ntp sync with host" msgstr="Sync with host" />
+  <message msgid="man gap title" msgstr="Green AP" />
+  <message msgid="man gap time" msgstr="Duration" />
+  <message msgid="man gap action" msgstr="Action" />
+  <message msgid="man ddns setting" msgstr="DDNS Settings" />
+  <message msgid="man ddns provider" msgstr="Dynamic DNS Provider" />
+  <message msgid="man ddns none" msgstr="None" />
+  <message msgid="man ddns account" msgstr="Account" />
+  <message msgid="man ddns passwd" msgstr="Password" />
+  <message msgid="man ddns" msgstr="DDNS" />
+
+  <message msgid="upload title" msgstr="Upgrade Firmware" />
+  <message msgid="upload introduction1" msgstr="Upgrade the firmware to obtain new functionality. " />
+  <message msgid="upload introduction2" msgstr="The software update takes about 2 minutes, Do not power-off during this period and other operating" />
+  <message msgid="upload firmware" msgstr="Update Firmware" />
+  <message msgid="upload firmware location" msgstr="Location:" />
+  <message msgid="upload bootloader" msgstr="Update Bootloader" />
+  <message msgid="upload bootloader location" msgstr="Location:" />
+  <message msgid="upload firmware from usb" msgstr="Upgrade firmware from USB" />
+  <message msgid="upload firmware force upgrade via mem" msgstr="Force upgrade firmware via mem " />
+  <message msgid="upload firmware force" msgstr="Force:" />
+
+  <message msgid="setman title" msgstr="Settings Management" />
+  <message msgid="setman introduction" msgstr="You might save system settings by exporting them to a configuration file, restore them by importing the file, or reset them to factory default." />
+  <message msgid="setman export setting" msgstr="Export Settings" />
+  <message msgid="setman export setting button" msgstr="Export Button" />
+  <message msgid="setman export setting export" msgstr="Export" />
+  <message msgid="setman import setting" msgstr="Import Settings" />
+  <message msgid="setman import setting file location" msgstr="Settings file location" />
+  <message msgid="setman import setting import" msgstr="Import" />
+  <message msgid="setman load factory default" msgstr="Load Factory Defaults" />
+  <message msgid="setman load factory default button" msgstr="Load Default Button" />
+  <message msgid="setman load default" msgstr="Load Default" />
+
+  <message msgid="status title" msgstr="Access Point Status" />
+  <message msgid="status introduction" msgstr="Let's take a look at the status of 3G Router." />
+  <message msgid="status system information" msgstr="System Info" />
+  <message msgid="status product model" msgstr="Product Model" />
+  <message msgid="status sdk version" msgstr="Software Version" />
+  <message msgid="status hrdw version" msgstr="Hardware Version" />
+  <message msgid="status device id" msgstr="Device ID" />
+  <message msgid="status system up time" msgstr="System Up Time" />
+  <message msgid="status system platform" msgstr="System Platform" />
+  <message msgid="status operate mode" msgstr="Operation Mode" />
+  <message msgid="status internet config" msgstr="Internet Configurations" />
+  <message msgid="status connect type" msgstr="Connected Type" />
+  <message msgid="status wan ipaddr" msgstr="WAN IP Address" />
+  <message msgid="status subnet mask" msgstr="Subnet Mask" />
+  <message msgid="status default gateway" msgstr="Default Gateway" />
+  <message msgid="status primary dns" msgstr="Primary Domain Name Server" />
+  <message msgid="status secondary dns" msgstr="Secondary Domain Name Server" />
+  <message msgid="status local network" msgstr="Local Network" />
+  <message msgid="status lan ipaddr" msgstr="Local IP Address" />
+  <message msgid="status local netmask" msgstr="Local Netmask" />
+  <message msgid="status mac" msgstr="MAC Address" />
+  <message msgid="status 3g info" msgstr="3G Info" />
+  <message msgid="status 3g signal" msgstr="Signal Strength" />
+  <message msgid="status 3g attach" msgstr="Attachment State" />
+
+  <message msgid="status ethernet port status" msgstr="Ethernet Port Status" />
+
+  <message msgid="statistic title" msgstr="Statistic" />
+  <message msgid="statistic introduction" msgstr=" Take a look at the statistics " />
+  <message msgid="statistic memory" msgstr="Memory" />
+  <message msgid="statistic memory total" msgstr="Memory total: " />
+  <message msgid="statistic memory left" msgstr="Memory left: " />
+  <message msgid="statistic wanlan" msgstr="WAN/LAN" />
+  <message msgid="statistic wan rx pkt" msgstr="WAN Rx packets: " />
+  <message msgid="statistic wan rx bytes" msgstr="WAN Rx bytes: " />
+  <message msgid="statistic wan tx pkt" msgstr="WAN Tx packets: " />
+  <message msgid="statistic wan tx bytes" msgstr="WAN Tx bytes: " />
+  <message msgid="statistic lan rx pkt" msgstr="LAN Rx packets: " />
+  <message msgid="statistic lan rx bytes" msgstr="LAN Rx bytes: " />
+  <message msgid="statistic lan tx pkt" msgstr="LAN Tx packets: " />
+  <message msgid="statistic lan tx bytes" msgstr="LAN Tx bytes: " />
+  <message msgid="statistic all interface" msgstr="All interfaces" />
+
+  <message msgid="syscommand title" msgstr="System Command" />
+  <message msgid="syscommand introduction" msgstr=" Run a system command as root: " />
+  <message msgid="syscommand system command" msgstr="System command " />
+  <message msgid="syscommand command" msgstr="Command:" />
+
+  <message msgid="syslog title" msgstr="System Log" />
+  <message msgid="syslog introduction" msgstr=" Syslog: " />
+  <message msgid="syslog system log" msgstr="System Log" />
+  <message msgid="syslog clear" msgstr="Clear" />
+  <message msgid="syslog refresh" msgstr="Refresh" />
+
+
+
+
+
+
+  <message msgid="id_rb_settings" msgstr="Reboot Settings" />
+  <message msgid="id_rb_timer_settings" msgstr="Reboot Timer Settings" />
+  <message msgid="id_rb_when_timeout" msgstr="Reboot When Timeout" />
+  <message msgid="id_rb_timer_str" msgstr="Timer (min)" />
+  <message msgid="id_rb_timer_apply" msgstr="Apply" />
+  <message msgid="id_rb_reboot_system" msgstr="Reboot System" />
+  <message msgid="id_rb_reboot_now" msgstr="Reboot Now" />
+  <message msgid="id_rb_reboot" msgstr="Reboot" />
+
+
+  <message msgid="id_rb_network_settings" msgstr="ICMP check and Reboot Settings" />
+  <message msgid="id_rb_network_error" msgstr="Reboot When Network Error" />
+  <message msgid="id_rb_network_check_method" msgstr="Check Method(PING)" />
+  <message msgid="id_rb_network_option_ping_ip" msgstr="Ping Host/IP" />
+  <message msgid="id_rb_network_check_interval_time_str" msgstr="Check Interval Time(Sec)" />
+  <message msgid="id_rb_network_check_count" msgstr="Check Count" />
+  <message msgid="id_rb_network_comment" msgstr="Comment: It is only used for 3G keep_alive and on_time mode,It is auto close in other mode! " />
+  <message msgid="id_rb_network_apply" msgstr="Apply" />
+  <message msgid="id_rb_check_host_ip" msgstr="check" />
+  <message msgid="id_rb_network_sleep_count" msgstr="Reboot Count Before Sleep" />
+  <message msgid="id_rb_network_sleep_time" msgstr="Sleep Time(min)" />
+
+</po>

@@ -1,0 +1,10 @@
+body {
+	padding:0;
+	margin:0;
+	background: url('../image/toprightplus.jpg') repeat-x #FFFFFF;
+}
+img{
+	position:absolute ;
+	top:0;
+	left:0;
+}

@@ -1,0 +1,72 @@
+	body{
+		padding:15px 0;
+		width:770px;
+		margin:20px auto;
+	}
+	#box{
+		width:770px;
+		margin:0 auto;		
+		height:auto;		
+		margin-bottom:20px;		
+	}
+	#head{
+		line-height: 25px;
+		height:25px;
+		text-align: left;
+		padding-left:2px;
+		background:#6699FF;
+		width:770px;
+	}
+	#content{
+		color:#003399; 
+		background:#F5F5F5;
+		border-right:#FF9933 solid 1px;
+		border-bottom:#FF9933 solid 1px;
+		border-left:#FF9933 solid 1px;
+		width:770px;
+		padding:10px 0;
+		margin:0;
+	}
+	#layout_table{
+		width:765px;
+		margin:0 auto;
+	}
+	.tdwidth1{
+		width:620px;
+	}
+	.tdwidth2{
+		width:115px;
+	}
+	#td1,#td2{
+		vertical-align: top;
+		text-align:center;
+		padding:20px 15px;
+	}
+	#right{
+		border-left:#000000 dotted 1px;
+		padding-right:8px;
+	}
+	#help_head{
+		color:#111111;
+		background: #6699FF;
+		text-align: left;
+		padding:3px 8px;
+		font-size:16px;
+	}
+	#help_head a{
+		text-decoration: none;
+		color:#111111;
+	}
+	
+	
+	/*IE6——IE8*/
+input{
+	width:expression((type=="submit"||type == "reset"||type == "button")? "auto" : "") !important;
+}
+input{
+	height:expression((type == "submit"||type == "reset"||type == "button")? "auto" : "")!important;
+}
+/*FF*/
+input[type="submit"],input[type="reset"],input[type="button"]{
+	width:auto !important;
+}

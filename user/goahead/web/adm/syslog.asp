@@ -1,0 +1,1 @@
+../html/syslog.asp

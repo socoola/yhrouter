@@ -1,0 +1,87 @@
+<po>
+  <message msgid="main disable" msgstr="Disable" />
+  <message msgid="main enable" msgstr="Enable" />
+  <message msgid="main apply" msgstr="Apply" />
+  <message msgid="main cancel" msgstr="Cancel" />
+
+  <message msgid="overview introduction" msgstr="Ralink is a world leader in IEEE 802.11 technology. Our Ralink SoC SOC combines Ralink's 2T3R MAC/BBP, a 266-MHz Mips4KEc CPU core, a Gigabit Ethernet MAC, and a PCI host/device, to enable a multitude of high performance and cost-effective draft 802.11n applications. Ralink SoC is Wi-Fi Certified and provides convenient wireless connectivity from computing devices to peripherals such as printers and network attached storage." />
+  <message msgid="overview select language" msgstr="Select Language" />
+  <message msgid="overview status link" msgstr="Status" />
+  <message msgid="overview statistic link" msgstr="Statistic" />
+  <message msgid="overview management link" msgstr="Management" />
+  <message msgid="treeapp openall" msgstr="open all" />
+  <message msgid="treeapp closeall" msgstr="close all" />
+  <message msgid="treeapp Forwell" msgstr="3G Router" />
+  <message msgid="treeapp operation mode" msgstr="Operation Mode" />
+  <message msgid="treeapp internet settings" msgstr="Internet Settings" />
+  <message msgid="treeapp wan" msgstr="WAN" />
+  <message msgid="treeapp lan" msgstr="LAN" />
+  <message msgid="treeapp dhcp clients" msgstr="DHCP clients" />
+  <message msgid="treeapp vpn passthrough" msgstr="VPN Passthrough" />
+  <message msgid="treeapp routing" msgstr="Advanced Routing" />
+  <message msgid="treeapp wireless settings" msgstr="Wireless Settings" />
+  <message msgid="treeapp inic settings" msgstr="I-NIC Settings" />
+  <message msgid="treeapp legacy settings" msgstr="Legacy Settings" />
+  <message msgid="treeapp profile" msgstr="Profile" />
+  <message msgid="treeapp link status" msgstr="Link Status" />
+  <message msgid="treeapp site survey" msgstr="Site Survey" />
+  <message msgid="treeapp statistics" msgstr="Statistics" />
+  <message msgid="treeapp advance" msgstr="Advance" />
+  <message msgid="treeapp qos" msgstr="QoS" />
+  <message msgid="treeapp 11n configurations" msgstr="11n Configurations" />
+  <message msgid="treeapp about" msgstr="About" />
+  <message msgid="treeapp wds" msgstr="WDS" />
+  <message msgid="treeapp wps" msgstr="WPS" />
+  <message msgid="treeapp basic" msgstr="Basic" />
+  <message msgid="treeapp advanced" msgstr="Advanced" />
+  <message msgid="treeapp security" msgstr="Security" />
+  <message msgid="treeapp ap client" msgstr="AP Client" />
+  <message msgid="treeapp station list" msgstr="Station List" />
+  <message msgid="treeapp mesh settings" msgstr="Mesh Settings" />
+  <message msgid="treeapp firewall" msgstr="Firewall" />
+  <message msgid="treeapp ip/port filtering" msgstr="MAC/IP/Port Filtering" />
+  <message msgid="treeapp port forwarding" msgstr="Port Forwarding" />
+  <message msgid="treeapp dmz" msgstr="DMZ" />
+  <message msgid="treeapp vpn" msgstr="VPN" />
+  <message msgid="treeapp content filtering" msgstr="Content Filtering" />
+  <message msgid="treeapp administration" msgstr="Administration" />
+  <message msgid="treeapp management" msgstr="Management" />
+  <message msgid="treeapp upload firmware" msgstr="Upload Firmware" />
+  <message msgid="treeapp settings management" msgstr="Settings Management" />
+  <message msgid="treeapp status" msgstr="Status" />
+  <message msgid="treeapp system command" msgstr="System Command" />
+  <message msgid="treeapp system log" msgstr="System Log" />
+  <message msgid="treeapp sdk history" msgstr="SDK History" />
+  <message msgid="treeapp system firewall" msgstr="System Security" />
+
+  <message msgid="treeapp usb" msgstr="USB App." />
+  <message msgid="treeapp storage" msgstr="Storage" />
+  <message msgid="treeapp useradmin" msgstr="User Admin" />
+  <message msgid="treeapp ftpsrv" msgstr="FTP Server" />
+  <message msgid="treeapp sambasrv" msgstr="SAMBA Server" />
+  <message msgid="treeapp mediasrv" msgstr="MEDIA Server" />
+  <message msgid="treeapp webcam" msgstr="Web Camera" />
+  <message msgid="treeapp disk" msgstr="Disk" />
+  <message msgid="treeapp printersrv" msgstr="Printer Server" />
+  <message msgid="treeapp usbinic" msgstr="USB iNIC" />
+
+  <message msgid="treeapp sms" msgstr="SMS/Voice Command" />
+  <message msgid="treeapp sms_novoi" msgstr="SMS Command" />
+  <message msgid="treeapp status_report" msgstr="Status Report" />
+  <message msgid="treeapp route fail over" msgstr="Route Fail Over" />
+  <message msgid="treeapp reboot" msgstr="Reboot" />
+  
+  <message msgid="opmode title" msgstr="Operation Mode Configuration" />
+  <message msgid="opmode introduction" msgstr="You may configure the operation mode suitable for you environment." />
+  <message msgid="opmode mode b" msgstr="Bridge:" />
+  <message msgid="opmode mode b intro" msgstr="All ethernet and wireless interfaces are bridged into a single bridge interface." />
+  <message msgid="opmode mode g" msgstr="Gateway:" />
+  <message msgid="opmode mode g intro" msgstr="The first ethernet port is treated as WAN port. The other ethernet ports and the wireless interface are bridged together and are treated as LAN ports." />
+  <message msgid="opmode mode e" msgstr="Ethernet Converter:" />
+  <message msgid="opmode mode e intro" msgstr="The wireless interface is treated as WAN port, and the ethernet ports are LAN ports." />
+  <message msgid="opmode mode a" msgstr="AP Client:" />
+  <message msgid="opmode mode a intro" msgstr="The wireless apcli interface is treated as WAN port, and the wireless ap interface and the ethernet ports are LAN ports." />
+  <message msgid="opmode nat" msgstr="NAT Enabled" />
+  <message msgid="opmode eth conv" msgstr="Ethernet Converter Enabled" />
+</po>
+

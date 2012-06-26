@@ -1,0 +1,319 @@
+<po>
+	<message msgid="manual connect" msgstr="Manual Connect" />
+	<message msgid="always on line" msgstr="Always On Line" />
+	<message msgid="connect mode" msgstr="Connect Mode" />
+  <message msgid="inet apply" msgstr="Apply" />
+  <message msgid="inet cancel" msgstr="Cancel" />
+  <message msgid="inet enable" msgstr="Enable" />
+  <message msgid="inet disable" msgstr="Disable" />
+
+  <message msgid="inet mac" msgstr="MAC Address" />
+  <message msgid="inet ip" msgstr="IP Address" />
+  <message msgid="inet server" msgstr="Server IP" />
+  <message msgid="inet netmask" msgstr="Subnet Mask" />
+  <message msgid="inet lan2" msgstr="LAN 2" />
+  <message msgid="inet lan2 ip" msgstr="LAN2 IP Address" />
+  <message msgid="inet lan2 netmask" msgstr="LAN2 Subnet Mask" />
+  <message msgid="inet gateway" msgstr="Default Gateway" />
+  <message msgid="inet pri dns" msgstr="Primary DNS Server" />
+  <message msgid="inet sec dns" msgstr="Secondary DNS Server" />
+  <message msgid="inet user" msgstr="User Name" />
+  <message msgid="inet password" msgstr="Password" />
+  <message msgid="inet pass2" msgstr="Verify Password" />
+  <message msgid="inet hostname" msgstr="Hostname" />
+
+  <message msgid="wan title" msgstr="Wide Area Network (WAN) Settings" />
+  <message msgid="wan introduction" msgstr="wan After changed" />
+  <message msgid="wan connection type" msgstr="WAN Connection Type:" />
+  <message msgid="wan connection type static" msgstr="STATIC (fixed IP)" />
+  <message msgid="wan connection type dhcp" msgstr="DHCP (Auto config)" />
+  <message msgid="wan connection type pppoe" msgstr="PPPOE" />
+  <message msgid="wan connection type l2tp" msgstr="L2TP" />
+  <message msgid="wan connection type pptp" msgstr="PPTP" />
+  <message msgid="wan protocol opmode" msgstr="Operation Mode" />
+  <message msgid="wan protocol opmode keepalive" msgstr="Keep Alive" />
+  <message msgid="wan protocol opmode ondemand" msgstr="On Demand" />
+  <message msgid="wan protocol opmode manual" msgstr="Manual" />
+  <message msgid="wan protocol opmode ontime" msgstr="On Time" />
+
+  <message msgid="wan static mode" msgstr="Static Mode" />
+  <message msgid="wan dhcp mode" msgstr="DHCP Mode" />
+  <message msgid="wan pppoe mode" msgstr="PPPoE Mode" />
+  <message msgid="wan l2tp mode" msgstr="L2TP Mode" />
+  <message msgid="wan pptp mode" msgstr="PPTP Mode" />
+  <message msgid="wan 3G mode" msgstr="Cellular Network" />
+  <message msgid="wan 3G modem" msgstr="USB 3G modem" />
+  <message msgid="wan 3G PIN" msgstr="3G SIM Code" />
+  <message msgid="wan 3G opmode" msgstr="Operation Mode" />
+  <message msgid="wan 3G mspparam" msgstr="mobile MSP Parameters" />
+  <message msgid="wan 3G mspname" msgstr="MSP Name" />
+  <message msgid="wan 3G nettype" msgstr="3G network type" />
+  <message msgid="wan 3G dialnum" msgstr="Dialing Number" />
+  <message msgid="wan 3G cmdstr" msgstr="APN" />
+  <message msgid="wan 3G username" msgstr="User Name" />
+  <message msgid="wan 3G password" msgstr="Password" />
+  <message msgid="wan 3G localip" msgstr="3g local IP" />
+  <message msgid="wan 3G curMSPs" msgstr="MSP List" />
+  <message msgid="wan 3G selMSP" msgstr="Selected MSP" />
+  <message msgid="wan 3G AuthType" msgstr="Authenticate Type" />
+  <message msgid="wan 3G OtherOptions" msgstr="Use Software Compress" />
+  <message msgid="wan 3G UseComp" msgstr="Enable" />
+  <message msgid="wan 3G AddMSP" msgstr="Add to List" />
+  <message msgid="wan 3G SelDft" msgstr="Select to Use" />
+  <message msgid="wan 3G DelMSP" msgstr="Delete" />
+  <message msgid="wan 3G mspdel" msgstr="Operation" />
+  <message msgid="wan address mode" msgstr="Address Mode" />
+  <message msgid="wan address mode static" msgstr="Static" />
+  <message msgid="wan address mode dynamic" msgstr="Dynamic" />
+
+  <message msgid="wan mac clone" msgstr="MAC Clone" />
+
+  <message msgid="lan title" msgstr="Local Area Network (LAN) Settings" />
+  <message msgid="lan introduction" msgstr="You may enable/disable networking functions and configure their parameters as your wish." />
+  <message msgid="lan setup" msgstr="LAN Setup" />
+  <message msgid="lan dhcp type" msgstr="DHCP Type" />
+  <message msgid="lan dhcp type server" msgstr="Server" />
+  <message msgid="lan dhcp start" msgstr="Start IP Address" />
+  <message msgid="lan dhcp end" msgstr="End IP Address" />
+  <message msgid="lan dhcp lease" msgstr="Lease Time" />
+  <message msgid="lan dhcp static" msgstr="Statically Assigned" />
+  <message msgid="lan stp" msgstr="802.1d Spanning Tree" />
+  <message msgid="lan lltd" msgstr="LLTD" />
+  <message msgid="lan igmpp" msgstr="IGMP Proxy" />
+  <message msgid="lan upnp" msgstr="UPNP" />
+  <message msgid="lan radvd" msgstr="Router Advertisement" />
+  <message msgid="lan pppoer" msgstr="PPPoE Relay" />
+  <message msgid="lan dnsp" msgstr="DNS Proxy" />
+
+  <message msgid="dhcp title" msgstr="DHCP Client List" />
+  <message msgid="dhcp introduction" msgstr="You could monitor DHCP clients here." />
+  <message msgid="dhcp clients" msgstr="DHCP Clients" />
+  <message msgid="dhcp expire" msgstr="Expires in" />
+
+  <message msgid="vpn title" msgstr="VPN Passthrough" />
+  <message msgid="vpn introduction" msgstr="VPN passthrought configurations including: L2TP, IPSec, and PPTP passthrough." />
+  <message msgid="vpn pass thru" msgstr="VPN Pass Through" />
+  <message msgid="vpn l2tp pass thru" msgstr="L2TP Passthrough" />
+  <message msgid="vpn ipsec pass thru" msgstr="IPSec Passthrough" />
+  <message msgid="vpn pptp pass thru" msgstr="PPTP Passthrough" />
+
+  <message msgid="routing title" msgstr="Static Routing Settings" />
+  <message msgid="routing Introduction" msgstr="You may add and remote custom Internet routing rules, and/or enable dynamic routing exchange protocol here." />
+  <message msgid="routing add rule" msgstr="Add a routing rule" />
+  <message msgid="routing routing dest" msgstr="Destination" />
+  <message msgid="routing range" msgstr="Range" />
+  <message msgid="routing netmask" msgstr="Netmask" />
+  <message msgid="routing gateway" msgstr="Gateway" />
+  <message msgid="routing interface" msgstr="Interface" />
+  <message msgid="routing custom" msgstr="Custom" />
+  <message msgid="routing comment" msgstr="Comment" />
+  <message msgid="routing submit" msgstr="Apply" />
+  <message msgid="routing reset" msgstr="Reset" />
+  <message msgid="routing Number" msgstr="No." />
+  <message msgid="routing del title" msgstr="Current Routing table in the system:" />
+  <message msgid="routing del dest" msgstr="Destination" />
+  <message msgid="routing del netmask" msgstr="Netmask" />
+  <message msgid="routing del gateway" msgstr="Gateway" />
+  <message msgid="routing del flags" msgstr="Flags" />
+  <message msgid="routing del metric" msgstr="Metric" />
+  <message msgid="routing del ref" msgstr="Ref" />
+  <message msgid="routing del use" msgstr="Use" />
+  <message msgid="routing del interface" msgstr="Interface" />
+  <message msgid="routing del comment" msgstr="Comment" />
+  <message msgid="routing del" msgstr="Delete" />
+  <message msgid="routing del reset" msgstr="Reset" />
+  <message msgid="routing host" msgstr="Host" />
+  <message msgid="routing net" msgstr="Net" />
+  <message msgid="routing LAN" msgstr="LAN" />
+  <message msgid="routing WAN" msgstr="WAN" />
+
+  <message msgid="routing dynamic Title" msgstr="Dynamic Routing Settings" />
+  <message msgid="routing dynamic Title2" msgstr="Dynamic Routing Protocol" />
+  <message msgid="routing dynamic rip disable" msgstr="Disable" />
+  <message msgid="routing dynamic rip enable" msgstr="Enable" />
+  <message msgid="routing dynamic rip apply" msgstr="Apply" />
+  <message msgid="routing dynamic rip reset" msgstr="Reset" />
+
+  <message msgid="qos title" msgstr="Quality of Service Settings" />
+  <message msgid="qos intro" msgstr="You may setup rules to provide Quality of Service guarantees for specific applications." />
+  <message msgid="qos setup" msgstr="QoS Setup" />
+  <message msgid="qos str" msgstr="Quality of Service" />
+  <message msgid="qos disable" msgstr="Disable" />
+  <message msgid="qos enable" msgstr="Enable" />
+  <message msgid="qos dscpmarkeronly" msgstr="mark DSCP only" />
+  <message msgid="qos upload bandwidth" msgstr="Upload Bandwidth:" />
+  <message msgid="qos bandwidth custom" msgstr="User defined" />
+  <message msgid="qos download bandwidth" msgstr="Download Bandwidth:" />
+  <message msgid="qos setup submit" msgstr="Submit" />
+  <message msgid="qos setup reset" msgstr="Reset" />
+  <message msgid="qos group" msgstr="Group" />
+  <message msgid="qos group attr" msgstr="Attribute" />
+  <message msgid="qos group modify" msgstr="Modify" />
+  <message msgid="qos rule no" msgstr="No" />
+  <message msgid="qos rule name" msgstr="Name" />
+  <message msgid="qos rule prio" msgstr="Group" />
+  <message msgid="qos rule info" msgstr="Info." />
+  <message msgid="qos rule add" msgstr="Add" />
+  <message msgid="qos rule del" msgstr="Delete" />
+  <message msgid="qos loaddefault" msgstr="Load default" />
+  <message msgid="qos Rate" msgstr="Rate:" />
+  <message msgid="qos Ceil" msgstr="Ceil:" />
+  <message msgid="qos AF Name" msgstr="Group Name" />
+  <message msgid="qos AF Upload Bandwidth" msgstr="% of upload bandwidth" />
+
+  <message msgid="qos classifier title" msgstr="Classifier Settings" />
+  <message msgid="qos classifier name" msgstr="Name" />
+  <message msgid="qos classifier group" msgstr="Group" />
+  <message msgid="qos classifier mac" msgstr="MAC Address" />
+  <message msgid="qos classifier dip" msgstr="Dest. IP address" />
+  <message msgid="qos classifier sip" msgstr="Src. IP address" />
+  <message msgid="qos classifier pktlen" msgstr="Packet Length" />
+  <message msgid="qos classifier dscp" msgstr="DSCP" />
+  <message msgid="qos classifier proto" msgstr="Protocol" />
+  <message msgid="qos classifier dport" msgstr="Dest. port" />
+  <message msgid="qos classifier sport" msgstr="Src. port" />
+  <message msgid="qos classifier l7" msgstr="Application" />
+  <message msgid="qos classifier remark" msgstr="Remark DSCP as:" />
+  <message msgid="qos classifier auto" msgstr="Auto" />
+
+
+
+
+<message msgid="dtu setting" msgstr="DTU Settings" />
+<message msgid="dtu status table" msgstr="DTU Status Table" />
+  <message msgid="dtu status" msgstr="dtu status" />
+  <message msgid="option off" msgstr="off" />
+  <message msgid="option on" msgstr="on" />
+  <message msgid="id dtu serial table" msgstr="DTU Serial Settings Table" />
+  <message msgid="dtu bandrate" msgstr="baudrate" />
+  <message msgid="dtu parity" msgstr="parity" />
+  <message msgid="option none" msgstr="none" />
+  <message msgid="option odd" msgstr="odd" />
+  <message msgid="option even" msgstr="even" />
+  <message msgid="dtu databits" msgstr="databits" />
+  <message msgid="dtu stopbits" msgstr="stopbits" />
+  <message msgid="dtu flowcontrol" msgstr="flow control" />
+  <message msgid="option n" msgstr="none" />
+  <message msgid="option h" msgstr="hardware" />
+  <message msgid="option s" msgstr="software" />
+  <message msgid="dtu config" msgstr="DTU config Table" />
+  <message msgid="dtu linktype" msgstr="link type" />
+  <message msgid="option server" msgstr="server" />
+  <message msgid="option client" msgstr="client" />
+  <message msgid="dtu socktype" msgstr="network type" />
+  <message msgid="dtu server port" msgstr="server port" />
+  <message msgid="dtu center 1" msgstr="server 1" /> 
+  <message msgid="dtu center 2" msgstr="server 2" />
+ <message msgid="dtu center 3" msgstr="server 3" />
+ <message msgid="dtu center 4" msgstr="server 4" />
+ <message msgid="dtu heart time" msgstr="heart beat time" />
+ <message msgid="dtu heart info" msgstr="heart beat infomation" /> 
+ <message msgid="dtu send data time" msgstr="send data timeout" /> 
+ <message msgid="dtu off heart after nodata select" msgstr="off heart beat when no serial data" /> 
+ <message msgid="dtu off heart delay time" msgstr="off heart beat delay time" /> 
+ <message msgid="dtu apply" msgstr="apply" />
+  
+
+	<message msgid="msg setting novoi" msgstr="SMS Settings" />
+	<message msgid="msg status table novoi" msgstr="SMS Table" />
+      	<message msgid="msg status novoi" msgstr="SMS status" />
+
+	<message msgid="msg setting" msgstr="SMS/Voice Settings" />
+	<message msgid="msg status table" msgstr="SMS/Voice Table" />
+      	<message msgid="msg status" msgstr="SMS/Voice status" />
+        <message msgid="msg status option off" msgstr="off" />
+        <message msgid="msg status option on" msgstr="on" />
+        <message msgid="msg send ack" msgstr="Send response message" />
+        <message msgid="msg send ack option off" msgstr="off" />
+        <message msgid="msg send ack option on" msgstr="on" />
+        <message msgid="msg telephone config" msgstr="Telephone Numbers" />
+        <message msgid="msg num1" msgstr="Number 1" />
+        <message msgid="msg num2" msgstr="Number 2" />
+        <message msgid="msg num3" msgstr="Number 3" />
+        <message msgid="msg num4" msgstr="Number 4" />
+        <message msgid="msg num5" msgstr="Number 5" />
+        <message msgid="msg num6" msgstr="Number 6" />
+        <message msgid="msg num7" msgstr="Number 7" />
+        <message msgid="msg num8" msgstr="Number 8" />
+        <message msgid="msg num9" msgstr="Number 9" />
+       	<message msgid="msg num10" msgstr="Number 10" />
+        <message msgid="msg cmd table" msgstr="Message Command Settings" />
+        <message msgid="msg cmd 1" msgstr="3G Link-up Command" />
+        <message msgid="msg cmd 2" msgstr="3G Link-down Command" />
+        <message msgid="msg voice cmd id" msgstr="Voice Command" />
+        <message msgid="msg voice cmd option off" msgstr="Off" />
+        <message msgid="msg voice cmd option 3gup" msgstr="3G Link Up" />
+        <message msgid="msg voice cmd option 3gdown" msgstr="3G Link Down" />
+        <message msgid="msg voice cmd option 3gupdown" msgstr="3G Link Up and Down" />
+	<message msgid="msg apply" msgstr="Apply" />
+
+
+	<message msgid="sr setting" msgstr="Status Report Settings" />
+	<message msgid="sr status table" msgstr="Report Status table" />
+	<message msgid="sr status" msgstr="Report status" />
+	<message msgid="sr option off" msgstr="Off" />
+	<message msgid="sr option normal" msgstr="On-Normal" />
+	<message msgid="sr option special" msgstr="On-Special" />
+	<message msgid="sr option advanced" msgstr="On-Advanced" />
+	<message msgid="sr test host" msgstr="Host for test" />
+	<message msgid="sr report table" msgstr="Status Report Settings" />
+	<message msgid="sr report host and port" msgstr="Report to host:port" />
+	<message msgid="sr report interval time" msgstr="Report time interval" />
+	<message msgid="sr report status1 str" msgstr="On Line informatime" />
+	<message msgid="sr report status2 str" msgstr="Off Line informatime" />
+	<message msgid="sr apply" msgstr="Apply" />
+
+
+	
+	<message msgid="lbk_id_linkbackup" msgstr="Route Fail Over" />
+	<message msgid="lbk_id_linkbackup_operation_mode" msgstr="Operation Mode" />
+	<message msgid="lbk_id_link_backup_status" msgstr="Active/Passive" />
+	<message msgid="lbk_id_back_to_main" msgstr="Back To Primary WAN When Possible" />
+	<message msgid="lbk_id_linkbackup_router_priority_setting" msgstr="Router Priority" />
+	<message msgid="lbk_high_prio" msgstr="High Priority" />
+	<message msgid="lbk_low_prio" msgstr="Low Priority" />
+
+	<message msgid="lbk_id_wan_mode_cellular" msgstr="Cellular" />
+	<message msgid="lbk_id_linkbackup_connectivity_check" msgstr="Connectivity Check" />
+	<message msgid="lbk_id_linkbackup_check_count" msgstr="Check Count" />
+	<message msgid="lbk_id_linkbackup_wan1_check_method" msgstr="Check Method" />
+	<message msgid="lbk_id_link_backup_apply" msgstr="Apply" />
+
+
+  <message msgid="id gps settings" msgstr="GPS Settings" />
+  <message msgid="id gps active" msgstr="GPS Active" />
+  <message msgid="id gps send to" msgstr="GPS Send to" />
+  <message msgid="id message to serial" msgstr="Serial" />
+  <message msgid="id gps to serial settings" msgstr="GPS To Serial Settings" />
+  <message msgid="id serial baudrate" msgstr="Serial Baudrate" />
+  <message msgid="id serial parity" msgstr="Serial Parity" />
+  <message msgid="id serial databits" msgstr="Serial Databits" />
+  <message msgid="id serial stopbits" msgstr="Serial Stopbits" />
+  <message msgid="id serial flowcontrol" msgstr="Serial Flow Control" />
+  <message msgid="id gps to net settings" msgstr="GPS To TCP/IP Settings" />
+  <message msgid="id gps socktype" msgstr="Socket Type" />
+  <message msgid="id gps server ip" msgstr="Server" />
+  <message msgid="id gps server port" msgstr="Port" />
+  <message msgid="id gps comment" msgstr="Comment: Do not used GPS with DTU when send to serial!" />
+  <message msgid="id gps apply" msgstr="Apply" />
+
+  <message msgid="id snmp settings" msgstr="SNMP Settings" />
+  <message msgid="id snmp active" msgstr="SNMP Active" />
+  <message msgid="id snmp contact info" msgstr="Contact Info" />
+  <message msgid="id snmp location" msgstr="Location" />
+  <message msgid="id snmp v2 settings" msgstr="SNMP V1 and V2c Settings" />
+  <message msgid="id snmp v2 user" msgstr="User" />
+  <message msgid="id snmp v2 host lan" msgstr="Host/Lan" />
+  <message msgid="id snmp v2 writable" msgstr="Writable" />
+  <message msgid="id snmp v3 settings" msgstr="SNMP V3 Settings" />
+  <message msgid="id snmp v3 user" msgstr="User" />
+  <message msgid="id snmp v3 host lan" msgstr="Host/Lan" />
+  <message msgid="id snmp v3 writable" msgstr="Writable" />
+  <message msgid="id snmp v3 security mode" msgstr="Security Mode" />
+  <message msgid="id snmp v3 authentication str" msgstr="Authentication" />
+  <message msgid="id snmp v3 encryption str" msgstr="Encryption" />
+  <message msgid="id snmp v3 authentication password" msgstr="Authentication Password" />
+  <message msgid="id snmp v3 encryption password" msgstr="Encryption Password" />
+  <message msgid="id snmp apply" msgstr="Apply" />
+
+</po>

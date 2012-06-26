@@ -1,0 +1,57 @@
+#!/bin/sh -f
+
+DEBUG=0
+
+debug_str()
+{
+	if [ $DEBUG = 1 ];then
+		echo -e   $1
+	fi
+}
+
+
+if [ $# -eq 1 ];then
+	if [ $1 = "reset" ];then
+		rm -rf /var/psk.txt.last
+		debug_str "rm -rf /var/psk.txt.last ;exit."	
+		exit 0 
+	fi
+	if [ $1 = "get_change_flag" ];then
+		if [ -f /var/psk.txt.last ];then
+       			 cmp /var/psk.txt /var/psk.txt.last 1>/dev/null  2>&1
+        		if [ $? = 1 ];then
+               			 echo  "changed"        
+       			 else
+               			 echo  "not_change"        
+        		fi
+		else
+	               	echo  "not_change"        
+		fi
+
+		exit 0		
+	fi
+fi
+
+
+
+if [ -f /var/psk.txt.last ];then
+	cmp /var/psk.txt /var/psk.txt.last 1>/dev/null  2>&1
+	if [ $? = 1 ];then
+		debug_str "ip have been change, do restart vpn."	
+		killall racoon
+		setkey -f /var/setkey.conf
+		racoon -f /var/racoon.conf
+		rm -rf /var/psk.txt.last
+	else
+		debug_str "the same IP."	
+	fi
+fi
+
+if [ -f /var/psk.txt ];then
+	if [ ! -f /var/psk.txt.last ];then
+		cp -rf  /var/psk.txt /var/psk.txt.last
+	fi
+fi
+
+
+

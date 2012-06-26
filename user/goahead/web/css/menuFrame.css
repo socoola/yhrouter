@@ -1,0 +1,35 @@
+body {
+	padding:0;
+	margin:0;
+	background: #0052A4;
+	font:12px Times,sans-serif;
+	color:#FFFFFF;
+}
+#menu{
+	width:120px;
+	margin:25px 17px;
+	padding-bottom: 30px;
+}
+.dot{
+	padding-left:13px;
+	background: url('../image/dot.gif') no-repeat left;
+}
+.plus{
+	padding-left:13px;
+	background: url('../image/plus.gif') no-repeat left;
+}
+.subMenu{
+	display: none;
+}
+.subMenu a{
+	margin-left:11px;
+	padding-left:13px;
+	background: url('../image/dot.gif') no-repeat left;
+}
+a{
+	display:block;
+	line-height: 22px;
+	text-decoration: none;
+	color:#FFFFFF;
+}
+
