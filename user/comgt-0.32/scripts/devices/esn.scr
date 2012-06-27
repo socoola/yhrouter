@@ -1,0 +1,16 @@
+opengt
+set com 115200n81
+    set senddelay 0.05
+    waitquiet 2 0.5
+    let c=0
+:signal
+    waitquiet 1 0.1
+    send "AT+GSN^m"
+    get 2 "^m" $s
+    get 2 "^m" $s
+    let a=len($s)
+    let a=a-6
+    let $s=$right($s,a)
+    print $s
+    waitquiet 1 0.1
+    exit 0\n"

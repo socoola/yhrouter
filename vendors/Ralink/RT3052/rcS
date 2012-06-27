@@ -1,0 +1,92 @@
+#!/bin/sh
+mount -a
+mkdir -p /var/run
+mdev -s
+#add v2.4.0 by zsf ,mount flash partition
+mk_flash_dir.sh 
+rm -rf /flash/web
+cp -rL /etc_ro/web /flash/
+
+chmod +x /flash/web/mklink.sh
+/flash/web/mklink.sh
+
+mkdir -p /flash/web/lang
+mkdir -p /flash/web/html
+mkdir -p /flash/web/js
+mkdir -p /flash/web/image
+mkdir -p /flash/web/css
+
+udpsvd -E 0 9069 tftpd -c /flash/web/lang&
+udpsvd -E 0 10069 tftpd -c /flash/web/html&
+udpsvd -E 0 20069 tftpd -c /flash/web/js&
+udpsvd -E 0 30069 tftpd -c /flash/web/image&
+udpsvd -E 0 40069 tftpd -c /flash/web/css&
+udpsvd -E 0 50069 tftpd -c /flash/web/&
+
+
+gpio l 12 4000 0 1 1 4000 #gpio12=0 for dtu dcd=0
+#gpio l 21 7 1 1 1 1 #gpio 21 for simcom700 igt, >500ms we set 700ms
+
+#gpio for restart cell modules
+gpio l 6 0 4000 1 1 4000 #gpio6=0 
+sleep 1 
+gpio l 6 4000 0 1 1 4000 #gpio6=1 
+
+
+
+sleep 1 
+gpio l 21 7 1 1 1 1 #gpio 21 for simcom700 igt, >500ms we set 700ms
+
+
+#cat /etc_ro/motd
+
+#for syslogd
+mkdir -p /var/log
+
+
+power_led.sh normal &
+
+nvram_daemon&
+#sleep 1 
+goahead&
+#sleep 5 
+#modify 2010-10-30
+#sleep 30 
+
+#for telnet debugging
+telnetd
+
+
+#echo 1-1 0:0 660 @usb_modeswitch -v 0x12d1 -p 0x1001 - H 1 > /etc/mdev.conf
+echo /sbin/mdev > /proc/sys/kernel/hotplug
+mdev -s
+
+
+#add 2010-10-30
+sleep 30 
+
+
+#dialup_3g_daemon.sh &
+reset_daemon&
+wpsledpbc&
+
+ddns.sh&
+
+#sleep 1 
+start_vpn&
+#sleep 1 
+start_dtu&
+#sleep 1 
+start_msg_cmd&
+#sleep 1
+start_status_report&
+#sleep 1
+start_reboot_timer.sh start&
+start_reboot_timer.sh network_reboot_start&
+#sleep 1
+start_linkbackup >/dev/console&
+pptp_oper.sh start &
+l2tp_oper.sh start &
+start_vrrp.sh&
+start_gps.sh&
+start_snmp.sh&

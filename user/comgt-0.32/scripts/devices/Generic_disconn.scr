@@ -1,0 +1,26 @@
+opengt
+set com 115200n81
+set senddelay 0.05
+waitquiet 1 0.2
+send "ATH"
+waitfor 5 "OK","ERR","ERROR"
+if % = -1 goto timeerror
+if % = 0 goto ok
+if % = 1 goto error
+if % = 2 goto error
+:ok
+print "DISCONNECTED\n"
+system "3gdialup_led.sh off"
+#system "echo \"Disconnected OK\" >/dev/console"
+exit 0
+:error
+print "DISCONNECT ERROR\n"
+system "3gdialup_led.sh off"
+#system "echo \"Disconnected Error\" >/dev/console"
+exit 1
+:timeerror
+print "DISCONNECT TIMEOUT\n"
+system "3gdialup_led.sh off"
+#system "echo \"Disconnected Timeout\" >/dev/console"
+exit 1
+
