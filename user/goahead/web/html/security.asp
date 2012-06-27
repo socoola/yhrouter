@@ -174,6 +174,9 @@ function style_display_on()
 }
 
 var http_request = false;
+
+
+
 function makeRequest(url, content, handler) {
 	http_request = false;
 	if (window.XMLHttpRequest) { // Mozilla, Safari,...
@@ -195,20 +198,27 @@ function makeRequest(url, content, handler) {
 		return false;
 	}
 	http_request.onreadystatechange = handler;
-	http_request.open('POST', url, true);
+	http_request.open('POST', url, false);
 	http_request.send(content);
 }
-
+function showCurrTime(){
+		var today=new Date();
+		var minutes = today.getMinutes();
+		var seconds = today.getSeconds();
+				
+		alert("mins:"+minutes+"secs"+seconds);
+	}
 function securityHandler() {
 	if (http_request.readyState == 4) {
 		if (http_request.status == 200) {
-			parseAllData(http_request.responseText);
-			UpdateMBSSIDList();
-			LoadFields(defaultShownMBSSID);
+			
+			parseAllData(http_request.responseText);//3secs
+			UpdateMBSSIDList();//0secs
+			LoadFields(defaultShownMBSSID);//0secs
 
-			// load Access Policy for MBSSID[selected]
-			LoadAP();
-			ShowAP(defaultShownMBSSID);
+			 //load Access Policy for MBSSID[selected]
+			LoadAP();//3secs
+			ShowAP(defaultShownMBSSID);//2secs
 		} else {
 			alert('There was a problem with the request.');
 		}
@@ -227,10 +237,13 @@ function parseAllData(str)
 	all_str = str.split("\n");
 
 	defaultShownMBSSID = parseInt(all_str[0]);
-
-	for (var i=0; i<all_str.length-2; i++) {
+	var all_str_length = all_str.length;
+	var for_length = all_str_length - 2;
+	
+	for (var i=for_length - 1; i>=0; i--) {
 		var fields_str = new Array();
 		fields_str = all_str[i+1].split("\r");
+
 
 		SSID[i] = fields_str[0];
 		PreAuth[i] = fields_str[1];
@@ -264,6 +277,7 @@ function parseAllData(str)
 		if(AuthMode[i] == "OPEN" && EncrypType[i] == "NONE" && IEEE8021X[i] == "0")
 			AuthMode[i] = "Disable";
 	}
+
 }
 
 function checkData()
@@ -789,7 +803,7 @@ function LoadFields(MBSSID)
 function ShowAP(MBSSID)
 {
 	var i;
-	for(i=0; i<MBSSID_MAX; i++){
+	for(i=MBSSID_MAX - 1; i>=0; i--){
 		document.getElementById("apselect_"+i).selectedIndex	= AccessPolicy[i];
 		document.getElementById("AccessPolicy_"+i).style.visibility = "hidden";
 		document.getElementById("AccessPolicy_"+i).style.display = "none";
@@ -805,13 +819,17 @@ function ShowAP(MBSSID)
 
 function LoadAP()
 {
-	for(var i=0; i<SSID.length; i++){
+	var ssid_length = SSID.length;
+	for(var i=ssid_length - 1; i>=0; i--){
 		var j=0;
 		var aplist = new Array;
-
-		if(AccessControlList[i].length != 0){
+		var accessControlList_length = AccessControlList[i].length;
+		if(accessControlList_length != 0){
+			
 			aplist = AccessControlList[i].split(";");
-			for(j=0; j<aplist.length; j++){
+			var aplist_length = aplist.length;
+			
+			for(j=aplist_length - 1; j>=0; j--){
 				document.getElementById("newap_"+i+"_"+j).value = aplist[j];
 			}
 
@@ -989,6 +1007,11 @@ function initTranslation()
 	e.value = _("wireless apply");
 	e = document.getElementById("secureCancel");
 	e.value = _("wireless cancel");
+	
+	e = document.getElementById("help_head");
+	e.innerHTML = _("help help_head");
+	e = document.getElementById("wireless_direc");
+	e.innerHTML = _("wireless wireless_direc");
 }
 
 function initAll()
@@ -1073,7 +1096,7 @@ function onPreAuthenticationClick(type)
   <tr>
     <td class="head" id="secureSSIDChoice">SSID choice</td>
     <td>
-      <select name="ssidIndex" size="1" onchange="selectMBSSIDChanged()" style="width:75">
+      <select name="ssidIndex" size="1" onchange="selectMBSSIDChanged()" >
 			<!-- ....Javascript will update options.... -->
       </select>
     </td>
@@ -1090,7 +1113,7 @@ function onPreAuthenticationClick(type)
   <tr id="div_security_infra_mode" name="div_security_infra_mode"> 
     <td class="head" id="secureSecureMode">Security Mode</td>
     <td>
-      <select name="security_mode" id="security_mode" size="1" onchange="securityMode(1)" style="width:75">
+      <select name="security_mode" id="security_mode" size="1" onchange="securityMode(1)">
 			<!-- ....Javascript will update options.... -->
       </select>
 
@@ -1142,9 +1165,10 @@ function onPreAuthenticationClick(type)
     <td class="head2" id="secureWEPKey2">WEP Key 2 : </td>
     <td><input name="wep_key_2" id="WEP2" maxlength="26" value="" onKeyUp="setChange(1)"></td>
     <td><select id="WEP2Select" name="WEP2Select" onchange="setChange(1)">
-		<option value="1">ASCII</option>
-		<option value="0">Hex</option>
-		</select></td>
+					<option value="1">ASCII</option>
+					<option value="0">Hex</option>
+				</select>
+		</td>
   </tr>
   <tr> 
     <td class="head2" id="secureWEPKey3">WEP Key 3 : </td>
@@ -1213,14 +1237,14 @@ function onPreAuthenticationClick(type)
 
 <!-- 802.1x -->
 <!-- WEP  -->
-<table id="div_8021x_wep" name="div_8021x_wep" border="0" bordercolor="#9babbd" cellpadding="3" cellspacing="1" hspace="2" vspace="2" width="640" style="visibility: hidden;">
+<table id="div_8021x_wep" name="div_8021x_wep" border="0" bordercolor="#9babbd" cellpadding="3" cellspacing="1" hspace="2" vspace="2" width="540" style="visibility: hidden;">
   <tbody>
   <tr>
     <td class="title" colspan="2" id="secure8021XWEP">802.1x WEP</td>
   </tr>
   <tr>
 		<td class="head" id="secure1XWEP"> WEP </td>
-		<td>
+		<td >
 	      <input name="ieee8021x_wep" id="ieee8021x_wep" value="0" type="radio" onClick="onIEEE8021XWEPClick(0)"><font id="secure1XWEPDisable">Disable &nbsp;</font>
     	  <input name="ieee8021x_wep" id="ieee8021x_wep" value="1" type="radio" onClick="onIEEE8021XWEPClick(1)"><font id="secure1XWEPEnable">Enable</font>
 		</td>
@@ -1321,9 +1345,9 @@ for(aptable = 0; aptable < MBSSID_MAX; aptable++){
 
 <td class="tdwidth2" id="td2"><!--start of td2-->
 	<div id="right"><!--start of right-->
-		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
+		<h2 id="help_head">Heeelp...</h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content"><span id="wireless_direc"></span></p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

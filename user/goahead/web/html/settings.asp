@@ -40,6 +40,13 @@ function initTranslation()
 	e.innerHTML = _("setman load factory default button");
 	e = document.getElementById("setmanLoadDefault");
 	e.value = _("setman load default");
+	
+	
+	e = document.getElementById("help_head");
+	e.innerHTML = _("help help_head");
+	e = document.getElementById("settings_direc");
+	e.innerHTML = _("settings settings_direc");
+	
 }
 
 function PageInit()
@@ -128,9 +135,9 @@ function PageInit()
 
 <td class="tdwidth2" id="td2"><!--start of td2-->
 	<div id="right"><!--start of right-->
-		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
+		<h2 id="help_head">Heeelp...</h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content"><span id="settings_direc"></span></p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

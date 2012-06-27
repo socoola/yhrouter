@@ -29,8 +29,8 @@ function TimeoutReload(timeout)
 {
 	secs = timeout;
 	if(timerRunning)
-		clearTimeout(timerID)
-	timerRunning = false
+		clearTimeout(timerID);
+	timerRunning = false;
 	StartTheTimer();	
 }
 
@@ -226,6 +226,11 @@ function initTranslation()
 	e.innerHTML = _("inet disable");
 	e = document.getElementById("lDnspE");
 	e.innerHTML = _("inet enable");
+	
+	e = document.getElementById("help_head");
+	e.innerHTML = _("help help_head");
+	e = document.getElementById("lan_direc");
+	e.innerHTML = _("lan lan_direc");
 
 	e = document.getElementById("lApply");
 	e.value = _("inet apply");
@@ -334,6 +339,8 @@ function initValue()
 		document.getElementById("dnsproxy").style.display = "none";
 		document.lanCfg.dnspEnbl.options.selectedIndex = 0;
 	}
+	
+	lan2_enable_switch();
 }
 
 function atoi(str, num)
@@ -504,7 +511,6 @@ function CheckValue()
 	}
 	return true;
 }
-
 function lan2_enable_switch()
 {
 	if (document.lanCfg.lan2enabled[1].checked == true)
@@ -793,7 +799,7 @@ function modDhcpCfg()
 <table width="540" cellpadding="2" cellspacing="1">
 <tr align="center">
   <td>
-    <input type=submit style="{width:auto;}" value="Apply" id="lApply"  onClick="TimeoutReload(20)">&nbsp;&nbsp;
+    <input type=submit style="{width:auto;}" value="Apply" id="lApply"  onClick="TimeoutReload(10)">&nbsp;&nbsp;
     <input type=reset  style="{width:auto;}" value="Cancel" id="lCancel" onClick="window.location.reload()">
   </td>
 </tr>
@@ -810,9 +816,9 @@ function modDhcpCfg()
 
 <td class="tdwidth2" id="td2"><!--start of td2-->
 	<div id="right"><!--start of right-->
-		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
+		<h2 id="help_head">Heeelp...</h2>
 		
-		<p id="help_content">Something provide help........Something provide help........Something provide help........Something provide help........Something provide help........Something provide help........</p>
+		<p id="help_content"><span id="lan_direc"></span></p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

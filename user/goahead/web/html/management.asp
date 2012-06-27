@@ -335,6 +335,19 @@ function initTranslation()
 	e.value = _("admin apply");
 	e = document.getElementById("manDdnsCancel");
 	e.value = _("admin cancel");
+	
+	
+	e = document.getElementById("help_head");
+	e.innerHTML = _("help help_head");
+	e = document.getElementById("management_direc1");
+	e.innerHTML = _("management management_direc1");
+	e = document.getElementById("management_direc2");
+	e.innerHTML = _("management management_direc2");
+	e = document.getElementById("management_direc3");
+	e.innerHTML = _("management management_direc3");
+	e = document.getElementById("management_direc4");
+	e.innerHTML = _("management management_direc4");
+	
 }
 
 function initValue()
@@ -597,7 +610,7 @@ function set_greenap()
 	    }
 	}
 }
-/*****************************************ÓïÑÔÇĞ»»Ê±£¬Ë¢ĞÂ×ó±ß²Ëµ¥MenuFrameÀ¸º¯Êı***************************************************/
+/*****************************************Ã“Ã¯Ã‘Ã”Ã‡ÃÂ»Â»ÃŠÂ±Â£Â¬Ã‹Â¢ÃÃ‚Ã—Ã³Â±ÃŸÂ²Ã‹ÂµÂ¥MenuFrameÃ€Â¸ÂºÂ¯ÃŠÃ½***************************************************/
  function refreshMenuFrame(){
     parent.menuFrame.location.reload(true); 		
  }
@@ -964,9 +977,14 @@ function greenap_action_switch(index)
 
 <td class="tdwidth2" id="td2"><!--start of td2-->
 	<div id="right"><!--start of right-->
-		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
+		<h2 id="help_head">Heeelp..</h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content">
+			<span id="management_direc1"></span><br/><br/>
+			<span id="management_direc2"></span><br/><br/>
+			<span id="management_direc3"></span><br/><br/>
+			<span id="management_direc4"></span><br/><br/>
+		</p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

@@ -234,6 +234,16 @@ function initTranslation()
 	e.value = _("routing dynamic rip apply");
 	e = document.getElementById("dynamicRoutingReset");
 	e.value = _("routing dynamic rip reset");
+	
+	e = document.getElementById("help_head");
+	e.innerHTML = _("help help_head");
+	
+	e = document.getElementById("routing_direc1");
+	e.innerHTML = _("routing routing_direc1");
+	e = document.getElementById("routing_direc2");
+	e.innerHTML = _("routing routing_direc2");
+	e = document.getElementById("routing_direc3");
+	e.innerHTML = _("routing routing_direc3");
 }
 
 function onInit()
@@ -530,9 +540,13 @@ function interfaceChange()
 
 <td class="tdwidth2" id="td2"><!--start of td2-->
 	<div id="right"><!--start of right-->
-		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
+		<h2 id="help_head">Heeelp...</h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content">
+			<span id="routing_direc1"></span><br/><br/>
+			<span id="routing_direc2"></span><br/><br/>
+			<span id="routing_direc3"></span>
+		</p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

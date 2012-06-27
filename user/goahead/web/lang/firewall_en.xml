@@ -1,4 +1,16 @@
 <po>
+	<message msgid="vpn vpn_direc" msgstr="VPN (virtual private network). A VPN is a private network that uses a public network (usually the Internet) to connect remote sites or users together. The router supports IPSEC, PPTP , L2TP now." />
+	
+	<message msgid="system_firewall system_firewall_direc" msgstr="If permit remote management via WAN IP,please choose 'Allow'." />
+	
+	<message msgid="dmz dmz_direc" msgstr="In some cases, need to expose the computer in LAN completely to wide area network to achieve two-way communication, you can set the computer as DMZ host." />
+	<message msgid="port_forward port_forward_direc1" msgstr="IP Address:IP of the computer used as server." />
+	<message msgid="port_forward port_forward_direc2" msgstr="Port Range: You can set a port (e.g 6000-6000),or a segment(e.g 6000-6006)." />
+	<message msgid="port_forward port_forward_direc3" msgstr="Protocol:Server's protocol." />
+	
+	<message msgid="port_filtering port_filtering_direc" msgstr="Here is used to restrict the computers in LAN to visit some websites through filtering MAC/IP/Port." />
+	<message msgid="help help_head" msgstr="Help more" />
+	
   <message msgid="Ipsec Current Rule" msgstr="IPSEC Vpn List" />
   <message msgid="firewall disable" msgstr="Disable" />
   <message msgid="firewall enable" msgstr="Enable" />

@@ -52,14 +52,14 @@ if [ "$ntp_info" = "get_time_ok" ];then
 				tpem=`nvram_get 2860 tp_em_${tpsel}`
 				thnow=`date +%H`
 				tmnow=`date +%M`
-				#echo "$tpsm $tpsh * * * /sbin/internet.sh" > /var/spool/cron/crontabs/r8_admin_user
-				#echo "$tpem $tpeh * * * /sbin/internet.sh" >> /var/spool/cron/crontabs/r8_admin_user
-				echo "$tpsm $tpsh * * * /sbin/3g_up_command.sh" > /var/spool/cron/crontabs/r8_admin_user
-				echo "$tpem $tpeh * * * /sbin/3g_down_command.sh" >> /var/spool/cron/crontabs/r8_admin_user
+				#echo "$tpsm $tpsh * * * /sbin/internet.sh" > /var/spool/cron/crontabs/yinghua868
+				#echo "$tpem $tpeh * * * /sbin/internet.sh" >> /var/spool/cron/crontabs/yinghua868
+				echo "$tpsm $tpsh * * * /sbin/3g_up_command.sh" > /var/spool/cron/crontabs/yinghua868
+				echo "$tpem $tpeh * * * /sbin/3g_down_command.sh" >> /var/spool/cron/crontabs/yinghua868
 
 				#for reboot_neterr in 3g on timer mode
-				echo "$tpsm $tpsh * * * /bin/reboot_neterr_up_for_crond.sh" >> /var/spool/cron/crontabs/r8_admin_user
-				echo "$tpem $tpeh * * * /bin/reboot_neterr_down_for_crond.sh" >> /var/spool/cron/crontabs/r8_admin_user
+				echo "$tpsm $tpsh * * * /bin/reboot_neterr_up_for_crond.sh" >> /var/spool/cron/crontabs/yinghua868
+				echo "$tpem $tpeh * * * /bin/reboot_neterr_down_for_crond.sh" >> /var/spool/cron/crontabs/yinghua868
 
 				crond
 				#comparetime $tpsh $tpsm $thnow $tmnow

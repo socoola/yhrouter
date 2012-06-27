@@ -1,16 +1,34 @@
 opengt
 set com 115200n81
-    set senddelay 0.05
-    waitquiet 2 0.5
-    let c=0
+set senddelay 0.05
+waitquiet 2 0.5
+let c=0
+system "echo \"No signal\" >/var/signal"
 :signal
-    waitquiet 1 0.1
-    send "AT+CSQ^m"
-    get 2 "^m" $s
-    get 2 "^m" $s
+    let c=c+1
+    waitquiet 10 0.5
+    send "AT+CSQ?^m"
+    get 2 ":" $s
+    if % != 0 goto signalerror
     let a=len($s)
-    let a=a-6
-    let $s=$right($s,a)
+    if a < 4 goto signalerror
+    let $s=$right($s,4)
+    print $s"\n"
+    if $s!="+CSQ" goto signalerror
+    get 2 "^m" $s
+    if % != 0 goto signalerror
+    print $s  
+    goto signalok
+:signalerror
+    if c <= 3 print "error and continue\n" goto signal
+    else goto error
+:error
+    print "error and finish\n"
+    exit 1
+:signalok
+    putenv "SIGNAL="$s
+    system "echo $SIGNAL>/var/signal"
     print $s
     waitquiet 1 0.1
-    exit 0\n"
+    exit
+

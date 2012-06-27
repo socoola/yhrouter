@@ -143,6 +143,7 @@ static int  option_send_setup(struct usb_serial_port *port);
 #define ZTE_PID_MU301                   0x1303
 #define ZTE_PID_MF210V                  0x2003
 #define ZTE_PID_MF210                  0x1300
+#define ZTE_PID_AD3812                  0xffeb
 //gmt681w
 #define GOBI3000_VID_ID                 0x0AF0
 #define GOBI3000_PRODUCT_ID             0x8120
@@ -212,6 +213,7 @@ static struct usb_device_id option_ids[] = {
         { USB_DEVICE(ZTE_VID_ID, ZTE_PID_MU301) },
         { USB_DEVICE(ZTE_VID_ID, ZTE_PID_MF210V) },
         { USB_DEVICE(ZTE_VID_ID, ZTE_PID_MF210) },
+        { USB_DEVICE(ZTE_VID_ID, ZTE_PID_AD3812) },
         { USB_DEVICE(VENDOR_ZX_600, PRODUCT_ZX_600) },
         { USB_DEVICE(GOBI3000_VID_ID, GOBI3000_PRODUCT_ID) },
 

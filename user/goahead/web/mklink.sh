@@ -42,22 +42,22 @@ cd ..
 
 cd lang/en/
 rm -f *
-ln -s ../admin_en.asp ./admin.asp
-ln -s ../firewall_en.asp ./firewall.asp
-ln -s ../internet_en.asp ./internet.asp
-ln -s ../main_en.asp ./main.asp
-ln -s ../usb_en.asp ./usb.asp
-ln -s ../wireless_en.asp ./wireless.asp
+ln -s ../admin_en.xml ./admin.xml
+ln -s ../firewall_en.xml ./firewall.xml
+ln -s ../internet_en.xml ./internet.xml
+ln -s ../main_en.xml ./main.xml
+ln -s ../usb_en.xml ./usb.xml
+ln -s ../wireless_en.xml ./wireless.xml
 cd ../../
 
 cd lang/zhcn/
 rm -f *
-ln -s ../admin_cn.asp ./admin.asp
-ln -s ../firewall_cn.asp ./firewall.asp
-ln -s ../internet_cn.asp ./internet.asp
-ln -s ../main_cn.asp ./main.asp
-ln -s ../usb_cn.asp ./usb.asp
-ln -s ../wireless_cn.asp ./wireless.asp
+ln -s ../admin_cn.xml ./admin.xml
+ln -s ../firewall_cn.xml ./firewall.xml
+ln -s ../internet_cn.xml ./internet.xml
+ln -s ../main_cn.xml ./main.xml
+ln -s ../usb_cn.xml ./usb.xml
+ln -s ../wireless_cn.xml ./wireless.xml
 cd ../../
 
 cd lang
@@ -65,6 +65,7 @@ rm b28n.js
 ln -s ../js/b28n.js ./b28n.js
 cd ..
 
+rm -f home.asp
 ln -s ./RouterProject.html ./home.asp
 
 

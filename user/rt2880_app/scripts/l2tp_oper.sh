@@ -1,7 +1,7 @@
 OPTION_FILE=/etc/l2tp_option
 L2TPD_CONFIG_DIR=/etc/l2tp
 L2TPD_CONFIG_FILE=/etc/l2tp/l2tp.conf
-HOSTNAME=forwell
+HOSTNAME=yinghua
 L2TP_DAEMON_PID_FILE=/tmp/.l2tp_daemon_pid
 
 server=`nvram_get l2tp_server`

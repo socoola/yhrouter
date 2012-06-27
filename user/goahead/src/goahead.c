@@ -114,14 +114,14 @@ extern void WPSSTAPBCStartEnr(void);
 static int set_stable_flag(void);
 #endif
 
-static void initDeviceName()
+void initDeviceName()
 {
 	char*pdev;
 	char *buf;
 	char szBuf[128];
 
     pdev = nvram_bufget(RT2860_NVRAM, "wan_3g_dev"); 
-	if(strcmp(pdev, "HUAWEI-EM560") == 0)
+	if((strcmp(pdev, "HUAWEI-EM560") == 0) || (strcmp(pdev, "F3607gw") == 0))
 	{
 	//	stream=popen("3GInfo -d /dev/ttyACM2 -s","r");
 		//stream=popen("comgt -d /dev/ttyACM2 -s /etc_ro/ppp/3g/signal.scr","r");
@@ -185,15 +185,20 @@ static void initDeviceName()
 	
          else if(strcmp(pdev,"SIERRA-MC8785")==0)
         {
-                buf = "/dev/ttyUSB3"; //-m signal range
+                buf = "/dev/ttyUSB6"; //-m signal range
 
         }
+	 else if(strcmp(pdev,"AD3812")==0)
+        {
+                buf = "/dev/ttyUSB0"; //-m signal range
 
+        }
 	else 
 	{
 		buf = "/dev/ttyUSB2";
 	}
-
+	
+	system("rm -f /dev/yh");
 	sprintf(szBuf, "ln -s %s /dev/yh", buf);
 	system(szBuf);
 

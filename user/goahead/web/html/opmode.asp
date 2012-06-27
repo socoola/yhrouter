@@ -108,11 +108,17 @@ function initTranslation()
 	e.innerHTML = _("main disable");
 	e = document.getElementById("oEthConvE");
 	e.innerHTML = _("main enable");
+	
+	e = document.getElementById("help_head");
+	e.innerHTML = _("help help_head");
+	e = document.getElementById("opmode_direc");
+	e.innerHTML = _("opmode opmode_direc");
 
 	e = document.getElementById("oApply");
 	e.value = _("main apply");
 	e = document.getElementById("oCancel");
 	e.value = _("main cancel");
+	
 }
 
 function initValue()
@@ -268,9 +274,9 @@ function msg()
 
 <td class="tdwidth2" id="td2"><!--start of td2-->
 	<div id="right"><!--start of right-->
-		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
+		<h2 id="help_head">Heeelp...</h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content"><span id="opmode_direc"></span></p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

@@ -94,6 +94,22 @@ if [ "$dev" = "HUAWEI-EM770" ]; then
 		WLNETWORK=2
 	fi
 fi
+if [ "$dev" = "F3607gw" ]; then
+	modem_f=ttyACM0
+	g3_network=`nvram_get 2860 g3_network_type`
+	export WLNETWORK=2
+	if [ $g3_network = 0 ];then
+		WLNETWORK=2
+	elif [ $g3_network = 1 ];then
+		WLNETWORK=14
+	elif [ $g3_network = 2 ];then
+		WLNETWORK=13
+	elif [ $g3_network = 3 ];then
+		WLNETWORK=16
+	else
+		WLNETWORK=2
+	fi
+fi
 if [ "$dev" = "HUAWEI-EM560" ]; then
 	modem_f=ttyACM0
 	g3_network=`nvram_get 2860 g3_network_type`
@@ -277,6 +293,17 @@ fi
 if [ "$dev" = "SIERRA-MC8785" ]; then
         #modem_f=ttyUSB0
         modem_f=ttyUSB4
+        g3_network=`nvram_get 2860 g3_network_type`
+        export WLNETWORK=""
+        if [ $g3_network = 0 ];then
+                WLNETWORK=""
+        fi
+
+fi
+
+if [ "$dev" = "AD3812" ]; then
+        #modem_f=ttyUSB0
+        modem_f=ttyUSB3
         g3_network=`nvram_get 2860 g3_network_type`
         export WLNETWORK=""
         if [ $g3_network = 0 ];then

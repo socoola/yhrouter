@@ -82,17 +82,20 @@ function connectionTypeSwitch()
 	if (document.wanCfg.connectionType.options.selectedIndex == 0) {
 		document.getElementById("static").style.visibility = "visible";
 		document.getElementById("static").style.display = "block";
+		showSubmit();
 	}
 	else if (document.wanCfg.connectionType.options.selectedIndex == 1) {
 		document.getElementById("dhcp").style.visibility = "visible";
 		document.getElementById("dhcp").style.display = "block";
+		showSubmit();
 	}
 	else if (document.wanCfg.connectionType.options.selectedIndex == 2) {
 		document.getElementById("pppoe").style.visibility = "visible";
 		document.getElementById("pppoe").style.display = "block";
+		showSubmit();
 		pppoeOPModeSwitch();
 	}
-	else if (document.wanCfg.connectionType.options.selectedIndex == 3) {
+	/*else if (document.wanCfg.connectionType.options.selectedIndex == 3) {
 		document.getElementById("l2tp").style.visibility = "visible";
 		document.getElementById("l2tp").style.display = "block";
 		l2tpOPModeSwitch();
@@ -101,8 +104,8 @@ function connectionTypeSwitch()
 		document.getElementById("pptp").style.visibility = "visible";
 		document.getElementById("pptp").style.display = "block";
 		pptpOPModeSwitch();
-	}
-	else if (document.wanCfg.connectionType.options.selectedIndex == 5) {
+	}*/
+	else if (document.wanCfg.connectionType.options.selectedIndex == 3) {
 		document.getElementById("3G").style.visibility = "visible";
 		document.getElementById("3G").style.display = "block";
 		document.getElementById("Operators").style.visibility = "visible";
@@ -110,10 +113,12 @@ function connectionTypeSwitch()
 		document.getElementById("CurOperators").style.visibility = "visible";
 		document.getElementById("CurOperators").style.display = "block";
         G3OPModeSwitch();
+        hideSubmit();
 	}
 	else {
 		document.getElementById("static").style.visibility = "visible";
 		document.getElementById("static").style.display = "block";
+		showSubmit();
 	}
 }
 
@@ -203,13 +208,14 @@ function pptpOPModeSwitch()
 
 function G3OPModeSwitch()
 {
-    document.getElementById("G3TimeOptions").style.visibility = "visible";
-	document.getElementById("G3TimeOptions").style.display = "block";
-    document.getElementById("G3TimePeriodsTable").style.visibility = "visible";
-	document.getElementById("G3TimePeriodsTable").style.display = "block";
-	//document.getElementById("g3connectbtn").style.visibility = "block";
+	//alert("G3OPModeSwitch");
+    document.getElementById("G3TimeOptions").style.visibility = "hidden";
+	document.getElementById("G3TimeOptions").style.display = "none";
+    document.getElementById("G3TimePeriodsTable").style.visibility = "hidden";
+	document.getElementById("G3TimePeriodsTable").style.display = "none";
+	document.getElementById("g3connectbtn").style.visibility = "hidden";
 /*	document.wanCfg.G3RedialPeriod.disabled = true;*/
-	document.wanCfg.G3IdleTime.disabled = false;
+	document.wanCfg.G3IdleTime.disabled = true;
 	if (document.wanCfg.G3Mode.options.selectedIndex == 0) 
 	{
 		/*document.wanCfg.G3RedialPeriod.disabled = false;        */
@@ -217,17 +223,17 @@ function G3OPModeSwitch()
 	else if (document.wanCfg.G3Mode.options.selectedIndex == 1)
 	{
 		document.wanCfg.G3IdleTime.disabled = false;
-        document.getElementById("G3TimeOptions").style.visibility = "visible";
-		document.getElementById("G3TimeOptions").style.display = style_display_on();
+        //document.getElementById("G3TimeOptions").style.visibility = "visible";
+		//document.getElementById("G3TimeOptions").style.display = style_display_on();
 	}
     else if (document.wanCfg.G3Mode.options.selectedIndex == 2)
     {
-      document.getElementById("G3TimePeriodsTable").style.visibility = "visible";
-	    document.getElementById("G3TimePeriodsTable").style.display =style_display_on();;
+       // document.getElementById("G3TimePeriodsTable").style.visibility = "visible";
+	    //document.getElementById("G3TimePeriodsTable").style.display =style_display_on();;
     }
     else if (document.wanCfg.G3Mode.options.selectedIndex == 3)
     {
-	document.getElementById("g3connectbtn").style.visibility = "visible";
+	//document.getElementById("g3connectbtn").style.visibility = "visible";
     }
         
 }
@@ -252,21 +258,6 @@ function MSPListOnSelectSelect(field, id)
 
 function MSPListOnSelect(num)
 {
-				if(document.CurOperators.RuleNo[0].checked){
-					document.getElementById('mspName').options[0].selected = true;
-				}
-				else if(document.CurOperators.RuleNo[1].checked){
-					document.getElementById('mspName').options[1].selected = true;
-				}
-				else if(document.CurOperators.RuleNo[2].checked){
-					document.getElementById('mspName').options[2].selected = true;
-				}
-				else if(document.CurOperators.RuleNo[3].checked){
-					document.getElementById('mspName').options[3].selected = true;
-				}
-				else if(document.CurOperators.RuleNo[4].checked){
-					document.getElementById('mspName').options[4].selected = true;
-				}
 	var id = "Name" + num;
     MSPListOnSelectStr(document.Operators.G3Comment, id);
 	id = "NetType" + num;
@@ -286,8 +277,6 @@ function MSPListOnSelect(num)
 	id = "Bcomp" + num;
 	document.Operators.G3UseCompress.checked = 
 	parseInt(document.getElementById(id).innerHTML, 10);
-	
-				
 }
 
 function atoi(str, num)
@@ -523,11 +512,11 @@ function CheckMSPValue()
 	for (var i=0; i<numint; i++) {
 		var curStrId = "Name"+i;
 
-		if((document.getElementById(curStrId).innerHTML == document.Operators.G3Comment.value))
-		{
-			alert("a MSP with this name exist!");
-			return false;
-		}
+		//if((document.getElementById(curStrId).innerHTML == document.Operators.G3Comment.value))
+		//{
+		//	alert("a MSP with this name exist!");
+		//	return false;
+		//}
 	}
 	
 	return true;
@@ -702,10 +691,10 @@ function initTranslation()
 	e.innerHTML = _("wan connection type dhcp");
 	e = document.getElementById("wConnTypePppoe");
 	e.innerHTML = _("wan connection type pppoe");
-	e = document.getElementById("wConnTypeL2tp");
-	e.innerHTML = _("wan connection type l2tp");
-	e = document.getElementById("wConnTypePptp");
-	e.innerHTML = _("wan connection type pptp");
+	//e = document.getElementById("wConnTypeL2tp");
+	//e.innerHTML = _("wan connection type l2tp");
+	//e = document.getElementById("wConnTypePptp");
+	//e.innerHTML = _("wan connection type pptp");
 
 	e = document.getElementById("wStaticMode");
 	e.innerHTML = _("wan static mode");
@@ -874,15 +863,49 @@ function initTranslation()
 	e = document.getElementById("wMacCloneAddr");
 	e.innerHTML = _("inet mac");
 	
-	
-	e = document.getElementById("connect_mode");
-	e.innerHTML = _("inet connect mode");
-	
+	e = document.getElementById("exam");
+	e.innerHTML = _("wan exam");
+	e = document.getElementById("connNode");
+	e.innerHTML = _("wan connNode");	
+	e = document.getElementById("firAlive");
+	e.innerHTML = _("wan firAlive");	
+	e = document.getElementById("secDmd");
+	e.innerHTML = _("wan secDmd");	
+	e = document.getElementById("thdTime");
+	e.innerHTML = _("wan thdTime");
+	e = document.getElementById("idT");
+	e.innerHTML = _("wan idT");
+	e = document.getElementById("idTm");
+	e.innerHTML = _("wan idTm");
+
+	e = document.getElementById("wan_direc1");
+	e.innerHTML = _("wan wan_direc1");
+	e = document.getElementById("wan_direc2");
+	e.innerHTML = _("wan wan_direc2");
+	e = document.getElementById("help_head");
+	e.innerHTML = _("help help_head");
 
 	e = document.getElementById("wApply");
 	e.value = _("inet apply");
 	e = document.getElementById("wCancel");
 	e.value = _("inet cancel");
+	
+	e = document.getElementById("resetbutton");
+	e.value = _("wan resetbutton");
+	e = document.getElementById("refreshbutton");
+	e.value = _("refresh button");    
+	
+	e = document.getElementById("ppoe_keep");
+	e.innerHTML = _("ppoe ppoe_keep");
+	
+	e = document.getElementById("ppoe_sec");
+	e.innerHTML = _("ppoe ppoe_sec");
+	
+	e = document.getElementById("ppoe_demand");
+	e.innerHTML = _("ppoe ppoe_demand");
+	
+	e = document.getElementById("ppoe_min");
+	e.innerHTML = _("ppoe ppoe_min");
 }
 
 function initValue()
@@ -995,37 +1018,23 @@ function initValue()
 			document.wanCfg.Dev3G.options.selectedIndex = 1;
 		else if (dev_3g == "HUAWEI-EM770")
 			document.wanCfg.Dev3G.options.selectedIndex = 2;
-		else if (dev_3g == "THINKWILL-MI600")
-			document.wanCfg.Dev3G.options.selectedIndex = 3;
+		
 		else if (dev_3g == "SYNCWISER-801/401")
-			document.wanCfg.Dev3G.options.selectedIndex = 4;
-		else if (dev_3g == "LONGSUNG-C5300")
-			document.wanCfg.Dev3G.options.selectedIndex = 5;
-		else if (dev_3g == "LONGSUNG-U6300/U5300")
-			document.wanCfg.Dev3G.options.selectedIndex = 6;
-		else if (dev_3g == "GAORAN-280")
-			document.wanCfg.Dev3G.options.selectedIndex = 7;
-		else if (dev_3g == "TW-W1M100")
-			document.wanCfg.Dev3G.options.selectedIndex = 8;
-		else if (dev_3g == "MC5728")
-			document.wanCfg.Dev3G.options.selectedIndex = 9;
-		else if (dev_3g == "SIMCOM-SIM700")
-			document.wanCfg.Dev3G.options.selectedIndex = 10;
-		else if (dev_3g == "ZTE-MU301")
-			document.wanCfg.Dev3G.options.selectedIndex = 11;
-		else if (dev_3g == "ZTE-MF210V")
-			document.wanCfg.Dev3G.options.selectedIndex = 12;
-		else if (dev_3g == "KSE-360")
-			document.wanCfg.Dev3G.options.selectedIndex = 13;
-		else if (dev_3g == "ZX-600")
-			document.wanCfg.Dev3G.options.selectedIndex = 14;
-		else if (dev_3g == "IE901D")
-			document.wanCfg.Dev3G.options.selectedIndex = 15;
-		 else if (dev_3g == "GTM681W")
-                        document.wanCfg.Dev3G.options.selectedIndex = 16;
-                 else if (dev_3g == "SIERRA-MC8785")
-                        document.wanCfg.Dev3G.options.selectedIndex = 17;
+			document.wanCfg.Dev3G.options.selectedIndex = 3;
 
+		else if (dev_3g == "LONGSUNG-U6300/U5300")
+			document.wanCfg.Dev3G.options.selectedIndex = 4;
+	
+		else if (dev_3g == "MC5728")
+			document.wanCfg.Dev3G.options.selectedIndex = 5;
+		else if (dev_3g == "F3607gw")
+			document.wanCfg.Dev3G.options.selectedIndex = 6;
+		else if (dev_3g == "ZTE-MF210V")
+			document.wanCfg.Dev3G.options.selectedIndex = 7;	
+    else if (dev_3g == "SIERRA-MC8785")
+    	document.wanCfg.Dev3G.options.selectedIndex = 8;
+    else if (dev_3g == "AD3812")
+    	document.wanCfg.Dev3G.options.selectedIndex = 9;
 		else
 			document.wanCfg.Dev3G.options.selectedIndex = 1;
 
@@ -1086,13 +1095,40 @@ function initValue()
 	else {
 		document.wanCfg.connectionType.options.selectedIndex = 0;
 	}
-	connectionTypeSwitch();
+	if(mode=="STATIC"){
+		document.wanCfg.connectionType.options[0].selected=true;
+		connectionTypeSwitch();
+		showSubmit();
+		}
+	else if(mode=="DHCP"){
+		document.wanCfg.connectionType.options[1].selected=true;
+		connectionTypeSwitch();
+		showSubmit();
+		}
+	else if(mode=="PPPOE"){
+		document.wanCfg.connectionType.options[2].selected=true;
+		connectionTypeSwitch();
+		showSubmit();
+		}
+	else if(mode=="3G"){
+		document.wanCfg.connectionType.options[3].selected=true;
+		connectionTypeSwitch();
+		hideSubmit();
+		}
+	else {
+		document.wanCfg.connectionType.options[3].selected=true;
+		connectionTypeSwitch();
+		}
 
 	if (clone == 1)
 		document.wanCfg.macCloneEnbl.options.selectedIndex = 1;
 	else
 		document.wanCfg.macCloneEnbl.options.selectedIndex = 0;
 	macCloneSwitch();
+	rmebSelOpt();
+	rmbCurrMode();
+	rmbCurrRadioTime();
+	rmbCurrOnDmd();
 }
 </script>
 </head>
@@ -1100,7 +1136,7 @@ function initValue()
 <body onLoad="initValue()">
 <center id="boxes">
 	<div id="box">
-	<div id="head">Wan Config</div>	<!--end of head-->	
+	<div id="head"></div>	<!--end of head-->	
 	<div id="content">
 
 
@@ -1124,8 +1160,8 @@ function initValue()
       <option value="STATIC" id="wConnTypeStatic">Static Mode (fixed IP)</option>
       <option value="DHCP" id="wConnTypeDhcp">DHCP (Auto Config)</option>
       <option value="PPPOE" id="wConnTypePppoe">PPPOE (ADSL)</option>
-      <option value="L2TP" style="display:none" id="wConnTypeL2tp">L2TP</option>
-      <option value="PPTP" style="display:none" id="wConnTypePptp">PPTP</option>
+     <!-- <option value="L2TP" style="display:none" id="wConnTypeL2tp">L2TP</option>
+      <option value="PPTP" style="display:none" id="wConnTypePptp">PPTP</option>-->
       <option value="3G" id="wConnType3G">Mobile Modem</option> 
     </select>
   </td>
@@ -1210,13 +1246,13 @@ function initValue()
 </tr>
 <tr>
   <td>
-    Keep Alive Mode: Redial Period
+    <span id="ppoe_keep">Keep Alive Mode: Redial Period</span>
     <input type="text" name="pppoeRedialPeriod" maxlength="5" size="3" value="60">
-    senconds
+    <span id="ppoe_sec">senconds</span>
     <br />
-    On demand Mode:  Idle Time
+    <span id="ppoe_demand">On demand Mode:  Idle Time</span>
     <input type="text" name="pppoeIdleTime" maxlength="3" size="2" value="5">
-    minutes
+    <span id="ppoe_min">minutes</span>
   </td>
 </tr>
 
@@ -1368,74 +1404,97 @@ function initValue()
 <!-- =========== G3 Modular =========== -->
 <table id="3G" width="540" border="0" cellpadding="2" cellspacing="1">
 <tr>
-  <td class="title" colspan="2" id="w3GMode">3G Mode</td>
+  <td class="title"  colspan="2" id="w3GMode">3G Mode</td>
 </tr>
-
-<!---------------------------------3G调制解调器及其模块选择------------------------>
-<tr style="display:none">
-  <td class="head" rowspan="1" id="w3GDev">USB 3G modem</td>
-  <td>
+<tr >
+  <td width="218px" rowspan="1" id="w3GDev">USB 3G modem</td>
+  <td width="322px" >
     <select name="Dev3G" size="1" style="width=150">
       <option value="HUAWEI-EM560" id="EM560">HUAWEI-EM560</option>
       <option value="HUAWEI-EM660" id="EM660">HUAWEI-EM660</option>
       <option value="HUAWEI-EM770" id="EM770">HUAWEI-EM770</option>
-      <option value="THINKWILL-MI600" id="MI600">THINKWILL-MI600</option>   
-      <option value="SYNCWISER-801/401" id="A801_A401">SYNCWISER-801/401</option>   
-      <option value="LONGSUNG-C5300" id="C5300">LONGSUNG-C5300</option>   
-       <option value="LONGSUNG-U6300/U5300" id="U6300_U5300">LONGSUNG-U6300/U5300</option>   
-       <option value="GAORAN-280" id="G280">GAORAN-280</option>   
-       <option value="TW-W1M100" id="W1M100">TW-W1M100</option>   
+      <option value="SYNCWISER-801/401" id="A801_A401">SYNCWISER-801/401</option>       
+       <option value="LONGSUNG-U6300/U5300" id="U6300_U5300">LONGSUNG-U6300/U5300</option>         
        <option value="MC5728" id="ID_MC5728">SIERRA-MC5728</option>   
-       <option value="SIMCOM-SIM700" id="ID_SIMCOM_SIM700">SIMCOM-SIM700(2G)</option>   
-       <option value="ZTE-MU301" id="id_zte_mu301">ZTE-MU301</option>   
-       <option value="ZTE-MF210V" id="id_zte_mf210v">ZTE-MF210</option>   
-       <option value="KSE-360" id="id_kse_360">KSE-360</option>   
-       <option value="ZX-600" id="id_zx_600">ZX-600</option>
-       <option value="IE901D" id="id_ie901d">IE901D</option>
-	<option value="GTM681W" id="id_gtm681w">GTM681W</option>
-       <option value="SIERRA-MC8785" id="id_gtm681w">SIERRA-MC8785</option>
-
-	   
+       <option value="F3607gw" id="ID_SIMCOM_SIM700">Ericsson F3607gw</option>       
+       <option value="ZTE-MF210V" id="id_zte_mf210v">ZTE-MF210</option>   	
+       <option value="SIERRA-MC8785" id="id_gtm681w">SIERRA-MC8785/8790</option> 
+       <option value="AD3812" id="id_Serria">ZTE AD3812</option>  
     </select>
   </td>
 </tr>
-
-
-
 <tr>
-  <td class="head" id="wG3Pin">PIN</td>
+  <td  id="wG3Pin">PIN</td>
   <td><input type="text" maxlength=32 size=32 name="simPIN" value="<% getCfgGeneral(1, "g3_sim_pin"); %>"></td>  
 </tr>
 <tr>
-  <td class="head"  id="id_cell_mtu">MTU</td>
-  <td>
+  <td   id="id_cell_mtu" >MTU</td>
+  <td >
    <input type="text" name="cell_mtu" maxlength="4" size="4">
   </td>
 </tr>
-
-
-<tr>
-	<td style="vertical-align:top" class="head" id="G3OPMode" rowspan="3">
+<tr style="display:none">
+	<td style="vertical-align: top"  id="G3OPMode" rowspan="3">
 		Mode
 	</td>
 	<td>
-		<select  name="G3Mode" size="1" onChange="G3OPModeSwitch()" style="width=150">
+		<select name="G3Mode" size="1" onChange="G3OPModeSwitch()" style="width=150">
    		<option value="G3ModeAol" id="G3AolMode">always on line</option>
 		<option value="G3ModeDod" id="G3DodMode">dial on demand</option>
 		<option value="G3ModeDot" id="G3DotMode">dial on time</option>
-   		<option value="G3ModeManual" id="G3ManualMode">manual</option>
-   		</select>&nbsp;&nbsp;  		
+   		<option style="display:none" value="G3ModeManual" id="G3ManualMode">manual</option>
+   		</select>&nbsp;&nbsp;
+   		<% showMuanalBtnASP(); %>
 	</td>
 </tr>
-
+<tr>
+  <td id="G3TimeOptions">
+    <!--
+    Keep Alive Mode: Redial Period
+    <input type="text" name="G3RedialPeriod" maxlength="5" size="3" value="60">
+    senconds
+    <br />
+    On demand Mode:  -->Idle Time
+    <input type="text" name="G3IdleTime" maxlength="3" size="2" value="5">
+    minutes
+  </td>
+  <td id="G3TimePeriodsTable" name="G3TimePeriods">
+  	example:15:50---22:30 ,set NTP Server in management page before used.
+	<br />
+    <br />
+    <input type="radio" name="timeperiod" value="0">&nbsp;&nbsp;
+    <input type="text" name="timeperiod0StartHour" id="tpsh0" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_sh_0"); %>">:
+    <input type="text" name="timeperiod0StartMin" id="tpsm0" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_sm_0"); %>">---
+    <input type="text" name="timeperiod0EndHour" id="tpeh0" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_eh_0"); %>">:
+    <input type="text" name="timeperiod0EndMin" id="tpem0" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_em_0"); %>">
+    <br />
+    <input type="radio" name="timeperiod" value="1">&nbsp;&nbsp;
+    <input type="text" name="timeperiod1StartHour" id="tpsh1" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_sh_1"); %>">:
+    <input type="text" name="timeperiod1StartMin" id="tpsm1" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_sm_1"); %>">---
+    <input type="text" name="timeperiod1EndHour" id="tpeh1" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_eh_1"); %>">:
+    <input type="text" name="timeperiod1EndMin" id="tpem1" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_em_1"); %>">
+    <br />
+    <input type="radio" name="timeperiod" value="2">&nbsp;&nbsp;
+    <input type="text" name="timeperiod2StartHour" id="tpsh2" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_sh_2"); %>">:
+    <input type="text" name="timeperiod2StartMin" id="tpsm2" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_sm_2"); %>">---
+    <input type="text" name="timeperiod2EndHour" id="tpeh2" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_eh_2"); %>">:
+    <input type="text" name="timeperiod2EndMin" id="tpem2" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_em_2"); %>">
+    <br />
+    <input type="radio" name="timeperiod" value="3">&nbsp;&nbsp;
+    <input type="text" name="timeperiod3StartHour" id="tpsh3" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_sh_3"); %>">:
+    <input type="text" name="timeperiod3StartMin" id="tpsm3" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_sm_3"); %>">---
+    <input type="text" name="timeperiod3EndHour" id="tpeh3" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_eh_3"); %>">:
+    <input type="text" name="timeperiod3EndMin" id="tpem3" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_em_3"); %>">
+  </td>
+</tr>
 </table>
 
 <!-- =========== MAC Clone =========== -->
 <table width="540" border="0" cellpadding="2" cellspacing="1">
-<tr>
+<tr style="display:none">
   <td class="title" colspan="2" id="wMacClone">MAC Address Clone</td>
 </tr>
-<tr>
+<tr style="display:none">
   <td class="head">Enabled</td>
   <td>
     <select name="macCloneEnbl" size="1" onChange="macCloneSwitch()" style="width=150">
@@ -1453,74 +1512,16 @@ function initValue()
 </tr>
 </table>
 
-
-<!-------------------------------------连接模式----------------------------------->
-<table>
-	<tr>
-		<td id="connect_mode" colspan="2">Connect Mode</td>
-	</tr>
-	
-	<tr>
-		<td><input type="radio" name="connect_mode" value="G3ModeAol"/></td>
-		<td>Always On Line</td>
-	</tr>
-	
-	<tr>
-		<td><input type="radio" name="connect_mode" value="G3ModeManual"/></td>
-		<td >Manual Connect:<% showMuanalBtnASP(); %></td>
-	</tr>
-	
-	<tr>
-		<td><input type="radio" name="connect_mode" value="G3ModeDod"/></td>
-	  <td id="G3TimeOptions" style="vertical-align:center">On demand Mode:
-	    <!--
-	    Keep Alive Mode: Redial Period
-	    <input type="text" name="G3RedialPeriod" maxlength="5" size="3" value="60">
-	    senconds
-	    <br />
-	    On demand Mode:  -->Idle Time
-	    <input type="text" name="G3IdleTime" maxlength="3" size="2" value="5">
-	    minutes
-	  </td>
-	</tr>
-	  	  
-	<tr>
-		<td style="vertical-align:top"><input type="radio" name="connect_mode" value="G3ModeDot"/></td>
-	  <td id="G3TimePeriodsTable" name="G3TimePeriods" >
-	  	On Time:
-	  	example:15:50---22:30 ,set NTP Server in management page before used.
-		<br />
-	    <br />
-	    <input type="radio" name="timeperiod" value="0">&nbsp;&nbsp;
-	    <input type="text" name="timeperiod0StartHour" id="tpsh0" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_sh_0"); %>">:
-	    <input type="text" name="timeperiod0StartMin" id="tpsm0" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_sm_0"); %>">---
-	    <input type="text" name="timeperiod0EndHour" id="tpeh0" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_eh_0"); %>">:
-	    <input type="text" name="timeperiod0EndMin" id="tpem0" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_em_0"); %>">
-	    <br />
-	    <input type="radio" name="timeperiod" value="1">&nbsp;&nbsp;
-	    <input type="text" name="timeperiod1StartHour" id="tpsh1" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_sh_1"); %>">:
-	    <input type="text" name="timeperiod1StartMin" id="tpsm1" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_sm_1"); %>">---
-	    <input type="text" name="timeperiod1EndHour" id="tpeh1" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_eh_1"); %>">:
-	    <input type="text" name="timeperiod1EndMin" id="tpem1" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_em_1"); %>">
-	    <br />
-	    <input type="radio" name="timeperiod" value="2">&nbsp;&nbsp;
-	    <input type="text" name="timeperiod2StartHour" id="tpsh2" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_sh_2"); %>">:
-	    <input type="text" name="timeperiod2StartMin" id="tpsm2" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_sm_2"); %>">---
-	    <input type="text" name="timeperiod2EndHour" id="tpeh2" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_eh_2"); %>">:
-	    <input type="text" name="timeperiod2EndMin" id="tpem2" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_em_2"); %>">
-	    <br />
-	    <input type="radio" name="timeperiod" value="3">&nbsp;&nbsp;
-	    <input type="text" name="timeperiod3StartHour" id="tpsh3" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_sh_3"); %>">:
-	    <input type="text" name="timeperiod3StartMin" id="tpsm3" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_sm_3"); %>">---
-	    <input type="text" name="timeperiod3EndHour" id="tpeh3" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_eh_3"); %>">:
-	    <input type="text" name="timeperiod3EndMin" id="tpem3" maxlength="2" size="1" value="<% getCfgGeneral(1, "tp_em_3"); %>">
-	  </td>
-	</tr>	
-</table>
-						<!-----------------------end of Connect Mode------------------------->
-
-<table width="540" cellpadding="2" cellspacing="1">
-<tr align="center">
+<script type="text/javascript">
+	function showSubmit(){
+			document.getElementById("showHide").style.display = "block";	
+	}
+	function hideSubmit(){
+			document.getElementById("showHide").style.display = "none";	
+	}
+</script>
+<table id="showHide"  width="540" cellpadding="2" cellspacing="1">
+<tr  align="center">
   <td>
     <input type=submit  value="Apply" id="wApply">&nbsp;&nbsp; 
     <input type=reset value="Cancel" id="wCancel" onClick="window.location.reload()">
@@ -1531,28 +1532,19 @@ function initValue()
 
 
 
+<script type="text/javascript">
+			function SelectMspofTable(name){
+				//alert(name);
+				var objs = document.getElementsByName("RuleNo");    
+				for(var i=0;i<objs.length;i++)   
+				{
+					//alert(objs[i].value);
+					if(objs[i].value == name)
+						document.CurOperators.RuleNo[i].click();
+				}
 
+			}
 
-
-<form method=post name="Operators" action=/goform/Operators id="Operators">
-<table width="540" border="0" cellpadding="2" cellspacing="1">
-	
-	
-<!-------------------------------------------移动运营商参数隐藏 开始-------------------------------->
-<tr style="display:none">
-  <td class="title" colspan="2" id="MobileOperators">mobile MSP parameter</td>
-</tr>
-<!-------------------------------------------移动运营商参数隐藏 结束-------------------------------->
-
-
-<tr>
-	<td class="head" id="G3Comment">
-		MSP Name
-	</td>
-	<td style="display:none">
-		<input type="text" name="G3Comment" size="32" maxlength="32" value="<% getCfgGeneral(1, "g3_operator_name"); %>">
-	</td>
-	<script type="text/javascript">
 			function changeMspName(){
 				
 				if(document.getElementById("mspName").options[0].selected){
@@ -1561,7 +1553,8 @@ function initValue()
 					document.getElementById("G3UserNameValue").value="G3UserNameValue1";
 					document.getElementById("G3PasswordValue").value="G3PasswordValue1";
 					document.getElementById("G3LocalIpValue").value="G3LocalIpValue1";*/
-					document.CurOperators.RuleNo[0].click();
+					//document.CurOperators.RuleNo[0].click();
+					SelectMspofTable(document.getElementById("mspName").options[0].text);
 				}
 				else if(document.getElementById("mspName").options[1].selected){
 					/*document.getElementById("DialingStrValue").value="DialingStrValue2";
@@ -1569,7 +1562,8 @@ function initValue()
 					document.getElementById("G3UserNameValue").value="G3UserNameValue2";
 					document.getElementById("G3PasswordValue").value="G3PasswordValue2";
 					document.getElementById("G3LocalIpValue").value="G3LocalIpValue2";*/
-					document.CurOperators.RuleNo[1].click();
+					//document.CurOperators.RuleNo[1].click();
+					SelectMspofTable(document.getElementById("mspName").options[1].text);
 				}
 				else if(document.getElementById("mspName").options[2].selected){
 					/*document.getElementById("DialingStrValue").value="DialingStrValue3";
@@ -1577,7 +1571,8 @@ function initValue()
 					document.getElementById("G3UserNameValue").value="G3UserNameValue3";
 					document.getElementById("G3PasswordValue").value="G3PasswordValue3";
 					document.getElementById("G3LocalIpValue").value="G3LocalIpValue3";*/
-					document.CurOperators.RuleNo[2].click();
+					//document.CurOperators.RuleNo[2].click();
+					SelectMspofTable(document.getElementById("mspName").options[2].text);
 				}
 				else if(document.getElementById("mspName").options[3].selected){
 					/*document.getElementById("DialingStrValue").value="DialingStrValue4";
@@ -1585,7 +1580,8 @@ function initValue()
 					document.getElementById("G3UserNameValue").value="G3UserNameValue4";
 					document.getElementById("G3PasswordValue").value="G3PasswordValue4";
 					document.getElementById("G3LocalIpValue").value="G3LocalIpValue4";*/
-					document.CurOperators.RuleNo[3].click();
+					//document.CurOperators.RuleNo[3].click();
+					SelectMspofTable(document.getElementById("mspName").options[3].text);
 				}
 				else if(document.getElementById("mspName").options[4].selected){
 					/*document.getElementById("DialingStrValue").value="DialingStrValue5";
@@ -1593,10 +1589,153 @@ function initValue()
 					document.getElementById("G3UserNameValue").value="G3UserNameValue5";
 					document.getElementById("G3PasswordValue").value="G3PasswordValue5";
 					document.getElementById("G3LocalIpValue").value="G3LocalIpValue5";*/
-					document.CurOperators.RuleNo[4].click();
+					//document.CurOperators.RuleNo[4].click();
+					SelectMspofTable(document.getElementById("mspName").options[4].text);
 				}		
 			}
+			
+			function rmebSelOpt(){
+				var RuleNo = document.getElementsByName("RuleNo");
+				var mspNameSel = document.getElementById("mspName")
+				var index = document.getElementById("mspName").selectedIndex;
+				for(var i=0;i<RuleNo.length;i++){
+					if(RuleNo[i].checked){
+							var value = mspNameSel.value = RuleNo[i].value;
+							if(value=="WCDMA") index = 0
+							else if(value=="EVDO") index=1
+							else if(value=="TDSCDMA") index=2
+							else if(value=="GPRS") index=3
+							else if(value=="CDMA") index=4
+							
+							mspNameSel.options[index].selected = true;
+							//alert("index=="+index);
+							break;
+					}
+				}
+			}
+			
+			function refreshMsp(){
+	
+				var objs = document.getElementsByName("RuleNo");    
+				var comment = document.getElementsByName("G3Comment")[0].value;
+				var dialingstr = document.getElementsByName("DialingStr")[0].value;
+				var apn = document.getElementsByName("InitCmdStr")[0].value;
+				var user = document.getElementsByName("G3UserName")[0].value;
+				var pwd = document.getElementsByName("G3Password")[0].value;
+				
+				
+				var onDmdValue = document.getElementById('onDmd').value;
+				
+				var currsh0 = document.getElementById("currsh0").value;
+				var currsm0 = document.getElementById("currsm0").value;
+				var curreh0 = document.getElementById("curreh0").value;
+				var currem0 = document.getElementById("currem0").value;
+				
+				var currsh1 = document.getElementById("currsh1").value;
+				var currsm1 = document.getElementById("currsm1").value;
+				var curreh1 = document.getElementById("curreh1").value;
+				var currem1 = document.getElementById("currem1").value;
+				
+				var currsh2 = document.getElementById("currsh2").value;
+				var currsm2 = document.getElementById("currsm2").value;
+				var curreh2 = document.getElementById("curreh2").value;
+				var currem2 = document.getElementById("currem2").value;
+				
+				var currsh3 = document.getElementById("currsh3").value;
+				var currsm3 = document.getElementById("currsm3").value;
+				var curreh3 = document.getElementById("curreh3").value;
+				var currem3 = document.getElementById("currem3").value;
+				
+					document.getElementsByName('DelRule')[0].click();
+					
+					//document.getElementById("AddMSP2List").click();	
+					
+					//setTimeout('alert("add new msp")',8000);
+					
+					var	txb = document.getElementsByName("DialingStr");
+						txb[0].value = dialingstr;
+						txb = document.getElementsByName("InitCmdStr");
+						txb[0].value = apn;
+						txb = document.getElementsByName("G3UserName");
+						txb[0].value = user;
+						txb = document.getElementsByName("G3Password");
+						txb[0].value = pwd;
+						
+						
+					document.wanCfg.G3IdleTime.value = onDmdValue;
+					
+					document.getElementById('tpsh0').value = currsh0;
+					document.getElementById('tpsm0').value = currsm0;
+					document.getElementById('tpeh0').value = curreh0;
+					document.getElementById('tpem0').value = currem0;
+					
+					document.getElementById('tpsh1').value = currsh1;
+					document.getElementById('tpsm1').value = currsm1;
+					document.getElementById('tpeh1').value = curreh1;
+					document.getElementById('tpem1').value = currem1;
+					
+					document.getElementById('tpsh2').value = currsh2;
+					document.getElementById('tpsm2').value = currsm2;
+					document.getElementById('tpeh2').value = curreh2;
+					document.getElementById('tpem2').value = currem2;
+					
+					document.getElementById('tpsh3').value = currsh3;
+					document.getElementById('tpsm3').value = currsm3;
+					document.getElementById('tpeh3').value = curreh3;
+					document.getElementById('tpem3').value = currem3;
+					
+					setTimeout('document.getElementById("AddMSP2List").click()',2000);
+				//	setTimeout('document.getElementById("SelAsDftMSP").click()',3000);				
+					setTimeout('document.getElementById("wApply").click()',3000);
+				}
+			
+			function resetPage(){
+				var form0 = document.forms[0];
+				var form1 = document.forms[1];
+				var form2 = document.forms[2];
+				//var form3 = document.forms[3];
+				
+				for(var i=1;i<form0.length;i++){
+					var formType = form0.elements[i].type;
+					if(formType=="text"||formType=="password"||formType=="select-one")
+						form0.elements[i].value="";
+					}
+				/*for(var i=1;i<form3.length;i++){
+					var formType = form3.elements[i].type;
+				if(formType=="text"||formType=="password"||formType == "select-one")
+						form3.elements[i].value="";
+					}*/
+				for(var i=0;i<form1.length;i++){
+					var formType = form1.elements[i].type;
+					if(formType=="text"||formType=="password"||formType=="select-one")
+						form1.elements[i].value="";
+					}
+				
+				for(var i=0;i<form2.length;i++){
+					var formType = form2.elements[i].type;
+					if(formType=="text"||formType=="password"||formType=="select-one")
+						form2.elements[i].value="";
+					}
+				}
 </script>
+</script>
+
+
+<form method=post name="Operators" action=/goform/Operators id="Operators">
+<table width="540" border="0" cellpadding="2" cellspacing="1">
+
+<tr style="display:none">
+  <td class="title" colspan="2" id="MobileOperators">mobile MSP parameter</td>
+</tr>
+
+<tr >
+	<td class="head" id="G3Comment">
+		MSP Name
+	</td>
+	<td style="display:none">
+		<input type="text" name="G3Comment" size="32" maxlength="32" value="<% getCfgGeneral(1, "g3_operator_name"); %>">
+	</td>
+	
 	<td>
 		<select id="mspName" name="mspName" onchange="changeMspName()">
 			<option>WCDMA</option>
@@ -1606,10 +1745,9 @@ function initValue()
 			<option>CDMA</option>
 		</select>
 	</td>
+	
 </tr>
 
-
-<!-------------------------------------------网络类型隐藏开始---------------------------------------->
 <tr style="display:none">
 	<td class="head" id="NetworkType">
 		Network Type
@@ -1620,13 +1758,13 @@ function initValue()
     </select>
     </td>
 </tr>
-<!-------------------------------------------网络类型隐藏结束---------------------------------------->
+
 <tr>
 	<td class="head" id="DialingString">
 		Dialing number
 	</td>
 	<td>
-  		<input id="DialingStrValue" type="text" maxlength=32 size=32 name="DialingStr" value="<% getCfgGeneral(1, "g3_dial_num"); %>">
+  		<input type="text" maxlength=32 size=32 name="DialingStr" value="<% getCfgGeneral(1, "g3_dial_num"); %>">
 	</td>
 </tr>
 
@@ -1635,9 +1773,8 @@ function initValue()
 		Initial Command String
 	</td>
 	<td>
-  	<!--	<input type="text" maxlength=50 size=32 name="InitCmdStr" value="<% getCfgGeneral(1, "g3_initial_cmd"); %>">
-	-->
-  		<input id="InitCmdStrValue" type="text" maxlength=100 size=32 name="InitCmdStr">
+  		<input type="text" maxlength=100 size=32 name="InitCmdStr" value="<% getCfgGeneral(1, "g3_initial_cmd"); %>">
+  		<!--<input type="text" maxlength=100 size=32 name="InitCmdStr">-->
 	</td>
 </tr>
 
@@ -1646,7 +1783,7 @@ function initValue()
 		User name
 	</td>
 	<td>
-  		<input id="G3UserNameValue" type="text" maxlength=100 size=32 name="G3UserName" value="<% getCfgGeneral(1, "G3UserName"); %>">
+  		<input type="text" maxlength=100 size=32 name="G3UserName" value="<% getCfgGeneral(1, "G3UserName"); %>">
 	</td>
 </tr>
 
@@ -1655,32 +1792,32 @@ function initValue()
 		Password
 	</td>
 	<td>
-  		<input id="G3PasswordValue" type="password" maxlength=100 size=32 name="G3Password" value="<% getCfgGeneral(1, "G3Password"); %>">
+  		<input type="password" maxlength=100 size=32 name="G3Password" value="<% getCfgGeneral(1, "G3Password"); %>">
 	</td>
 </tr>
 
-<tr>
+<tr style="display:none">
 	<td class="head" id="G3LocalIp">
 		Local Ip
 	</td>
 	<td>
-  		<input id="G3LocalIpValue" type="text" maxlength=30 size=30 name="G3LocalIp" value="<% getCfgGeneral(1, "G3LocalIp"); %>">
+  		<input type="text" maxlength=30 size=30 name="G3LocalIp" value="<% getCfgGeneral(1, "G3LocalIp"); %>">
 	</td>
 </tr>
-<tr>
+<tr style="display:none">
 	<td class="head" id="id_G3AuthProtocol">
 		Auth protocol
 	</td>
 	<td>
 		<select name="G3AuthProtocol" value="<% getCfgGeneral(1, "G3auth_type"); %>" style="width=150">
    		<option value=0>AUTO</option>
-			<option value=1>CHAP</option>
+		<option value=1>CHAP</option>
    		<option value=2>PAP</option>
    		</select>&nbsp;&nbsp;
 	</td>
 </tr>
 
-<tr>
+<tr style="display:none">
 	<td class="head" id="G3OtherOptions">
 		Other Options
 	</td>
@@ -1690,17 +1827,8 @@ function initValue()
 </tr>
 </table>
 
-
-
-
-
-
-
-
-
-<!------------------------------------被隐藏的代码--------------------------------------->
-<table style="display:none"  width="540" cellpadding="2" cellspacing="1">
-<tr  align="center">
+<table style="display:none" width="540" cellpadding="2" cellspacing="1">
+<tr align="center">
 <td>
 	<input type="submit" value="Add to List" id="AddMSP2List" onClick="return CheckMSPValue()" style="width:90;height:25"> &nbsp;&nbsp;
 </td>
@@ -1709,12 +1837,178 @@ function initValue()
 </form>
 
 
+<script type="text/javascript">
+			/*function showMode(){
+				var currMode = document.getElementById('modeSelect');
+
+				if(currMode.options[0].selected){
+					document.getElementById('onDmdTd').style.display = "none";
+					document.getElementById('onTimeTd').style.display = "none";
+				}
+				else if(currMode.options[1].selected){
+					document.getElementById('onDmdTd').style.display = "block";
+					document.getElementById('onTimeTd').style.display = "none";
+				}
+				else if(currMode.options[2].selected){
+					document.getElementById('onDmdTd').style.display = "none";
+					document.getElementById('onTimeTd').style.display = "block";
+				}
+			}*/
+			
+			function modeSelects(){
+				document.getElementById('onDmdTd').style.display = "none";
+				document.getElementById('onTimeTd').style.display = "none";
+				var currMode = document.getElementById('modeSelect');
+				var realMode = document.wanCfg.G3Mode;
+				if(currMode.options.selectedIndex==0){
+					realMode.options.selectedIndex=0;
+				}
+				else if(currMode.options.selectedIndex==1){
+					document.getElementById('onDmdTd').style.display = "block";
+					realMode.options.selectedIndex=1;
+				}
+				else if(currMode.options.selectedIndex==2){
+					document.getElementById('onTimeTd').style.display = "block";
+					realMode.options.selectedIndex=2;
+				}
+				G3OPModeSwitch();
+			}
+			
+			
+			function rmbCurrMode(){
+				
+				document.getElementById('onDmdTd').style.display = "none";
+				document.getElementById('onTimeTd').style.display = "none";
+					
+				var currMode = document.getElementById('modeSelect');
+				var realMode = document.wanCfg.G3Mode;
+				if(realMode.options.selectedIndex==0){
+					currMode.options.selectedIndex=0;
+					currMode.options[0].selected=true;
+				}	
+				else if(realMode.options.selectedIndex==1){
+					realMode.options.selectedIndex=1;
+					currMode.options[1].selected=true;
+					document.getElementById('onDmdTd').style.display = "block";
+				}
+				else if(realMode.options.selectedIndex==2){
+					realMode.options.selectedIndex=2;
+					currMode.options[2].selected=true;
+					document.getElementById('onTimeTd').style.display = "block";
+				}
+			}
+			function radioTimeCheck(){
+				if(document.getElementsByName('radioTime')[0].checked){
+					document.getElementsByName('timeperiod')[0].checked = true;
+				}
+				else if(document.getElementsByName('radioTime')[1].checked){
+					document.getElementsByName('timeperiod')[1].checked = true;
+				}
+				else if(document.getElementsByName('radioTime')[2].checked){
+					document.getElementsByName('timeperiod')[2].checked = true;
+				}
+				else if(document.getElementsByName('radioTime')[3].checked){
+					document.getElementsByName('timeperiod')[3].checked = true;
+				}
+			}
+			
+			function rmbCurrRadioTime(){
+				if(document.getElementsByName('timeperiod')[0].checked)	{
+					document.getElementsByName('radioTime')[0].checked = true;
+				}
+				else if(document.getElementsByName('timeperiod')[1].checked)	{
+					document.getElementsByName('radioTime')[1].checked = true;
+				}
+				else if(document.getElementsByName('timeperiod')[2].checked)	{
+					document.getElementsByName('radioTime')[2].checked = true;
+				}
+				else if(document.getElementsByName('timeperiod')[3].checked)	{
+					document.getElementsByName('radioTime')[3].checked = true;
+				}
+			}
+			function rmbCurrOnDmd(){
+				document.getElementById('onDmd').value = document.wanCfg.G3IdleTime.value;
+			}
+			
+			function hello(){
+					alert("hello");
+				}
+</script>
+
+	
+
+
+<form action=/goform/OperatorDelete method=POST name="CurOperators" id="CurOperators" >
 
 
 
-<form  action=/goform/OperatorDelete method=POST name="CurOperators" id="CurOperators" >
-
-<table  width="540" border="1" cellpadding="2" cellspacing="1">	
+<table width="540" id="connModeNew">
+				<tr>
+					<td style="vertical-align: top;width:40%" id="connNode">connect mode</td>
+					<td>
+						<select id="modeSelect" onchange="modeSelects()">
+							<option id="firAlive">Keep Alive</option>
+							<option id="secDmd">On Demand</option>
+							<option id="thdTime">On Time</option>
+						</select>
+						<br/>
+						      
+						<br />
+						<table>
+							<tr>
+								<td  id="onDmdTd">
+									<span id="idT">Idle Time</span>
+									<input type="text" size="3" id="onDmd"/>
+									<span id="idTm">minutes</span>
+								</td>
+							</tr>
+							<tr>
+								<td id="onTimeTd">								
+									<table>
+										<tr>
+											<td><span id="exam">example:15:50---22:30 ,set NTP Server in management page before used. </span></td>
+										</tr>
+										<tr>
+											
+											<td>
+												<input type="radio" name="radioTime" onclick="radioTimeCheck()"/>
+												
+												<input type="text" size="2" id="currsh0" value="<% getCfgGeneral(1, "tp_sh_0"); %>"/>:<input type="text" size="2" id="currsm0" value="<% getCfgGeneral(1, "tp_sm_0"); %>"/>
+												--- <input type="text" size="2" id="curreh0" value="<% getCfgGeneral(1, "tp_eh_0"); %>"/>:<input type="text" size="2" id="currem0" value="<% getCfgGeneral(1, "tp_em_0"); %>"/>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="radio" name="radioTime" onclick="radioTimeCheck()"/>
+												
+												<input type="text" size="2" id="currsh1" value="<% getCfgGeneral(1, "tp_sh_1"); %>"/>:<input type="text" size="2" id="currsm1" value="<% getCfgGeneral(1, "tp_sm_1"); %>"/>
+												--- <input type="text" size="2" id="curreh1" value="<% getCfgGeneral(1, "tp_eh_1"); %>"/>:<input type="text" size="2" id="currem1" value="<% getCfgGeneral(1, "tp_em_1"); %>"/>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="radio" name="radioTime" onclick="radioTimeCheck()"/>
+												
+												<input type="text" size="2" id="currsh2" value="<% getCfgGeneral(1, "tp_sh_2"); %>"/>:<input type="text" size="2" id="currsm2" value="<% getCfgGeneral(1, "tp_sm_2"); %>"/>
+												--- <input type="text" size="2" id="curreh2" value="<% getCfgGeneral(1, "tp_eh_2"); %>"/>:<input type="text" size="2" id="currem2" value="<% getCfgGeneral(1, "tp_em_2"); %>"/>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="radio" name="radioTime" onclick="radioTimeCheck()"/>
+												
+												<input type="text" size="2" id="currsh3" value="<% getCfgGeneral(1, "tp_sh_3"); %>"/>:<input type="text" size="2" id="currsm3" value="<% getCfgGeneral(1, "tp_sm_3"); %>"/>
+												--- <input type="text" size="2" id="curreh3" value="<% getCfgGeneral(1, "tp_eh_3"); %>"/>:<input type="text" size="2" id="currem3" value="<% getCfgGeneral(1, "tp_em_3"); %>"/>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>			
+	</table>
+<table style="display:none" width="540" border="1" cellpadding="2" cellspacing="1">	
 	<tr>
 		<td class="title" colspan="8" id="CurOperatorsInSys">MSP List</td>
 	</tr>
@@ -1735,10 +2029,13 @@ function initValue()
 </table>
 <br>
 
-<table  width="540" cellpadding="2" cellspacing="1">
+<table width="540" cellpadding="2" cellspacing="1">
 <tr align="center">
 <td>
-<input type="submit" value="Select" id="SelAsDftMSP" name="setDefaultMSP" onClick="return deleteClick()" style="width:auto;height:25">&nbsp;&nbsp; 
+	<input id="refreshbutton" type="button" value="Refresh" onclick="refreshMsp();" style="width:auto;height:25"/>
+	<input id="resetbutton" type="button" value="Reset" onclick="resetPage()" style="width:auto;height:25"/>
+	
+<input style="display:none" type="submit" value="Select" id="SelAsDftMSP" name="setDefaultMSP" onClick="return deleteClick()" style="width:auto;height:25">&nbsp;&nbsp; 
 </td>
 </tr>
 </table>
@@ -1754,7 +2051,7 @@ function initValue()
 	<div id="right"><!--start of right-->
 		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content"><span id="wan_direc1"></span><br/><br/><span id="wan_direc2"></span></p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

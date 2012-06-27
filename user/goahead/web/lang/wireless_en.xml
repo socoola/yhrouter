@@ -1,4 +1,10 @@
 <po>
+	
+	<message msgid="help help_head" msgstr="Help more" />
+	<message msgid="wireless wireless_direc" msgstr="Configure username and password of WIFI." />
+	<message msgid="basic wifiEnable" msgstr="Enable" />
+	<message msgid="basic wifiDisable" msgstr="Disable" />
+	
   <message msgid="wireless apply" msgstr="Apply" />
   <message msgid="wireless cancel" msgstr="Cancel" />
   <message msgid="wireless close" msgstr="Close" />

@@ -22,6 +22,11 @@ function initTranslation()
 	e.innerHTML = _("stalist wireless network");
 	e = document.getElementById("stalistMacAddr");
 	e.innerHTML = _("stalist macaddr");
+	
+	e = document.getElementById("help_head");
+	e.innerHTML = _("help help_head");
+	e = document.getElementById("wireless_direc");
+	e.innerHTML = _("wireless wireless_direc");
 }
 
 function PageInit()
@@ -78,9 +83,9 @@ function PageInit()
 
 <td class="tdwidth2" id="td2"><!--start of td2-->
 	<div id="right"><!--start of right-->
-		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
+		<h2 id="help_head">Heeelp...</h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content"><span id="wireless_direc"></span></p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

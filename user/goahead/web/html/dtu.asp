@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="/css/normal_ws.css" type="text/css">
 <link rel="stylesheet" href="/css/boxStyle.css" type="text/css">
 <meta http-equiv="content-type" content="text/html;charset=gb2312" />
-<script type="text/javascript" src="/js/b28n.js"></script>
+<script type="text/javascript" src="/lang/b28n.js"></script>
 <script language="JavaScript" type="text/javascript">
 Butterlate.setTextDomain("internet");   
 
@@ -150,9 +150,30 @@ function initTranslation()
 	      e.innerHTML = _("Ip Address");
 	e= document.getElementById("server_port");
 	      e.innerHTML = _("Port");
-		   
+	e= document.getElementById("heartbeatData");
+	      e.innerHTML = _("dtu heartbeatData");
+	      
+	e= document.getElementById("heartBeatService");
+	      e.innerHTML = _("dtu heartBeatService");
+	
+	e= document.getElementById("hbSta1");
+	      e.innerHTML = _("dtu hbSta1");
+	
+	e= document.getElementById("hbSta2");
+	      e.innerHTML = _("dtu hbSta2");
+	         
 	e= document.getElementById("dtu_apply");
 	       e.value = _("dtu apply");
+	
+	e = document.getElementById("help_head");
+	e.innerHTML = _("help help_head");
+	
+	e= document.getElementById("dtu_direc1");
+	e.innerHTML = _("dtu dtu_direc1");
+	e= document.getElementById("dtu_direc2");
+	e.innerHTML = _("dtu dtu_direc2");
+	e= document.getElementById("dtu_direc3");
+	e.innerHTML = _("dtu dtu_direc3");
 	
 
 
@@ -656,6 +677,9 @@ function formLoad()
         load_cur_para();
 	dtu_linktype_select();
 	initTranslation();
+	navigatorType();
+	rmbHtStatusSelect();
+	htStatus();
 }
 
 
@@ -675,7 +699,7 @@ function formLoad()
 	<table id="layout_table" border="0"><!--start of layout_table-->
 <tr><!--start of layout tr-->
 <td class="tdwidth1" id="td1"><!--start of td1-->
-<div id="left"><!--start of left-->
+<div id="left" style="width:540;"><!--start of left-->
 
 
 <h1 id="dtu_settings" align="left">DTU Settings</h1>
@@ -698,12 +722,12 @@ function formLoad()
      </tr>
     <tr>
       <td width="50%" id="dtu_status">dtu status</td>
-	        <td>
-                <select name="dtu_status_sel">
-                         <option id="option_off" value="off">off</option>
-                         <option id="option_on" value="on">on</option>
-                 </select>
-      		  </td>
+	    <td>
+          <select name="dtu_status_sel">
+            <option id="option_off" value="off">off</option>
+            <option id="option_on" value="on">on</option>
+           </select>
+      </td>
     </tr>
     
     <tr>
@@ -800,29 +824,114 @@ function formLoad()
   			</table>
   		</fieldset>
   		
-  		
+  		<script type="text/javascript">
+  			
+  			function htStatus(){
+  					var dtu_h_time_value = document.dtu_config.dtu_h_time.value;
+  					if(document.getElementById("hbStatus").options[0].selected){
+  							/*
+  							document.getElementById("heartbeatData").style.display = "block";
+  							document.getElementById("hbData").style.display = "block";
+  							
+  							document.getElementById("dtu_senddata_time").style.display = "block";
+  							document.getElementById("sdTime").style.display = "block";
+  							
+  							document.getElementById("dtu_heart_time").style.display = "block";
+  							document.getElementById("hbTime").style.display = "block";
+  							
+  							document.getElementById("dtu_off_heart_delay_time").style.display = "block";
+  							document.getElementById("offTime").style.display = "block";*/
+								
+								document.getElementById("tableSetting").style.display = "block";
+  							document.dtu_config.dtu_h_time.value = '<% getCfgGeneral(1,"dtu_h_time"); %>';
+  						}
+  					else if(document.getElementById("hbStatus").options[1].selected){
+  							
+  						/*	document.getElementById("heartbeatData").style.display = "none";
+  							document.getElementById("hbData").style.display = "none";
+  							
+  							document.getElementById("dtu_senddata_time").style.display = "none";
+  							document.getElementById("sdTime").style.display = "none";
+  							
+  							document.getElementById("dtu_heart_time").style.display = "none";
+  							document.getElementById("hbTime").style.display = "none";
+  							
+  							document.getElementById("dtu_off_heart_delay_time").style.display = "none";
+  							document.getElementById("offTime").style.display = "none";*/
+  							
+  							document.getElementById("tableSetting").style.display = "none";
+  							document.dtu_config.dtu_h_time.value = 0;
+  						}
+  				}
+  			
+  			function rmbHtStatusSelect(){
+  					if(document.dtu_config.dtu_h_time.value > 0){
+  							document.getElementById("hbStatus").options[0].selected = true;
+  						}
+  					else
+  						document.getElementById("hbStatus").options[1].selected = true;
+  				}
+  				
+  			function navigatorType(){
+  					if(navigator.userAgent.indexOf("MSIE")>0){
+					   document.getElementById("heartBeatService").style.width = "247";
+					   document.getElementById("heartbeatData").style.width = "255";
+					  }else if(navigator.userAgent.indexOf("Firefox")>0){
+					   document.getElementById("heartBeatService").style.width = "255";
+					   document.getElementById("heartbeatData").style.width = "273";
+					  }else if(navigator.userAgent.indexOf("Chrome")>0){
+					   document.getElementById("heartBeatService").style.width = "255";
+					   document.getElementById("heartbeatData").style.width = "276";
+					  }else{
+					   document.getElementById("heartBeatService").style.width = "255";
+					   document.getElementById("heartbeatData").style.width = "255";
+   					}
+  				}
+  			
+  		</script>
   		<fieldset>
   			<legend id="heartbeat_settings" style="text-align:left;color:#3A587A;font-weight:bold">Heartbeat Settings</legend>
-  			<table>
-					<tr class="hidden">
-						<td width="50%">Heartbeat Service</td>
-						<td width="50%"> 
-							<input type="radio" />Enabled
-							<input type="radio"/>Disabled
+  			
+  			<table width="500" >
+					<tr>
+						<td id="heartBeatService">Heartbeat Service</td>
+						<td >
+							<select id="hbStatus" onchange="htStatus()">
+								<option id="hbSta1">Enable</option>
+								<option id="hbSta2">Disable</option>
+							</select>
+						</td>		
+					</tr>
+				</table>
+				<table width="500" id="tableSetting">
+					<tr>
+						<td  id="heartbeatData">Heartbeat Data</td>
+						<td  id="hbData"><input name="dtu_h_info" maxlength=10  size=10 type="text"></td>
+					</tr>
+					<tr>
+						<td id="dtu_heart_time">heart beat time</td>
+						<td id="hbTime"> 
+							<input name="dtu_h_time" maxlength=5 size=5  type="text">
+							s ( 0 means disable ) 
 						</td>
 					</tr>
-					<tr class="hidden">
-						<td>Heartbeat Data</td>
-						<td><input type="text" value="123456" size="5"/></td>
-					</tr>
 					
-					<tr > 
-							<td class="width1" id="dtu_off_heart_delay_time">off heart beat delay time</td>
-							<td class="width2">
+					
+					<tr> 
+							<td  id="dtu_off_heart_delay_time">off heart beat delay time</td>
+							<td id="offTime" class="width2">
 								<input name="dtu_off_heart_after_nodata_time" maxlength=5  size=5 type="text">
 								s
 							</td>
 					</tr>
+					
+					<tr>
+						<td " id="dtu_senddata_time"> send data time</td>
+						<td id="sdTime" > 
+							<input name="dtu_send_data_time"  maxlength=3 size=3   type="text" >
+							ms ( 0~999 ) 
+						</td>
+					</tr>				
 				</table>
   		</fieldset>
   		
@@ -839,7 +948,7 @@ function formLoad()
 					                         <option id="option_19200" value="19200">19200</option>
 					                         <option id="option_38400" value="38400">38400</option>
 					                         <option id="option_57600" value="57600">57600</option>
-					                         <option id="option_115200" value="115200">115200</option>
+					                         <option id="option_115200" value="115200" selected="selected">115200</option>
 					                 </select>
 					                 bps
 						</td>
@@ -892,7 +1001,7 @@ function formLoad()
   
 
 
-  <table class="hidden" border="0" cellpadding="2" cellspacing="1" width="540"   bordercolor="#9BABBD">
+  <table class="hidden" border="0" cellpadding="2" cellspacing="1" width="500"   bordercolor="#9BABBD">
 
     	<tr>
     		<td class="title" colspan="2" id="dtu_serial_table">DTU Serial setting</td>
@@ -916,7 +1025,7 @@ function formLoad()
 
 
 
-  <table class="hidden" border="0" cellpadding="2" cellspacing="1" width="540"   bordercolor="#9BABBD">
+  <table class="hidden" border="0" cellpadding="2" cellspacing="1" width="500"   bordercolor="#9BABBD">
 
     	<tr>
     		<td class="title" colspan="2" id="dtu_config_table">DTU config</td>
@@ -930,7 +1039,7 @@ function formLoad()
 
 	
 	<div id="server_block">
-		<table border="0" cellpadding="2" cellspacing="1" width="540"  bordercolor="#9BABBD">
+		<table border="0" cellpadding="2" cellspacing="1" width="500"  bordercolor="#9BABBD">
 			<tr>
 				<td width="40%" id="dtu_server_port">server port</td>
 				<td> 
@@ -943,7 +1052,7 @@ function formLoad()
 
 
 	<div id="client_block">
-	<table class="hidden" border="0" cellpadding="2" cellspacing="1" width="540" bordercolor="#9BABBD" >
+	<table class="hidden" border="0" cellpadding="2" cellspacing="1" width="500" bordercolor="#9BABBD" >
      	<tr>
 		
 	</tr>
@@ -957,19 +1066,13 @@ function formLoad()
 		
 	</tr>
 
-	<tr>
-		<td width="40%" id="dtu_heart_time">heart beat time</td>
-		<td > 
-			<input name="dtu_h_time" maxlength=5 size=5   type="text">
-			s ( 0 means disable ) 
-		</td>
-	</tr>
+	
 	<tr > 
 			<td width="40%" id="dtu_heart_info">heart beat information</td>
 			<td >
 			hex
 			<input type="checkbox"  name="dtu_h_info_type">
-			<input name="dtu_h_info" maxlength=240  size=32 type="text">
+			<!--<input name="dtu_h_info" maxlength=240  size=32 type="text">-->
 			</td>
 	</tr>
 
@@ -986,19 +1089,13 @@ function formLoad()
 </table>
 </div>
 
- <table class="hidden" border="0" cellpadding="2" cellspacing="1" width="540"   bordercolor="#9BABBD">
-	<tr>
-		<td width="40%" id="dtu_senddata_time"> send data time</td>
-		<td > 
-			<input name="dtu_send_data_time" maxlength=3 size=3   type="text">
-			ms ( 0~999 ) 
-		</td>
-	</tr>
+ <table class="hidden" border="0" cellpadding="2" cellspacing="1" width="500"   bordercolor="#9BABBD">
+	
 </table>
 
 
 <p>
-<table width="540" border="0" cellpadding="2" cellspacing="1">
+<table width="500" border="0" cellpadding="2" cellspacing="1">
 
   <tr align="center">
     <td>
@@ -1018,9 +1115,13 @@ function formLoad()
 
 <td class="tdwidth2" id="td2"><!--start of td2-->
 	<div id="right"><!--start of right-->
-		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
+		<h2 id="help_head">Heeelp...</h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content">
+			<span id="dtu_direc1"></span><br/><br/>
+			<span id="dtu_direc2"></span><br/><br/>
+			<span id="dtu_direc3"></span>
+		</p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

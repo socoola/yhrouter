@@ -43,6 +43,11 @@ function initTranslation()
 	e.value = _("sysfw apply");
 	e = document.getElementById("sysfwReset");
 	e.value = _("sysfw reset");
+	
+	e = document.getElementById("help_head");
+	e.innerHTML = _("help help_head");
+	e = document.getElementById("system_firewall_direc");
+	e.innerHTML = _("system_firewall system_firewall_direc");
 }
 
 function updateState()
@@ -160,9 +165,9 @@ function updateState()
 
 <td class="tdwidth2" id="td2"><!--start of td2-->
 	<div id="right"><!--start of right-->
-		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
+		<h2 id="help_head">Heeelp...</h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content"><span id="system_firewall_direc"></span></p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

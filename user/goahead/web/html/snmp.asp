@@ -105,12 +105,26 @@ function initTranslation()
         e.innerHTML = _("id snmp v3 security mode");
         e = document.getElementById("id_snmp_v3_authentication_str");
         e.innerHTML = _("id snmp v3 authentication str");
-  e = document.getElementById("id_snmp_v3_encryption_str");
+  			e = document.getElementById("id_snmp_v3_encryption_str");
         e.innerHTML = _("id snmp v3 encryption str");
         e = document.getElementById("id_snmp_v3_authentication_password");
         e.innerHTML = _("id snmp v3 authentication password");
-        e = document.getElementById("id_snmp_v3_encryption_password");
-        e.innerHTML = _("id snmp v3 encryption password");
+        
+        e = document.getElementById("help_head");
+				e.innerHTML = _("help help_head");
+	
+        e = document.getElementById("snmp_direc1");
+        e.innerHTML = _("snmp snmp_direc1");
+        e = document.getElementById("snmp_direc2");
+        e.innerHTML = _("snmp snmp_direc2");
+        e = document.getElementById("snmp_direc3");
+        e.innerHTML = _("snmp snmp_direc3");
+        e = document.getElementById("snmp_direc4");
+        e.innerHTML = _("snmp snmp_direc4");
+        e = document.getElementById("snmp_direc5");
+        e.innerHTML = _("snmp snmp_direc5");
+        e = document.getElementById("snmp_direc6");
+        e.innerHTML = _("snmp snmp_direc6");
 
 
 
@@ -447,9 +461,16 @@ function applyClick()
 
 <td class="tdwidth2" id="td2"><!--start of td2-->
 	<div id="right"><!--start of right-->
-		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
+		<h2 id="help_head">Heeelp...</h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content">
+			<span id="snmp_direc1"></span><br/><br/>
+			<span id="snmp_direc2"></span><br/><br/>
+			<span id="snmp_direc3"></span><br/><br/>
+			<span id="snmp_direc4"></span><br/><br/>
+			<span id="snmp_direc5"></span><br/><br/>
+			<span id="snmp_direc6"></span><br/><br/>
+		</p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

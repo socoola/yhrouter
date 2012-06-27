@@ -1,0 +1,9 @@
+waitquiet 1 0.1
+system "echo \"Not Ready\" >/var/sim"
+system "echo \"No signal\" >/var/signal"
+send "AT+CPIN?"
+waitfor 5 "READY","ERR"
+if % != 0 goto error
+putenv  "SIMSTATE=Inserted"
+system "echo $SIMSTATE >/var/sim"
+

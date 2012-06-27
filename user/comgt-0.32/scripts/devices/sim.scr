@@ -5,18 +5,17 @@ set com 115200n81
     let c=0
 :signal
     waitquiet 1 0.1
-    send "AT^SCKS?^m"
-    get 2 "^m" $s
-	print $s
-	if % != 0 goto error
-    get 2 "^m" $s
-	print $s
-	if % != 0 goto error
-    let $s=$right($s,1)
-	if $s = "0" print "Inserted"
-	else goto error
+    send "AT+CPIN?^m"
+    waitfor 5 "OK","ERR","ERROR"
+    if % = -1 goto error
+    if % = 1 goto error
+    if % = 2 goto error
+    print "Inserted"
     waitquiet 1 0.1
     exit 0
+:timeout
+	print "Timeout"
+	exit 1
 :error
 	print "Not Ready"
-	exit 1
+	exit 2

@@ -1,4 +1,58 @@
 <po>
+	
+	<message msgid="ppoe ppoe_keep" msgstr="Keep Alive Mode: Redial Period" />
+	<message msgid="ppoe ppoe_sec" msgstr="seconds" />
+	<message msgid="ppoe ppoe_demand" msgstr="On demand Mode: Idle Time " />
+	<message msgid="ppoe ppoe_min" msgstr="minutes" />
+	
+	
+	<message msgid="linkbackup linkbackup_direc" msgstr="Link failover function is valuable for 1WAN4LAN router only. You can choose priotiry line according to application. Configure each parameter in WAN Settings before running it." />
+	
+	<message msgid="dtu dtu_direc1" msgstr="Here DTU is used to do transparent data transmission. There are two working mode of DTU,Client and Server." />
+	<message msgid="dtu dtu_direc2" msgstr="1. When use it as client,please configure one central server's IP and port in Data Center Configure." />
+	<message msgid="dtu dtu_direc3" msgstr="2. When use it as server,please configure a port at 'dtu server port'" />
+	
+	<message msgid="snmp snmp_direc1" msgstr="SNMP setting:" />
+	<message msgid="snmp snmp_direc2" msgstr="Contact Info:Set contact information." />
+	<message msgid="snmp snmp_direc3" msgstr="Set router's mounted position." />
+	<message msgid="snmp snmp_direc4" msgstr="SNMP Edit:Choose from V1/V2c or V3 according to your application." />
+	<message msgid="snmp snmp_direc5" msgstr="User:Set community name,e.g. public." />
+	<message msgid="snmp snmp_direc6" msgstr="Host/Lan:Set IP port.Default settings is any (0.0.0.0/0)." />
+	
+	<message msgid="routing routing_direc1" msgstr="1. Gatewat IP and the router's local IP are at same segment." />
+	<message msgid="routing routing_direc2" msgstr="2. If configure Host IP as destination IP address,the Netmask has to be 255.255.255.255." />
+	<message msgid="routing routing_direc3" msgstr="3. If destination IP is network segment,the netmask should match.  e.g, destination IP is 192.0.0.0,then netmask should be 255.0.0.0." />
+	
+	<message msgid="dhcp dhcp_direc" msgstr="List the devices connecting with the router." />
+	<message msgid="lan lan_direc" msgstr="Change router's local IP here." />
+	<message msgid="help help_head" msgstr="Help more" />
+	<message msgid="wan wan_direc2" msgstr="MSP Name: Choose it from the list. Input APN offered by local ISP." />
+	<message msgid="wan wan_direc1" msgstr="WAN Connection Type: Static IP, DHCP, PPPOE, Mobile Modem." />
+	<message msgid="dtu hbSta1" msgstr="Enable" />
+	<message msgid="dtu hbSta2" msgstr="Disable" />
+	<message msgid="uart settings" msgstr="UART Settings" />
+	<message msgid="heartbeat settings" msgstr="Heartbeat Settings" />
+	<message msgid="data center configuration" msgstr="Data Center Configure" />
+	<message msgid="wan connNode" msgstr="Connect Mode" />
+	<message msgid="wan firAlive" msgstr="Keep Alive" />
+	<message msgid="wan secDmd" msgstr="On Demand" />
+	<message msgid="wan thdTime" msgstr="On Time" />
+	<message msgid="wan idT" msgstr="Idle Time" />
+	<message msgid="wan idTm" msgstr="minutes" />
+	
+	<message msgid="wan exam" msgstr="example:15:50---22:30 ,set NTP Server in management page before used." />
+	<message msgid="dtu heartBeatService" msgstr="Heartbeat Status" />
+	
+	<message msgid="dtu heartbeatData" msgstr="Heartbeat Data" />
+	<message msgid="wan resetbutton" msgstr="Reset" />
+	<message msgid="pppoe AliveMode" msgstr="Keep Alive Mode: Redial Period" />
+	<message msgid="ppoe OnDemand" msgstr="On Demand:Idle Time" />
+	<message msgid="pppoe Seconds" msgstr="senconds " />
+	<message msgid="pppoe Minutes" msgstr="minutes" />
+	
+	<message msgid="button g3connectbtn" msgstr="connect" />
+	<message msgid="inet connmode G3TimePeriodsTable" msgstr="example:15:50---22:30 ,set NTP Server in management page before used. " />
+	<message msgid="refresh button" msgstr="Apply" />
 	<message msgid="manual connect" msgstr="Manual Connect" />
 	<message msgid="always on line" msgstr="Always On Line" />
 	<message msgid="connect mode" msgstr="Connect Mode" />
@@ -30,7 +84,7 @@
   <message msgid="wan connection type pppoe" msgstr="PPPOE" />
   <message msgid="wan connection type l2tp" msgstr="L2TP" />
   <message msgid="wan connection type pptp" msgstr="PPTP" />
-  <message msgid="wan protocol opmode" msgstr="Operation Mode" />
+  <message msgid="wan protocol opmode" msgstr="Connect Mode" />
   <message msgid="wan protocol opmode keepalive" msgstr="Keep Alive" />
   <message msgid="wan protocol opmode ondemand" msgstr="On Demand" />
   <message msgid="wan protocol opmode manual" msgstr="Manual" />
@@ -43,8 +97,8 @@
   <message msgid="wan pptp mode" msgstr="PPTP Mode" />
   <message msgid="wan 3G mode" msgstr="Cellular Network" />
   <message msgid="wan 3G modem" msgstr="USB 3G modem" />
-  <message msgid="wan 3G PIN" msgstr="3G SIM Code" />
-  <message msgid="wan 3G opmode" msgstr="Operation Mode" />
+  <message msgid="wan 3G PIN" msgstr="SIM PIN Code" />
+  <message msgid="wan 3G opmode" msgstr="Connect Mode" />
   <message msgid="wan 3G mspparam" msgstr="mobile MSP Parameters" />
   <message msgid="wan 3G mspname" msgstr="MSP Name" />
   <message msgid="wan 3G nettype" msgstr="3G network type" />
@@ -178,39 +232,39 @@
 
 
 
-
+<message msgid="dtu settings" msgstr="DTU Settings" />
 <message msgid="dtu setting" msgstr="DTU Settings" />
 <message msgid="dtu status table" msgstr="DTU Status Table" />
-  <message msgid="dtu status" msgstr="dtu status" />
+  <message msgid="dtu status" msgstr="Dtu Status" />
   <message msgid="option off" msgstr="off" />
   <message msgid="option on" msgstr="on" />
   <message msgid="id dtu serial table" msgstr="DTU Serial Settings Table" />
-  <message msgid="dtu bandrate" msgstr="baudrate" />
-  <message msgid="dtu parity" msgstr="parity" />
+  <message msgid="dtu bandrate" msgstr="Baudrate" />
+  <message msgid="dtu parity" msgstr="Parity" />
   <message msgid="option none" msgstr="none" />
   <message msgid="option odd" msgstr="odd" />
   <message msgid="option even" msgstr="even" />
-  <message msgid="dtu databits" msgstr="databits" />
+  <message msgid="dtu databits" msgstr="Databits" />
   <message msgid="dtu stopbits" msgstr="stopbits" />
-  <message msgid="dtu flowcontrol" msgstr="flow control" />
+  <message msgid="dtu flowcontrol" msgstr="Flow Control" />
   <message msgid="option n" msgstr="none" />
   <message msgid="option h" msgstr="hardware" />
   <message msgid="option s" msgstr="software" />
   <message msgid="dtu config" msgstr="DTU config Table" />
-  <message msgid="dtu linktype" msgstr="link type" />
+  <message msgid="dtu linktype" msgstr="Link Type" />
   <message msgid="option server" msgstr="server" />
   <message msgid="option client" msgstr="client" />
-  <message msgid="dtu socktype" msgstr="network type" />
+  <message msgid="dtu socktype" msgstr="Network Type" />
   <message msgid="dtu server port" msgstr="server port" />
-  <message msgid="dtu center 1" msgstr="server 1" /> 
-  <message msgid="dtu center 2" msgstr="server 2" />
- <message msgid="dtu center 3" msgstr="server 3" />
- <message msgid="dtu center 4" msgstr="server 4" />
- <message msgid="dtu heart time" msgstr="heart beat time" />
+  <message msgid="dtu center 1" msgstr="Server 1" /> 
+  <message msgid="dtu center 2" msgstr="Server 2" />
+ <message msgid="dtu center 3" msgstr="Server 3" />
+ <message msgid="dtu center 4" msgstr="Server 4" />
+ <message msgid="dtu heart time" msgstr="Heartbeat Send Interval" />
  <message msgid="dtu heart info" msgstr="heart beat infomation" /> 
- <message msgid="dtu send data time" msgstr="send data timeout" /> 
+ <message msgid="dtu send data time" msgstr="Send Data Timeout" /> 
  <message msgid="dtu off heart after nodata select" msgstr="off heart beat when no serial data" /> 
- <message msgid="dtu off heart delay time" msgstr="off heart beat delay time" /> 
+ <message msgid="dtu off heart delay time" msgstr="Off Heartbeat Delay Time" /> 
  <message msgid="dtu apply" msgstr="apply" />
   
 

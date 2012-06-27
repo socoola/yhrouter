@@ -1041,7 +1041,7 @@ static int getSdkVersion(int eid, webs_t wp, int argc, char_t **argv)
 {
 	//char* version_str=nvram_get(RT2860_NVRAM,"VERSION_STR");
 //	return websWrite(wp, T("%s"), version_str);
-	return websWrite(wp, T("%s"), "S 1.1.1");
+	return websWrite(wp, T("%s"), "S 1.1.2");
 
 }
 
@@ -1049,6 +1049,30 @@ static int getSdkVersion(int eid, webs_t wp, int argc, char_t **argv)
  * description: write System Uptime
  */
 static int getSysUptime(int eid, webs_t wp, int argc, char_t **argv)
+{
+	char   buff[256];
+	char *pos;
+
+	FILE *fp = fopen("/proc/uptime", "r");
+	if(fp)
+	{
+		unsigned int uptime = 0;
+		if (fgets(buff, sizeof(buff), fp) != NULL) {
+			fclose(fp);
+			pos = strchr(buff, ' ');
+			if(pos != NULL)
+			{
+				*pos = 0;
+			}
+			uptime = atoi(buff);
+			return websWrite(wp, "%ddays,%dhours,%dmins,%dsecs", 
+				uptime/86400,(uptime%86400)/3600,(uptime%3600)/60,uptime%60);
+		}
+		fclose(fp);
+	}
+	return websWrite(wp, "system error");	
+}
+/*
 {
 	struct tm *utime;
 	time_t usecs;
@@ -1070,7 +1094,7 @@ static int getSysUptime(int eid, webs_t wp, int argc, char_t **argv)
 				utime->tm_sec, (utime->tm_sec == 1)? "" : "s");
 	return 0;
 }
-
+*/
 static int getPortStatus(int eid, webs_t wp, int argc, char_t **argv)
 {
 #if (defined (CONFIG_RAETH_ROUTER) || defined CONFIG_RT_3052_ESW) && defined (CONFIG_USER_ETHTOOL)
@@ -1158,7 +1182,8 @@ void redirect_wholepage(webs_t wp, const char *url)
 {
 	websWrite(wp, T("HTTP/1.1 200 OK\nContent-type: text/html\nPragma: no-cache\nCache-Control: no-cache\n\n"));
 	websWrite(wp, T("<html><head><script language=\"JavaScript\">"));
-	websWrite(wp, T("parent.location.replace(\"%s\");"), url);
+	//websWrite(wp, T("parent.location.replace(\"%s\");"), url);
+	websWrite(wp, T("parent.location.reload();"));
 	websWrite(wp, T("</script></head></html>"));
 }
 
@@ -1374,7 +1399,8 @@ static void setOpMode(webs_t wp, char_t *path, char_t *query)
 		need_commit = 1; //force to run initInternet
 	}
 #endif
-/*
+	//redirect_wholepage(wp, "home.asp");
+
 	websHeader(wp);
 	websWrite(wp, T("<h2>Operation Mode</h2>\n"));
 	websWrite(wp, T("mode: %s<br>\n"), mode);
@@ -1389,8 +1415,8 @@ static void setOpMode(webs_t wp, char_t *path, char_t *query)
 #endif
 	websFooter(wp);
 	websDone(wp, 200);
-*/
-	websRedirect(wp, "home.asp");
+
+	
 final:
 	sleep(1);	// wait for websDone() to finish tcp http session(close socket)
 

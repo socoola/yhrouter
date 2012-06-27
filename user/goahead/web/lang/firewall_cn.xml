@@ -1,4 +1,18 @@
 ﻿<po>
+	
+	
+	<message msgid="vpn vpn_direc" msgstr="虚拟专用网络（Virtual Private Network ，简称VPN)指的是在公用网络上建立专用网络的技术。包括IPSEC，PPTP，L2TP。" />
+	
+	<message msgid="system_firewall system_firewall_direc" msgstr="本页用来设置是否允许通过广域网络对路由器进行远程管理。" />
+	
+	<message msgid="dmz dmz_direc" msgstr="在某些特殊情况下，需要让局域网中的一台计算机完全暴露给广域网，以实现双向通信，此时可以把该计算机设置为DMZ主机。" />
+	<message msgid="port_forward port_forward_direc1" msgstr="IP地址：局域网中作为服务器的计算机的IP地址。" />
+	<message msgid="port_forward port_forward_direc2" msgstr="端口范围：可以设置一个端口号（如6000-6000），也可设置一个端口段（如6000-6006）。" />
+	<message msgid="port_forward port_forward_direc3" msgstr="协议：服务器所使用的协议。" />
+	
+	<message msgid="port_filtering port_filtering_direc" msgstr="本页主要通过MAC地址/IP/端口过滤来限制局域网中的计算机对某些网站的访问。" />
+	<message msgid="help help_head" msgstr="帮助" />
+	
   <message msgid="Ipsec Current Rule" msgstr="IPSEC VPN 列表" />
   <message msgid="firewall disable" msgstr="停用" />
   <message msgid="firewall enable" msgstr="启用" />
@@ -76,11 +90,11 @@
   <message msgid="sysfw title" msgstr="系统安全设置" />
   <message msgid="sysfw introduction" msgstr="您可以透过设置系统防火墙来保护路由器或无线接入点本身。" />
   <message msgid="sysfw remote management title" msgstr="远程管理" />
-  <message msgid="sysfw remote management head" msgstr="远程管理 (經由广域网络)" />
-  <message msgid="sysfw allow" msgstr="允許" />
+  <message msgid="sysfw remote management head" msgstr="远程管理 (经由广域网络)" />
+  <message msgid="sysfw allow" msgstr="允许" />
   <message msgid="sysfw deny" msgstr="禁止" />
-  <message msgid="sysfw wanping title" msgstr="过滤广域网路的PING封包" />
-  <message msgid="sysfw wanping head" msgstr="过滤广域网路的PING封包" />
+  <message msgid="sysfw wanping title" msgstr="过滤广域网络的PING封包" />
+  <message msgid="sysfw wanping head" msgstr="过滤广域网络的PING封包" />
   <message msgid="sysfw spi title" msgstr="数据包状态检测 (SPI)" />
   <message msgid="sysfw spi head" msgstr="SPI 防火墙" />
   <message msgid="sysfw apply" msgstr="确定" />

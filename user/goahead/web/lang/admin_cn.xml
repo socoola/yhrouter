@@ -1,4 +1,25 @@
 ﻿<po>
+	
+	<message msgid="status imei" msgstr="模块IMEI" />
+	
+	<message msgid="status status_direc" msgstr="显示设备当前状态。" />
+	
+	<message msgid="syslog syslog_direc" msgstr="显示系统运行日志。" />
+	<message msgid="statistic statistic_direc" msgstr="统计当前流量。" />
+	<message msgid="restart restart_direc" msgstr="设置定时重启时间" />
+	<message msgid="icmp icmp_direc" msgstr="该功能主要是以Ping包的形式检测路由器WAN口状态，根据返回情况，执行相应动作。支持IP地址和域名形式。（例如 8.8.8.8 和 www.baidu.com）。" />
+	<message msgid="settings settings_direc" msgstr="备份当前设置或恢复路由器以前设置。" />
+	<message msgid="upload upload_direc" msgstr="路由器软件更新。" />
+	<message msgid="management management_direc4" msgstr="4. 动态域名服务器：支持Dyndns.org、freedns.afraid.org、www.zoneedit.com、www.no-ip.com、3322.org。" />
+	<message msgid="management management_direc3" msgstr="3. 网络时间设置：填写当地网络时间服务器地址。网络时间校准为12或24小时。" />
+	<message msgid="management management_direc2" msgstr="2. 管理者设置：修改登录路由器界面的用户名和密码。" />
+	<message msgid="management management_direc1" msgstr="1. 语言设置：可选择中、英文界面。" />
+	
+	<message msgid="help help_head" msgstr="帮助" />
+	
+	<message msgid="status modelType" msgstr="模块型号" />
+	
+	
 	<message msgid="menuFrame status" msgstr="运行状态" />
 	<message msgid="menuFrame opmode" msgstr="运行模式" />
 	
@@ -141,7 +162,7 @@
   <message msgid="status product model" msgstr="路由器型号" />
   <message msgid="status system information" msgstr="系统信息" />
   <message msgid="status hrdw version" msgstr="硬件版本" />
-  <message msgid="router S/N" msgstr="路由器S/N" />
+  <message msgid="router S/N" msgstr="路由器" />
   <message msgid="status sdk version" msgstr="软件版本" />
   <message msgid="status system up time" msgstr="系统运行时间" />
   <message msgid="status system platform" msgstr="系统平台" />
@@ -160,7 +181,7 @@
   <message msgid="status wanmac" msgstr="广域网MAC地址" />
   <message msgid="status ethernet port status" msgstr="以太网络端口状态" />
   
-  <message msgid="status 3g info" msgstr="3G 模块信息" />
+  <message msgid="status 3g info" msgstr="模块信息" />
   <message msgid="status 3g signal" msgstr="信号强度" />
   <message msgid="status 3g attach" msgstr="SIM状态" />
 

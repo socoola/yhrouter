@@ -240,6 +240,15 @@ function initTranslation()
 	e.value = _("firewall del select");
 	e = document.getElementById("forwardCurrentVirtualSrvReset");
 	e.value = _("firewall reset");
+	
+	e = document.getElementById("help_head");
+	e.innerHTML = _("help help_head");
+	e = document.getElementById("port_forward_direc1");
+	e.innerHTML = _("port_forward port_forward_direc1");
+	e = document.getElementById("port_forward_direc2");
+	e.innerHTML = _("port_forward port_forward_direc2");
+	e = document.getElementById("port_forward_direc3");
+	e.innerHTML = _("port_forward port_forward_direc3");
 }
 
 function updateState()
@@ -354,7 +363,7 @@ function updateState()
 </script>
 <p align="center">
 	<input type="submit" value="Apply" id="forwardVirtualSrvApply" name="addFilterPort" onClick="return formCheck()"> &nbsp;&nbsp;
-	<input type="reset" value="Reset" id="forwardVirtualSrvReset" name="reset">
+	<input style="display:none" type="reset" value="Reset" id="forwardVirtualSrvReset" name="reset">
 </p>
 </form>
 
@@ -381,7 +390,7 @@ function updateState()
 
 <p align="center">
 <input type="submit" value="Delete Selected" id="forwardCurrentVirtualSrvDel" name="deleteSelPortForward" onClick="return deleteClick()">&nbsp;&nbsp;
-<input type="reset" value="Reset" id="forwardCurrentVirtualSrvReset" name="reset">
+<input style="display:none" type="reset" value="Reset" id="forwardCurrentVirtualSrvReset" name="reset">
 </p>
 </form>
 
@@ -393,9 +402,13 @@ function updateState()
 
 <td class="tdwidth2" id="td2"><!--start of td2-->
 	<div id="right"><!--start of right-->
-		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
+		<h2 id="help_head">Heeelp..</h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content">
+			<span id="port_forward_direc1"></span><br/><br/>
+			<span id="port_forward_direc2"></span><br/><br/>
+			<span id="port_forward_direc3"></span>
+		</p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

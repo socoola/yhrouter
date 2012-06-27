@@ -110,6 +110,12 @@ function initTranslation()
 	        e.innerHTML = _("id_rb_network_sleep_count");
 	e= document.getElementById("rb_network_sleep_time");
 	        e.innerHTML = _("id_rb_network_sleep_time");
+	
+	
+	e = document.getElementById("help_head");
+	e.innerHTML = _("help help_head");
+	e = document.getElementById("restart_direc");
+	e.innerHTML = _("restart restart_direc");
 
 }
 
@@ -559,10 +565,9 @@ function check_hostip_fun()
 
     	 
   <tr >
-  <td width="40%" id="rb_reboot_now">Reboot Now</td>
-    <td>
-    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <input type="submit" value="Reboot" id="rb_reboot" name="rb_reboot_button" >
+  <td width="45%" id="rb_reboot_now">Reboot Now</td>
+    <td align="left">
+             &nbsp;<input type="submit" value="Reboot" id="rb_reboot" name="rb_reboot_button" >
     </td>
   </tr>
   
@@ -579,7 +584,7 @@ function check_hostip_fun()
 	<div id="right"><!--start of right-->
 		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content"><span id="restart_direc"></span></p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

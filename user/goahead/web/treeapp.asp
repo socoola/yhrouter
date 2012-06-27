@@ -79,7 +79,7 @@ var ad = '<% isAntennaDiversityBuilt(); %>';
 a = new dTree('a');
 a.config.useStatusText=true;
 a.config.useCookies=false;
-a.add(000,  -1, _("treeapp Forwell"),                "javascript:go('overview.asp');");
+a.add(000,  -1, _("treeapp Yinghua"),                "javascript:go('overview.asp');");
 
 a.add(200,   0, _("treeapp operation mode"),        "javascript:go('opmode.asp');");
 a.add(300,   0, _("treeapp internet settings"),     "javascript:a.oo(300);");

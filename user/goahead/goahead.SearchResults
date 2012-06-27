@@ -1,0 +1,5 @@
+---- /dev/yh Matches (4 in 2 files) ----
+Goahead.c (src):	system("rm -f /dev/yh");
+Goahead.c (src):	sprintf(szBuf, "ln -s %s /dev/yh", buf);
+Internet.c (src):	if((fp=popen("comgt -d /dev/yh -s /etc_ro/ppp/3g/imei","r"))==NULL){
+Internet.c (src):		stream=popen("comgt -d /dev/yh -s /etc_ro/ppp/3g/sim.scr","r");

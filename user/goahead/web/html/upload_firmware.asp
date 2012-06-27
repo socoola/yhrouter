@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/css/normal_ws.css" type="text/css">
 <link rel="stylesheet" href="/css/boxStyle.css" type="text/css">
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
-<script type="text/javascript" src="/js/b28n.js"></script>
+<script type="text/javascript" src="/lang/b28n.js"></script>
 <style type="text/css">
 <!--
 #loading {
@@ -274,6 +274,11 @@ function initTranslation()
 	e.innerHTML = _("upload firmware force");
 	e = document.getElementById("ForceMemUpgradeSubmit");
 	e.value = _("admin apply");
+	
+	e = document.getElementById("help_head");
+	e.innerHTML = _("help help_head");
+	e = document.getElementById("upload_direc");
+	e.innerHTML = _("upload upload_direc");
 }
 
 function pageInit(){
@@ -380,7 +385,7 @@ function pageInit(){
 </form>
 <form method="get" name="ScanUSBFirmware" action="/goform/ScanUSBFirmware">
     <td>
-  <input value="Scan" id="uploadFWUSBScan" name="UploadFirmwareUSBScan" type="submit"> &nbsp;&nbsp;
+  <input style="display:none" value="Scan" id="uploadFWUSBScan" name="UploadFirmwareUSBScan" type="submit"> &nbsp;&nbsp;
     </td>
 </form>
   </tr>
@@ -432,9 +437,9 @@ function pageInit(){
 
 <td class="tdwidth2" id="td2"><!--start of td2-->
 	<div id="right"><!--start of right-->
-		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
+		<h2 id="help_head">Heeelp...</h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content"><span id="upload_direc"></span></p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

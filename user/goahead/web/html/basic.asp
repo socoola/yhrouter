@@ -647,11 +647,21 @@ function initTranslation()
 	e.innerHTML = _("basic ht txstream");
     	e = document.getElementById("basicHTRxStream");
 	e.innerHTML = _("basic ht rxstream");
+	
+	e = document.getElementById("wifiEnable");
+	e.innerHTML = _("basic wifiEnable");
+	e = document.getElementById("wifiDisable");
+	e.innerHTML = _("basic wifiDisable");
 
 	e = document.getElementById("basicApply");
 	e.value = _("wireless apply");
 	e = document.getElementById("basicCancel");
 	e.value = _("wireless cancel");
+	
+	e = document.getElementById("help_head");
+	e.innerHTML = _("help help_head");
+	e = document.getElementById("wireless_direc");
+	e.innerHTML = _("wireless wireless_direc");
 }
 
 function initValue()
@@ -1193,6 +1203,8 @@ function initValue()
 		document.wireless_basic.radioButton.value = "RADIO ON";
 	else
 		document.wireless_basic.radioButton.value = "RADIO OFF";
+	
+	rmbWifiSelect();
 }
 
 function wirelessModeChange()
@@ -1482,6 +1494,8 @@ function RadioStatusChange(rs)
 <p id="basicIntroduction" style="display: none"> You could configure the minimum number of Wireless settings for communication, such as Network Name (SSID) and Channel. The Access Point can be set simply with only the minimum setting items. </p>
 <hr /><br/>
 
+	
+
 <form method=post name=wireless_basic action="/goform/wirelessBasic" onSubmit="return CheckValue()">
 <table width="540" border="0" cellspacing="1" cellpadding="3" bordercolor="#9BABBD">
   <tr> 
@@ -1489,11 +1503,36 @@ function RadioStatusChange(rs)
   </tr>
   <tr> 
     <td class="head" id="basicRadioButton">Radio On/Off</td>
-    <td>
+    <td >
       <input type="button" name="radioButton"  value="RADIO ON"
       onClick="if (this.value.indexOf('OFF') >= 0) RadioStatusChange(1); else RadioStatusChange(0); document.wireless_basic.submit();"> &nbsp; &nbsp;
       <input type=hidden name=radiohiddenButton value="2">
     </td>
+    <td>
+   <script type="text/javascript">
+		function wifiSelect(){
+			var wifiSel = document.getElementById('selectWifi');
+			if(wifiSel.options[0].selected){
+				RadioStatusChange(0);
+			}
+			else if(wifiSel.options[1].selected){
+				RadioStatusChange(1);
+			}
+		}
+		
+		function rmbWifiSelect(){
+			if(document.wireless_basic.radioButton.value =="RADIO OFF")
+				document.getElementById('selectWifi').options[0].selected = true;
+			else 
+				document.getElementById('selectWifi').options[1].selected = true;
+		}
+	</script>
+	<select id="selectWifi" onchange="wifiSelect()">
+			<option id="wifiEnable">Enable</option>
+			<option id="wifiDisable">Disable</option>
+	</select>
+    </td>
+    
   </tr>
   <tr> 
     <td class="head" id="basicNetMode">Network Mode</td>
@@ -1529,7 +1568,7 @@ function RadioStatusChange(rs)
     		
     	</script>
     	
-      <input id="" type=text name=ssid size=20 maxlength=32 value="Mobile Router"> <!--value="<% getCfgGeneral(1, "SSID1"); %>"-->
+      <input type=text name=ssid size=20 maxlength=32 value="<% getCfgGeneral(1, "SSID1"); %>">
       &nbsp;&nbsp;<font id="basicHSSID0">Hidden</font>
       <input type=checkbox name=hssid value="0">
       &nbsp;&nbsp;<font id="basicIsolatedSSID0">Isolated</font>
@@ -1795,13 +1834,26 @@ function RadioStatusChange(rs)
 <table width = "540" border = "0" cellpadding = "2" cellspacing = "1">
   <tr align="center">
     <td>
-      <input type=submit  value="Apply" id="basicApply"> &nbsp; &nbsp;
+    	<input type="button" value="Apply" id="basicApply" onclick="submitPage()" />
+      <span ><input type=submit  value="Apply" id="basicApplyold" /></span> &nbsp; &nbsp;
       <input type=reset   value="Cancel" id="basicCancel" onClick="window.location.reload()">
     </td>
   </tr>
 </table>
 </form>  
-
+<script type="text/javascript">
+	function submitPage(){
+		//alert("submitPage");
+		if(document.wireless_basic.radiohiddenButton.value==1||document.wireless_basic.radiohiddenButton.value==0){
+			document.wireless_basic.radioButton.click();
+			setTimeout("document.wireless_basic.submit();",2000);
+		}
+		else{
+			document.wireless_basic.radiohiddenButton.value = 2;
+			document.wireless_basic.submit();
+		}
+	}
+</script>
 </td></tr></table>
 
 
@@ -1810,9 +1862,9 @@ function RadioStatusChange(rs)
 
 <td class="tdwidth2" id="td2"><!--start of td2-->
 	<div id="right"><!--start of right-->
-		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
+		<h2 id="help_head">Heeelp...</h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content"><span id="wireless_direc"></span></p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

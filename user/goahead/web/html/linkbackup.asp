@@ -76,7 +76,11 @@ function initTranslation()
 
 		e= document.getElementById("id_link_backup_apply");
 	        e.value = _("lbk_id_link_backup_apply");
-
+		
+		e = document.getElementById("help_head");
+		e.innerHTML = _("help help_head");
+		e= document.getElementById("linkbackup_direc");
+	  e.innerHTML = _("linkbackup linkbackup_direc");
 
  
  }
@@ -390,13 +394,13 @@ function formLoad()
 <body onLoad="formLoad()">
 <center id="boxes">
 	<div id="box">
-	<div id="head"></div>	<!--end of head-->	
+	<div id="head" style="width:770"></div>	<!--end of head-->	
 	<div id="content">
 
 	<table id="layout_table" border="0"><!--start of layout_table-->
 <tr><!--start of layout tr-->
 <td class="tdwidth1" id="td1"><!--start of td1-->
-<div id="left"><!--start of left-->
+<div id="left" style="width:550"><!--start of left-->
 
 
 <h1 class="STYLE14" id="id_linkbackup" align="left">Route Fail Over </h1>
@@ -405,9 +409,9 @@ function formLoad()
 
 <form method=post name="form_linkbackup" action="/goform/linkbackup_action" onSubmit="return applyClick()">
 
-<table width="588" border="0" cellpadding="2" cellspacing="1"  >
+<table width="550" border="0" cellpadding="2" cellspacing="1"  >
 	<tr>
-		<td width="578"		 class="title"  id="id_linkbackup_connectivity_check" colspan="2">
+		<td width="550"		 class="title"  id="id_linkbackup_connectivity_check" colspan="2">
 		<span class="STYLE14"><font color=#FFFFFF>Connectivity Check</font></span>
 		</td>
 	</tr>
@@ -422,7 +426,7 @@ function formLoad()
  </table>
 
 
-<table width="588" border="0" cellpadding="3" cellspacing="1"  >
+<table width="550" border="0" cellpadding="3" cellspacing="1"  >
 	<tr>
 		<td  width="40%" id="id_linkbackup_wan1_check_method">Check method</td>
 		<td width="20%" >
@@ -457,7 +461,7 @@ function formLoad()
 
 
 
- <table width="588" cellpadding="2" cellspacing="1"  border="0" >
+ <table width="550" cellpadding="2" cellspacing="1"  border="0" >
     <tr>
 	<td class="title"  id="id_linkbackup_operation_mode" colspan="2">
 		 <span class="STYLE14"><font color=#FFFFFF>Operation Mode </font></span>
@@ -486,7 +490,7 @@ function formLoad()
 
 
  
- <table width="588" cellpadding="2" cellspacing="1"  border="0" >
+ <table width="550" cellpadding="2" cellspacing="1"  border="0" >
     <tr>
 	<td class="title"  id="id_linkbackup_router_priority_setting" colspan="2">
 	<span class="STYLE14"><font color=#FFFFFF>Router Priority</font></span>
@@ -551,9 +555,9 @@ function formLoad()
 
 <td class="tdwidth2" id="td2"><!--start of td2-->
 	<div id="right"><!--start of right-->
-		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
+		<h2 id="help_head">Heeelp...</h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content"><span id="linkbackup_direc"></span></p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

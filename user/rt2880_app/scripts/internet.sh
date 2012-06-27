@@ -254,13 +254,13 @@ genSysFiles()
 	#fi
 
 
-	echo "r8_admin_user::0:0:Adminstrator:/:/bin/sh" > /etc/passwd
-	echo "r8_admin_user:x:0:r8_admin_user" > /etc/group
-	chpasswd.sh r8_admin_user r8_pwd
+	echo "admin868::0:0:Adminstrator:/:/bin/sh" > /etc/passwd
+	echo "admin868:x:0:admin868" > /etc/group
+	chpasswd.sh admin868 lylq-268
 
-	echo "r8_user::1000:1000:Adminstrator:/:/bin/sh" >> /etc/passwd
-	echo "r8_user:x:1000:r8_user">> /etc/group
-	chpasswd.sh r8_user r8_123
+	echo "yh_user::1000:1000:Adminstrator:/:/bin/sh" >> /etc/passwd
+	echo "yh_user:x:1000:yh_user">> /etc/group
+	chpasswd.sh yh_user yh_123
 	
 	chmod 751 /etc/passwd
 	chmod 751 /etc/passwd-

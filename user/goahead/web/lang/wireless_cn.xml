@@ -1,4 +1,10 @@
 ﻿<po>
+	
+	<message msgid="help help_head" msgstr="帮助" />
+	<message msgid="wireless wireless_direc" msgstr="设置WIFI用户名和密码。" />
+	<message msgid="basic wifiEnable" msgstr="启用" />
+	<message msgid="basic wifiDisable" msgstr="停用" />
+	
 	<message msgid="Wireless Distribution System" msgstr="无线分布式系统（WDS）" />
   <message msgid="wireless apply" msgstr="确定" />
   <message msgid="wireless cancel" msgstr="取消" />

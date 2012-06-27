@@ -110,6 +110,11 @@ function initTranslation()
 	        e.innerHTML = _("id_rb_network_sleep_count");
 	e= document.getElementById("rb_network_sleep_time");
 	        e.innerHTML = _("id_rb_network_sleep_time");
+	        
+	e = document.getElementById("help_head");
+	e.innerHTML = _("help help_head");
+	e = document.getElementById("icmp_direc");
+	e.innerHTML = _("icmp icmp_direc");
 
 }
 
@@ -363,7 +368,7 @@ function check_hostip_fun()
 <body onLoad="formLoad()">
 <center id="boxes">
 	<div id="box">
-	<div id="head">Wan Config</div>	<!--end of head-->	
+	<div id="head"></div>	<!--end of head-->	
 	<div id="content">
 
 
@@ -576,7 +581,7 @@ function check_hostip_fun()
 	<div id="right"><!--start of right-->
 		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content"><span id="icmp_direc"></span></p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

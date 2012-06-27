@@ -39,6 +39,11 @@ function initTranslation()
 	e.innerHTML = _("statistic lan tx pkt");
 	e = document.getElementById("statisticLANTxBytes");
 	e.innerHTML = _("statistic lan tx bytes");
+	
+	e = document.getElementById("help_head");
+	e.innerHTML = _("help help_head");
+	e = document.getElementById("statistic_direc");
+	e.innerHTML = _("statistic statistic_direc");
 
 //	e = document.getElementById("statisticAllIF");
 	//e.innerHTML = _("statistic all interface");
@@ -188,9 +193,9 @@ for(i=0; i<a.length; i+=5){
 
 <td class="tdwidth2" id="td2"><!--start of td2-->
 	<div id="right"><!--start of right-->
-		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
+		<h2 id="help_head">Heeelp...</h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content"><span id="statistic_direc"></span></p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

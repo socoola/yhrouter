@@ -1,4 +1,24 @@
 <po>
+	<message msgid="status imei" msgstr="Model IMEI" />
+	<message msgid="status status_direc" msgstr="Show status of the device." />
+	
+	<message msgid="syslog syslog_direc" msgstr="System running logs." />
+	<message msgid="statistic statistic_direc" msgstr="Record present system flow." />
+	<message msgid="restart restart_direc" msgstr="Set reboot on time." />
+	<message msgid="icmp icmp_direc" msgstr="Here is used to detect WAN status by ping, and then perform correspond -ing actions. Support IP and Domain name.(e.g. 8.8.8.8 and www.google.com)" />
+	<message msgid="settings settings_direc" msgstr="Backup or restore previously settings." />
+	<message msgid="upload upload_direc" msgstr="Upload newest software here." />
+	<message msgid="management management_direc1" msgstr="1.Language:Choose English or Chinese." />
+	<message msgid="management management_direc2" msgstr="2. Administrator settings:Modify username and password here to log in router's webpage." />
+	<message msgid="management management_direc3" msgstr="3. NTP settings:Input local NTP server." />
+	<message msgid="management management_direc4" msgstr="4. DDNS settings: Support Dyndns.org, freedns.afraid.org, www.zoneedit.com, www.no-ip.com,3322.org." />
+	
+	<message msgid="help help_head" msgstr="Help more" />
+	
+	<message msgid="status modelType" msgstr="Model Type" />
+	<message msgid="status lanmac" msgstr="WAN MAC Address" />
+  <message msgid="status wanmac" msgstr="LAN MAC Address" />
+	<message msgid="router S/N" msgstr="Router" />
 	<message msgid="menuFrame status" msgstr="Status" />
 	<message msgid="menuFrame opmode" msgstr="Operation Mode" />
 	
@@ -6,7 +26,7 @@
 	<message msgid="menuFrame wan" msgstr="WAN" />
 	<message msgid="menuFrame lan" msgstr="LAN" />
 	<message msgid="menuFrame dhcpcliinfo" msgstr="DHCP clients" />
-	<message msgid="menuFrame routing" msgstr="Advanced Routing Settings" />
+	<message msgid="menuFrame routing" msgstr="Advanced Settings" />
 	<message msgid="menuFrame snmp" msgstr="SNMP" />
 	
 	<message msgid="menuFrame VPN" msgstr="VPN" />
@@ -34,11 +54,11 @@
 	<message msgid="menuFrame upload_firmware" msgstr="Upload Firmware" />
 	<message msgid="menuFrame settings" msgstr="Settings Manage" />
 	<message msgid="menuFrame reboot" msgstr="Reboot" />
-	<message msgid="menuFrame ICMP" msgstr="ICMP Reboot" />
+	<message msgid="menuFrame ICMP" msgstr="ICMP" />
 	<message msgid="menuFrame restart" msgstr="Restart" />
 	<message msgid="menuFrame statistic" msgstr="Statistics" />
 	<message msgid="menuFrame syslog" msgstr="System Log" />
-	<message msgid="menuFrame yinghua" msgstr="Other Products of YingHua Tech" />
+	<message msgid="menuFrame yinghua" msgstr="More Products of YingHua" />
 	
 	
 	
@@ -147,7 +167,7 @@
   <message msgid="status system platform" msgstr="System Platform" />
   <message msgid="status operate mode" msgstr="Operation Mode" />
   <message msgid="status internet config" msgstr="Internet Configurations" />
-  <message msgid="status connect type" msgstr="Connected Type" />
+  <message msgid="status connect type" msgstr="NetWork Name" />
   <message msgid="status wan ipaddr" msgstr="WAN IP Address" />
   <message msgid="status subnet mask" msgstr="Subnet Mask" />
   <message msgid="status default gateway" msgstr="Default Gateway" />
@@ -157,9 +177,9 @@
   <message msgid="status lan ipaddr" msgstr="Local IP Address" />
   <message msgid="status local netmask" msgstr="Local Netmask" />
   <message msgid="status mac" msgstr="MAC Address" />
-  <message msgid="status 3g info" msgstr="3G Info" />
+  <message msgid="status 3g info" msgstr="Model Info" />
   <message msgid="status 3g signal" msgstr="Signal Strength" />
-  <message msgid="status 3g attach" msgstr="Attachment State" />
+  <message msgid="status 3g attach" msgstr="SIM Card Status" />
 
   <message msgid="status ethernet port status" msgstr="Ethernet Port Status" />
 

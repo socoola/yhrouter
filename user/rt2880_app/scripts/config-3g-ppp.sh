@@ -1,5 +1,6 @@
 #!/bin/sh
 
+echo "config-3g-ppp.sh begin"
 PPP_3G_FILE=/etc_ro/ppp/peers/3g
 init=`nvram_get 2860 g3_initial_cmd`
 conn_num=`nvram_get 2860 g3_dial_num`
@@ -72,6 +73,7 @@ for arg in $*
   done
 
 PPP_3G_CONN_FILE=/etc/$CONN
+echo "user 3g conn file:"$PPP_3G_CONN_FILE
 echo "opengt" > $PPP_3G_CONN_FILE
 echo "set com 115200n81" >> $PPP_3G_CONN_FILE
 echo "set senddelay 0.05" >> $PPP_3G_CONN_FILE
@@ -81,7 +83,7 @@ echo "waitquiet 1 0.2" >> $PPP_3G_CONN_FILE
 
 
 
-if [ "$g3_dialup_device" == "HUAWEI-EM560" -o "$g3_dialup_device" == "ZTE-MU301" ]; then
+if [[ "$g3_dialup_device" == "HUAWEI-EM560" -o "$g3_dialup_device" == "ZTE-MU301" -o "$g3_dialup_device" == "F3607gw" ]]; then
 
 
 	if [ "$g3_dialup_device" == "ZTE-MU301" ];then
@@ -162,24 +164,80 @@ echo "if % = 1 goto error" >> $PPP_3G_CONN_FILE
 echo "if % = 2 goto error" >> $PPP_3G_CONN_FILE
 
 fi
-
-
-
-
 echo ":next1" >> $PPP_3G_CONN_FILE
 
+#echo -e	"waitquiet 1 0.1\n"\
+#	"putenv  \"SIMSTATE=\\\"Not Ready\\\"\"\n"\
+#	"system \"echo \$SIMSTATE >/var/sim\"\n"\
+#	"send \"AT+CPIN?\"\n"\
+#	"waitfor 5 \"READY\",\"ERR\"\n"\
+#	"if % != 0 goto error\n"\
+#	"putenv  \"SIMSTATE=Inserted\"\n"\
+#	"system \"echo \$SIMSTATE >/var/sim\"\n"\
+#	>>$PPP_3G_CONN_FILE	
+cat /etc_ro/ppp/3g/sim >>$PPP_3G_CONN_FILE	
 
-if [ "$init" != "" ]; then
-      	echo "send \"$init^m\"" >> $PPP_3G_CONN_FILE
+#echo "waitquiet 1 0.1">>$PPP_3G_CONN_FILE
+#echo "system \"echo xx>/var/signal\"" >>$PPP_3G_CONN_FILE
+#echo "send \"AT+CSQ?\"" >>$PPP_3G_CONN_FILE
+#echo "get 2 \"^m\" \$s" >>$PPP_3G_CONN_FILE
+#echo "get 2 \"^m\" \$s" >>$PPP_3G_CONN_FILE
+#echo "let a=len(\$s)" >>$PPP_3G_CONN_FILE
+#echo "let a=a-6" >>$PPP_3G_CONN_FILE
+#echo "let \$s=\$right(\$s,a)" >>$PPP_3G_CONN_FILE
+#echo "putenv \"SIGNAL=\"\$s" >>$PPP_3G_CONN_FILE
+#echo "system \"echo \$SIGNAL >/var/signal\"" >>$PPP_3G_CONN_FILE
+cat /etc_ro/ppp/3g/signal >>$PPP_3G_CONN_FILE
+
+
+user=`nvram_get 2860 G3UserName`
+password=`nvram_get 2860 G3Password`
+#if [ "$init" != "" ]; then
+	
+	if [ "$g3_dialup_device" == "GTM681W" -o "$g3_dialup_device" == "SIERRA-MC8785" ]; then
+		init="at+cgdcont=1,\\\"IP\\\",""\\\""$init"\\\""
+	elif [ "$g3_dialup_device" == "HUAWEI-EM770" ]; then
+		init="at+cgdcont=1,\\\"IP\\\",""\\\""$init"\\\""
+	elif [[ "$g3_dialup_device" == "HUAWEI-EM660" -o "$g3_dialup_device" == "KSE-360" -o "$g3_dialup_device" == "IE901D" ]]; then
+		init="at\\^pppcfg=\\\""$user"\\\",\\\""$password"\\\"" 
+	elif [[ "$g3_dialup_device" == "HUAWEI-EM560" -o "$g3_dialup_device" == "ZTE-MU301" -o "$g3_dialup_device" == "F3607gw" ]]; then
+		init="at+cgdcont=1,\\\"IP\\\",""\\\""$init"\\\""
+	elif [ "$g3_dialup_device" == "THINKWILL-MI600" ]; then
+		init="at\\^pppcfg=\\\""$user"\\\",\\\""$password"\\\"" 
+	elif [ "$g3_dialup_device" == "SYNCWISER-801/401" ]; then
+		init="at\\^pppcfg=\\\""$user"\\\",\\\""$password"\\\""
+	elif [ "$g3_dialup_device" == "LONGSUNG-C5300" ]; then
+		init="at\\^pppcfg=\\\""$user"\\\",\\\""$password"\\\""
+	elif [ "$g3_dialup_device" == "LONGSUNG-U6300/U5300" ]; then
+		init="at+cgdcont=1,\\\"IP\\\",""\\\""$init"\\\""
+	elif [ "$g3_dialup_device" == "GAORAN-280" ]; then
+		init="at+cgdcont=1,\\\"IP\\\",""\\\""$init"\\\""
+
+	elif [ "$g3_dialup_device" == "TW-W1M100" ]; then
+		init="at+cgdcont=1,\\\"IP\\\",""\\\""$init"\\\""
+	elif [ "$g3_dialup_device" == "MC5728" ]; then
+		init="at\\^pppcfg=\\\""$user"\\\",\\\""$password"\\\""
+	elif [ "$g3_dialup_device" == "SIMCOM-SIM700" ]; then
+		init="at+cgdcont=1,\\\"IP\\\",""\\\""$init"\\\""
+	elif [ "$g3_dialup_device" == "ZTE-MF210V" ]; then
+		init="at+cgdcont=1,\\\"IP\\\",""\\\""$init"\\\""
+
+	elif [ "$g3_dialup_device" == "ZX-600" ]; then
+		init="at+cgdcont=1,\\\"IP\\\",""\\\""$init"\\\""
+	else
+		init="at+cgdcont=1,\\\"IP\\\",""\\\""$init"\\\""
+	fi
+
+      	echo "send \"$init\"" >> $PPP_3G_CONN_FILE
 			echo "waitfor 10 \"OK\",\"ERR\",\"ERROR\"" >> $PPP_3G_CONN_FILE
 
 	echo "if % = -1 goto timeerror" >> $PPP_3G_CONN_FILE
 	echo "if % = 0 goto next2" >> $PPP_3G_CONN_FILE
 	echo "if % = 1 goto error" >> $PPP_3G_CONN_FILE
 	echo "if % = 2 goto error" >> $PPP_3G_CONN_FILE
-else
-	echo "goto next2" >> $PPP_3G_CONN_FILE
-fi
+#else
+	#echo "goto next2" >> $PPP_3G_CONN_FILE
+#fi
 
 
 
@@ -199,7 +257,7 @@ elif [ "$g3_dialup_device" == "HUAWEI-EM770" ]; then
         echo "if % = 0 goto next21" >> $PPP_3G_CONN_FILE
         echo "if % = 1 goto error" >> $PPP_3G_CONN_FILE
         echo "if % = 2 goto error" >> $PPP_3G_CONN_FILE
-elif [ "$g3_dialup_device" == "HUAWEI-EM660" -o "$g3_dialup_device" == "KSE-360" -o "$g3_dialup_device" == "IE901D" ]; then
+elif [[ "$g3_dialup_device" == "HUAWEI-EM660" -o "$g3_dialup_device" == "KSE-360" -o "$g3_dialup_device" == "IE901D" ]]; then
         echo "config-3g-ppp.sh:use  device HUAWEI-EM660  or kse-360 or ie901d"
         echo "send \"AT\\^PREFMODE=$WLNETWORK\"" >> $PPP_3G_CONN_FILE
         echo "waitfor 10 \"OK\",\"ERR\",\"ERROR\"" >> $PPP_3G_CONN_FILE
@@ -207,8 +265,8 @@ elif [ "$g3_dialup_device" == "HUAWEI-EM660" -o "$g3_dialup_device" == "KSE-360"
         echo "if % = 0 goto next21" >> $PPP_3G_CONN_FILE
         echo "if % = 1 goto error" >> $PPP_3G_CONN_FILE
         echo "if % = 2 goto error" >> $PPP_3G_CONN_FILE
-elif [ "$g3_dialup_device" == "HUAWEI-EM560" -o "$g3_dialup_device" == "ZTE-MU301" ]; then
-        echo "config-3g-ppp.sh:use  device HUAWEI-EM560  or ZTE-MU301"
+elif [[ "$g3_dialup_device" == "HUAWEI-EM560" -o "$g3_dialup_device" == "ZTE-MU301" -o "$g3_dialup_device" == "F3607gw" ]]; then
+        echo "config-3g-ppp.sh:use  device HUAWEI-EM560  or ZTE-MU301 or F3607gw"
         echo "send \"AT\\^SYSCONFIG=$WLNETWORK,0,1,2\"" >> $PPP_3G_CONN_FILE
         echo "waitfor 10 \"OK\",\"ERR\",\"ERROR\"" >> $PPP_3G_CONN_FILE
         echo "if % = -1 goto timeerror" >> $PPP_3G_CONN_FILE
@@ -371,8 +429,8 @@ else
 	echo "disconnect \"/bin/comgt -d $MODEM -s /etc_ro/ppp/3g/$DISCONN\"" >> $PPP_3G_FILE
 fi
 
-
-
+cat /etc_ro/ppp/3g/sim >>/etc_ro/ppp/3g/$DISCONN	
+cat /etc_ro/ppp/3g/signal >>/etc_ro/ppp/3g/$DISCONN	
 
 
 if [ "$auth_type" == "0" ];then 
@@ -387,4 +445,4 @@ elif [ "$auth_type" == "1" ];then
 	echo "$user_for_auth * $pwd_for_auth  " > /etc_ro/ppp/chap-secrets
 	chmod 700 /etc_ro/ppp/chap-secrets
 fi
-
+echo "config-3g-ppp.sh end"

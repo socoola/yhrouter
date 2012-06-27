@@ -4,8 +4,8 @@
 <link rel="stylesheet" href="/css/normal_ws.css" type="text/css">
 <link rel="stylesheet" href="/css/boxStyle.css" type="text/css">
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
-<script type="text/javascript" src="/js/b28n.js"></script>
-<META HTTP-EQUIV="refresh" CONTENT="10"; URL=./status.asp">
+<script type="text/javascript" src="/lang/b28n.js"></script>
+<META HTTP-EQUIV="refresh" CONTENT="60"; URL=./status.asp">
 
 <script language="JavaScript" type="text/javascript">
 Butterlate.setTextDomain("admin");
@@ -78,8 +78,8 @@ function initTranslation()
 	e.innerHTML = _("status system information");
    e = document.getElementById("statusProMo");
    e.innerHTML = _("status product model");
-    e = document.getElementById("statusDeviceID");
-	e.innerHTML = _("router S/N");
+    //e = document.getElementById("statusDeviceID");
+	//e.innerHTML = _("router S/N");
    e = document.getElementById("statusHrdVersion");
 	e.innerHTML = _("status hrdw version");
 	e = document.getElementById("statusSDKVersion");
@@ -125,6 +125,18 @@ function initTranslation()
 	e.innerHTML = _("status local netmask");
 	e = document.getElementById("statusLANMAC");
 	e.innerHTML = _("status lanmac");
+	
+	e = document.getElementById("modelType");
+	e.innerHTML = _("status modelType");
+	
+	
+	e = document.getElementById("help_head");
+	e.innerHTML = _("help help_head");
+	e = document.getElementById("status_direc");
+	e.innerHTML = _("status status_direc");
+	
+	e = document.getElementById("imei");
+	e.innerHTML = _("status imei");
 
 //	e = document.getElementById("statusEthPortStatus");
 	//e.innerHTML = _("status ethernet port status");
@@ -149,6 +161,8 @@ function PageInit()
 		//document.getElementById("div_ethtool").style.visibility = "hidden";
 		//document.getElementById("div_ethtool").style.display = "none";
 	}	
+	
+	getModelType();
 }
 </script>
 </head>
@@ -169,44 +183,170 @@ function PageInit()
 <H1 id="statusTitle">Access Point Status</H1>
 <!--<P id="statusIntroduction">Let's take a look at the status of 3G Router </P>-->
 <hr /><br/>
+
+<style type="text/css">
+	legend{
+		text-align:left;
+		color:#3A587A;
+		font-weight:bold
+	}	
+	
+</style>
+<fieldset>
+	<legend><span class="title" id="statusSysInfo">System Info</span></legend>
+	<table width="540" border="0" cellpadding="2" cellspacing="1">
+		<tr>
+		  
+		</tr>
+		<tr>
+		    <td class="head" id="statusProMo">Product Model</td>
+		    <td>Mobile Router</td>
+		<!--
+		    <td>R8</td>
+		<tr>
+		  <td class="head" id="statusDeviceID">Device ID</td>
+		  <td><% getDeviceID(); %> </td>
+		</tr>
+		-->
+		</tr>
+		<tr>
+		  <td class="head" id="statusHrdVersion">Hardware Version</td>
+		  <td><% getHrdVersion(); %> </td>
+		</tr>
+		<tr>
+		  <td class="head" id="statusSDKVersion">SDK Version</td>
+		  <td><% getSdkVersion(); %> (<% getSysBuildTime(); %>)</td>
+		</tr>
+		
+		
+		<tr>
+		  <td class="head" id="statusSysUpTime">System Up Time</td>
+		  <td><% getSysUptime(); %></td>
+		</tr>
+		<!--<tr>
+		  <td class="head" id="statusSysPlatform">System Platform</td>
+		  <td><% getPlatform(); %></td>
+		</tr>-->
+		<tr>
+		  <td class="head" id="statusOPMode">Operation Mode</td>
+		  <td><script type="text/javascript">showOpMode();</script></td>
+		</tr>
+	</table>
+</fieldset><br/>
+<fieldset>
+	<legend><span class="title" id="status3gStatus">3G Status</span></legend>
+	<table width="540" border="0" cellpadding="2" cellspacing="1">
+		<tr>
+		  
+		</tr>
+		<tr>
+		  <td class="head" id="status3gSignal">Signal</td>
+		  <td><% get3gSignal(); %></td>
+		</tr>
+		<tr>
+		  <td class="head" id="status3gAttach">Attach State</td>
+		  <td><% getSimState(); %></td>
+		</tr>
+		
+		<script type="text/javascript">
+			
+			function getModelType(){
+				var dev_3g = "<% getCfgGeneral(1, "wan_3g_dev"); %>";
+			//	document.getElementById("MoType").innerHTML;
+			if (dev_3g == "HUAWEI-EM560")
+					document.getElementById("MoType").innerHTML = "HUAWEI-EM560";
+				else if (dev_3g == "HUAWEI-EM660")
+					document.getElementById("MoType").innerHTML = "HUAWEI-EM660";
+				else if (dev_3g == "HUAWEI-EM770")
+					document.getElementById("MoType").innerHTML = "HUAWEI-EM770";
+				else if (dev_3g == "SYNCWISER-801/401")
+					document.getElementById("MoType").innerHTML = "SYNCWISER-801/401";
+				else if (dev_3g == "LONGSUNG-U6300/U5300")
+					document.getElementById("MoType").innerHTML = "LONGSUNG-U6300/U5300";
+				else if (dev_3g == "MC5728")
+					document.getElementById("MoType").innerHTML = "MC5728";
+				else if (dev_3g == "F3607gw")
+					document.getElementById("MoType").innerHTML = "Ericsson F3607gw";
+				else if (dev_3g == "ZTE-MF210V")
+					document.getElementById("MoType").innerHTML = "ZTE-MF210V";
+		    else if (dev_3g == "SIERRA-MC8785")
+		    	document.getElementById("MoType").innerHTML = "SIERRA-MC8785";
+		    else if (dev_3g == "MC8785")
+		    	document.getElementById("MoType").innerHTML = "Serria MC8785";
+				else
+					document.getElementById("MoType").innerHTML = "NO MODEM";
+				}
+		</script>
+		
+		<tr>
+			<td id="modelType">Model Type</td>	
+			<td id="MoType"><% getCfgGeneral(1, "wan_3g_dev"); %></td>	
+		</tr>
+		<tr>
+			<td id="imei">IMEI</td>
+			<td><% getDeviceID(); %></td>
+		</tr>
+	</table>
+</fieldset><br/>
+<fieldset>
+	<legend><span class="title" id="statusLocalNet">Local Network</span></legend>
+	<table width="540" border="0" cellpadding="2" cellspacing="1">
+		<tr>
+		  
+		</tr>
+		<tr>
+		  <td class="head" id="statusLANIPAddr">Local IP Address</td>
+		  <td><% getLanIp(); %></td>
+		</tr>
+		<tr>
+		  <td class="head" id="statusLocalNetmask">Local Netmask</td>
+		  <td><% getLanNetmask(); %></td>
+		</tr>
+		<tr>
+		  <td class="head" id="statusLANMAC">MAC Address</td>
+		  <td><% getLanMac(); %></td>
+		</tr>
+	</table>
+</fieldset><br/>
+<fieldset>
+	<legend><span class="title" colspan="2" id="statusInternetConfig">Internet Configurations</span></legend>
+	<table width="540" border="0" cellpadding="2" cellspacing="1">
+		<tr>
+		  
+		</tr>
+		<tr>
+		  <td class="head" id="statusConnectedType">Connected Type</td>
+		  <td><!--<% get3gAttachState(); %> --> <% getCfgGeneral(1, "g3_operator_name"); %> </td>
+		</tr>
+		<tr>
+		  <td class="head" id="statusWANIPAddr">WAN IP Address</td>
+		  <td><% getWanIp(); %></td>
+		</tr>
+		<tr>
+		  <td class="head" id="statusSubnetMask">Subnet Mask</td>
+		  <td><% getWanNetmask(); %></td>
+		</tr>
+		<tr>
+		  <td class="head" id="statusDefaultGW">Default Gateway</td>
+		  <td><% getWanGateway(); %></td>
+		</tr>
+		<tr>
+		  <td class="head" id="statusPrimaryDNS">Primary Domain Name Server</td>
+		  <td><% getDns(1); %></td>
+		</tr>
+		<tr>
+		  <td class="head" id="statusSecondaryDNS">Secondary Domain Name Server</td>
+		  <td><% getDns(2); %></td>
+		</tr>
+		<tr>
+		  <td class="head" id="statusWANMAC">MAC Address</td>
+		  <td><% getWanMac(); %></td>
+		</tr>
+	</table>
+</fieldset>
 <table width="540" border="0" cellpadding="2" cellspacing="1">
 <!-- ================= System Info ================= -->
-<tr>
-  <td class="title" colspan="2" id="statusSysInfo">System Info</td>
-</tr>
-<tr>
-    <td class="head" id="statusProMo">Product Model</td>
-    <td>Mobile Router</td>
-<!--
-    <td>R8</td>
--->
-<tr>
-  <td class="head" id="statusDeviceID">Device ID</td>
-  <td><% getDeviceID(); %> </td>
-</tr>
-</tr>
-<tr>
-  <td class="head" id="statusHrdVersion">Hardware Version</td>
-  <td><% getHrdVersion(); %> </td>
-</tr>
-<tr>
-  <td class="head" id="statusSDKVersion">SDK Version</td>
-  <td><% getSdkVersion(); %> (<% getSysBuildTime(); %>)</td>
-</tr>
 
-
-<tr>
-  <td class="head" id="statusSysUpTime">System Up Time</td>
-  <td><% getSysUptime(); %></td>
-</tr>
-<!--<tr>
-  <td class="head" id="statusSysPlatform">System Platform</td>
-  <td><% getPlatform(); %></td>
-</tr>-->
-<tr>
-  <td class="head" id="statusOPMode">Operation Mode</td>
-  <td><script type="text/javascript">showOpMode();</script></td>
-</tr>
 <!--<tr>
   <td class="head" id="status3gSN">SN</td>
   <td><% get3gSN(); %></td>
@@ -217,38 +357,14 @@ function PageInit()
 </tr>
 -->
 
-<tr>
-  <td class="title" colspan="2" id="status3gStatus">3G Status</td>
-</tr>
-<tr>
-  <td class="head" id="status3gSignal">Signal</td>
-  <td><% get3gSignal(); %></td>
-</tr>
-<tr>
-  <td class="head" id="status3gAttach">Attach State</td>
-  <td><% get3gAttachState(); %></td>
-</tr>
+
 <!--
 <tr>
   <td class="head" id="status3gESN">ESN</td>
 </tr>
 -->
 <!-- ================= Local Network ================= -->
-<tr>
-  <td class="title" colspan="2" id="statusLocalNet">Local Network</td>
-</tr>
-<tr>
-  <td class="head" id="statusLANIPAddr">Local IP Address</td>
-  <td><% getLanIp(); %></td>
-</tr>
-<tr>
-  <td class="head" id="statusLocalNetmask">Local Netmask</td>
-  <td><% getLanNetmask(); %></td>
-</tr>
-<tr>
-  <td class="head" id="statusLANMAC">MAC Address</td>
-  <td><% getLanMac(); %></td>
-</tr>
+
 <!-- ================= Other Information ================= -->
 </table>
 
@@ -270,37 +386,7 @@ function PageInit()
 -->
 <table width="540" border="0" cellpadding="2" cellspacing="1">
 <!-- ================= Internet Configurations ================= -->
-<tr>
-  <td class="title" colspan="2" id="statusInternetConfig">Internet Configurations</td>
-</tr>
-<tr>
-  <td class="head" id="statusConnectedType">Connected Type</td>
-  <td><% getCfgGeneral(1, "wanConnectionMode"); %> </td>
-</tr>
-<tr>
-  <td class="head" id="statusWANIPAddr">WAN IP Address</td>
-  <td><% getWanIp(); %></td>
-</tr>
-<tr>
-  <td class="head" id="statusSubnetMask">Subnet Mask</td>
-  <td><% getWanNetmask(); %></td>
-</tr>
-<tr>
-  <td class="head" id="statusDefaultGW">Default Gateway</td>
-  <td><% getWanGateway(); %></td>
-</tr>
-<tr>
-  <td class="head" id="statusPrimaryDNS">Primary Domain Name Server</td>
-  <td><% getDns(1); %></td>
-</tr>
-<tr>
-  <td class="head" id="statusSecondaryDNS">Secondary Domain Name Server</td>
-  <td><% getDns(2); %></td>
-</tr>
-<tr>
-  <td class="head" id="statusWANMAC">MAC Address</td>
-  <td><% getWanMac(); %></td>
-</tr>
+
 </table>
 <br>
 </td></tr></table>
@@ -313,9 +399,9 @@ function PageInit()
 
 <td class="tdwidth2" id="td2"><!--start of td2-->
 	<div id="right"><!--start of right-->
-		<h2 id="help_head">Heeelp...<a href="#">more</a></h2>
+		<h2 id="help_head">Heeelp...</h2>
 		
-		<p id="help_content">Something provide help........</p>
+		<p id="help_content"><span id="status_direc"></span></p>
 	</div><!--end of right-->
 </td><!--end of td2-->
 </tr><!--end of layout tr-->

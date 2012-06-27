@@ -1,5 +1,53 @@
 ﻿<po>
 	
+	<message msgid="ppoe ppoe_keep" msgstr="永久在线：重拨间隔" />
+	<message msgid="ppoe ppoe_sec" msgstr="秒" />
+	<message msgid="ppoe ppoe_demand" msgstr="按需在线：空闲时间" />
+	<message msgid="ppoe ppoe_min" msgstr="分" />
+	
+	<message msgid="linkbackup linkbackup_direc" msgstr="路由备份功能仅限于1WAN4LAN系列路由器。用户可根据需要设置网络优先级。启用备份功能前，请在WAN口配置界面设置好各项参数。" />
+	
+	<message msgid="dtu dtu_direc1" msgstr="DTU连接方式有服务器和客户端两种：" />
+	<message msgid="dtu dtu_direc2" msgstr="1. 当启用客户端模式时，请至少在数据中心配置表里应至少设置一个中心服务器IP地址和端口。" />
+	<message msgid="dtu dtu_direc3" msgstr="2. 当启用服务器模式时，应在dtu server port 处设置端口号。" />
+	<message msgid="snmp snmp_direc1" msgstr="SNMP设置：" />
+	<message msgid="snmp snmp_direc2" msgstr="联系：输入路由器相关的联系人名称" />
+	<message msgid="snmp snmp_direc3" msgstr="位置：设置路由器安装的位置名称" />
+	<message msgid="snmp snmp_direc4" msgstr="SNMP版本选择：根据当前使用选择V1/V2c 或者V3版本。" />
+	<message msgid="snmp snmp_direc5" msgstr="用户：设置共同体名称，如：public" />
+	<message msgid="snmp snmp_direc6" msgstr="主机/网段：设置SNMP功能的端口IP。默认any (0.0.0.0/0)" />
+	
+	<message msgid="routing routing_direc1" msgstr="1.网关IP地址必须是与本路由器LAN口IP属于同一个网段。" />
+	<message msgid="routing routing_direc2" msgstr="2.如果目标IP地址是一台主机IP地址，则子网掩码必须要为255.255.255.255。" />
+	<message msgid="routing routing_direc3" msgstr="3.如果目标IP地址为IP网段，则须与子网掩码匹配。例如，如果目的IP为192.0.0.0，子网掩码为255.0.0.0。" />
+	<message msgid="dhcp dhcp_direc" msgstr="显示连接路由器的设备名称" />
+	<message msgid="lan lan_direc" msgstr="修改路由器登陆IP地址。" />
+	<message msgid="help help_head" msgstr="帮助" />
+	<message msgid="wan wan_direc2" msgstr="网络名称：选择网络类型。填写接入点参数。连接模式：选择路由器连接模式：永久在线，按需在线，按时在线。" />
+	<message msgid="wan wan_direc1" msgstr="广域网连接模式：静态IP，动态IP，PPPOE拨号，Mobile Modem。" />
+	<message msgid="dtu hbSta1" msgstr="启用" />
+	<message msgid="dtu hbSta2" msgstr="停用" />
+	<message msgid="wan connNode" msgstr="连接模式" />
+	<message msgid="wan firAlive" msgstr="永久在线" />
+	<message msgid="wan secDmd" msgstr="按需在线" />
+	<message msgid="wan thdTime" msgstr="按时在线" />
+	<message msgid="wan idT" msgstr="动态需求：自动断线等待时间" />
+	<message msgid="wan idTm" msgstr="分" />
+	
+	<message msgid="wan exam" msgstr="例如：15:50---22：30，在管理页面中，设置NTP服务器，然后使用。" />
+	
+	<message msgid="dtu heartBeatService" msgstr="心跳状态" />
+	<message msgid="dtu heartbeatData" msgstr="心跳内容" />
+	<message msgid="wan resetbutton" msgstr="重置" />
+	<message msgid="pppoe AliveMode" msgstr="永久在线：重拨时间" />
+	<message msgid="ppoe OnDemand" msgstr="动态需求：自动断线等待时间" />
+	<message msgid="pppoe Seconds" msgstr="秒" />
+	<message msgid="pppoe Minutes" msgstr="分" />
+	
+	<message msgid="" msgstr="确定" />
+	<message msgid="inet connect mode" msgstr="连接模式" />
+	
+	
 	<message msgid="wan 3G localip" msgstr="3G local IP" />
 	<message msgid="Server Name" msgstr="服务器" />
 	  <message msgid="Ip Address" msgstr="IP地址" />
@@ -14,9 +62,11 @@
 	
 	<message msgid="always on line" msgstr="自动连接" />
 	
-	<message msgid="On Demand, idle time is" msgstr="按需连接，有访问时自动连接，自动断线等待时间：" />
+	<message msgid="inet connmode ondmand" msgstr="自动断线等待时间" />
 	<message msgid="On Time,example:15:50---22:30 ,set NTP Server in management page before used" msgstr="定时连接，例如：15:50---22:30，使用前设置NTP服务器管理页面" />
-	<message msgid="minutes" msgstr="分钟（0表示不自动断线）" />
+	<message msgid="inet connmode ondmandminutes" msgstr="分钟" />
+	<message msgid="inet connmode G3TimePeriodsTable" msgstr="例如：15:50---22：30，在管理页面中，设置NTP服务器，然后使用。" />
+	<message msgid="button g3connectbtn" msgstr="连接" />
 	<message msgid="period connected" msgstr="定时连接" />
 	<message msgid="manual connect" msgstr="手动连接" />
 	
@@ -52,11 +102,11 @@
   <message msgid="wan connection type pppoe" msgstr="PPPOE" />
   <message msgid="wan connection type l2tp" msgstr="L2TP" />
   <message msgid="wan connection type pptp" msgstr="PPTP" />
-  <message msgid="wan protocol opmodes" msgstr="连接模式" />
-  <message msgid="wan protocol opmode keepalive" msgstr="永久连线" />
-  <message msgid="wan protocol opmode ondemand" msgstr="动态需求" />
+  <message msgid="wan protocol opmode" msgstr="连接模式" />
+  <message msgid="wan protocol opmode keepalive" msgstr="永久在线" />
+  <message msgid="wan protocol opmode ondemand" msgstr="按需在线" />
   <message msgid="wan protocol opmode manual" msgstr="手动" />
-  <message msgid="wan protocol opmode ontime" msgstr="按时拨号" />
+  <message msgid="wan protocol opmode ontime" msgstr="按时在线" />
 
   <message msgid="wan static mode" msgstr="静态模式" />
   <message msgid="wan dhcp mode" msgstr="DHCP 模式" />
@@ -81,6 +131,7 @@
   <message msgid="wan 3G UseComp" msgstr="Enable" />
   <message msgid="wan 3G AddMSP" msgstr="添加到列表" />
   <message msgid="wan 3G SelDft" msgstr="提交" />
+  <message msgid="refresh button" msgstr="确定" />
   <message msgid="wan 3G DelMSP" msgstr="删除" />
   <message msgid="wan 3G mspdel" msgstr="操作" />
   <message msgid="wan address mode" msgstr="IP 地址模式" />
@@ -125,11 +176,11 @@
   <message msgid="routing routing dest" msgstr="目标IP住址" />
   <message msgid="routing range" msgstr="类型" />
   <message msgid="routing netmask" msgstr="子网掩码" />
-  <message msgid="routing gateway" msgstr="闸道器IP住址" />
+  <message msgid="routing gateway" msgstr="网关IP住址" />
   <message msgid="routing interface" msgstr="网络接口" />
   <message msgid="routing custom" msgstr="自定义" />
   <message msgid="routing comment" msgstr="注解" />
-  <message msgid="routing submit" msgstr="提交" />
+  <message msgid="routing submit" msgstr="确定" />
   <message msgid="routing reset" msgstr="重置" />
   <message msgid="routing Number" msgstr="編号" />
   <message msgid="routing del title" msgstr="当前的路由规则" />
@@ -224,9 +275,9 @@
   <message msgid="dtu center 2" msgstr="服务端2" />
   <message msgid="dtu center 3" msgstr="服务端3" />
   <message msgid="dtu center 4" msgstr="服务端4" />
-  <message msgid="dtu heart time" msgstr="心跳时间" />
+  <message msgid="dtu heart time" msgstr="心跳发送间隔" />
   <message msgid="dtu heart info" msgstr="心跳信息" />
-  <message msgid="dtu send data time" msgstr="发送数据超时时间" />
+  <message msgid="dtu send data time" msgstr="数据发送超时时间" />
 <message msgid="dtu off heart after nodata select" msgstr="当没接收到串口数据停止发心跳" />
  <message msgid="dtu off heart delay time" msgstr="停止发心跳延时时间" /> 
 

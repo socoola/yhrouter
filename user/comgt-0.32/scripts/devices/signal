@@ -1,0 +1,23 @@
+let c=0
+system "echo \"No signal\" >/var/signal"
+:signal
+    let c=c+1
+    waitquiet 10 0.5
+    send "AT+CSQ^m"
+    get 2 ":" $s
+    if % != 0 goto signalerror
+    let a=len($s)
+    if a < 4 goto signalerror
+    let $s=$right($s,4)
+    print $s"\n"
+    if $s!="+CSQ" goto signalerror
+    get 2 "^m" $s
+    if % != 0 goto signalerror
+    print $s  
+    goto signalok
+:signalerror
+    if c <= 3 print "error and continue\n" goto signal
+    else goto error
+:signalok
+    putenv "SIGNAL="$s
+    system "echo $SIGNAL>/var/signal"

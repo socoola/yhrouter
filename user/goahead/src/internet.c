@@ -30,6 +30,9 @@
 #include      "qos.h"
 #endif
 
+static char wan_3g_signal[128] = "No Signal";
+static char wan_3g_sim[128] = "Not Ready";
+
 static int getMeshBuilt(int eid, webs_t wp, int argc, char_t **argv);
 static int getWDSBuilt(int eid, webs_t wp, int argc, char_t **argv);
 static int getWSCBuilt(int eid, webs_t wp, int argc, char_t **argv);
@@ -993,138 +996,66 @@ static int getWanGateway(int eid, webs_t wp, int argc, char_t **argv)
 		return websWrite(wp, T(""));
 }
 
+static char* get3gSignal_not_web(char *buf, int buflen);
 static int get3gSignal(int eid, webs_t wp, int argc, char_t **argv)
 {
-	FILE   *stream;
-	static char   buf[128];
-	static int get_count=-1;
-	char*pdev;
-	
-	get_count++;
-	if(get_count%10){
-    		return websWrite(wp, buf);
-	}else{
-		get_count=0;
-	}
+	char   buff[256];
+	char *pos;
 
-
-
-
-    pdev = nvram_bufget(RT2860_NVRAM, "wan_3g_dev"); 
-    memset( buf, '\0', sizeof(buf) );//初始化buf,以免后面写如乱码到文件中
- //   stream = popen( "comgt -d /dev/ttyUSB2 -s /etc_ro/ppp/3g/signal.scr", "r" ); //将�?�ls －l”命令的输出 通过管道读取（�?�r”参数）到FILE* stream
-
-
-	if((strcmp(pdev,"MC5728")==0)||(strcmp(pdev,"SIMCOM-SIM700")==0)||(strcmp(pdev,"GTM681W")==0)){
-		return websWrite(wp, "&nbsp;");
-	}
-
-	if(strcmp(pdev, "HUAWEI-EM560") == 0)
+	FILE *fp = fopen("/var/signal", "r");
+	if(fp)
 	{
-	//	stream=popen("3GInfo -d /dev/ttyACM2 -s","r");
-		//stream=popen("comgt -d /dev/ttyACM2 -s /etc_ro/ppp/3g/signal.scr","r");
-		stream=popen("3GInfo -d /dev/ttyACM2 ","r");
-	}
-	else if(strcmp(pdev, "HUAWEI-EM660") == 0)
-	{
-		stream=popen("3GInfo -d /dev/ttyUSB2 -m 0-31","r");
-	}
-	else if(strcmp(pdev, "IE901D") == 0)
-        {
-                stream=popen("3GInfo -d /dev/ttyUSB1 -m 0-31","r");
-        }
-
-	else if(strcmp(pdev, "HUAWEI-EM770") == 0)
-	{
-		stream=popen("3GInfo -d /dev/ttyUSB2 -m 0-31","r");
-	}
-	else if(strcmp(pdev,"THINKWILL-MI600")==0)
-	{
-		//stream=popen("comgt -d /dev/ttyUSB4 -s /etc_ro/ppp/3g/signal.scr","r");
-		stream=popen("3GInfo -d /dev/ttyUSB4 -m 0-31","r"); //-m signal range
-	}
-	else if(strcmp(pdev,"SYNCWISER-801/401")==0)
-	{
-		stream=popen("3GInfo -d /dev/ttyUSB2 -c AT*ST*INFO? -m 1-5 ","r"); //-m signal range
-	}
-	else if(strcmp(pdev,"LONGSUNG-C5300")==0)
-	{
-		stream=popen("3GInfo -d /dev/ttyUSB3  -m 0-31 ","r"); //-m signal range
-	}
-	else if(strcmp(pdev,"LONGSUNG-U6300/U5300")==0)
-	{
-		stream=popen("3GInfo -d /dev/ttyUSB1  -m 0-31 ","r"); //-m signal range
-	}
-	else if(strcmp(pdev,"GAORAN-280")==0)
-	{
-		stream=popen("3GInfo -d /dev/ttyUSB3  -m 0-31 ","r"); //-m signal range
-	}
-	else if(strcmp(pdev,"TW-W1M100")==0)
-	{
-		stream=popen("3GInfo -d /dev/ttyUSB1  -m 0-31 ","r"); //-m signal range
-	}
-	else if(strcmp(pdev,"ZTE-MU301")==0)
-	{
-		stream=popen("3GInfo -d /dev/ttyUSB2","r"); //-m signal range
-	}
-	else if(strcmp(pdev,"ZTE-MF210V")==0)
-	{
-		//stream=popen("3GInfo -d /dev/ttyUSB2  -m 0-31 ","r"); //-m signal range MF210V
-		stream=popen("3GInfo -d /dev/ttyUSB1  -m 0-31 ","r"); //-m signal range  MF210
-	}
-	else if(strcmp(pdev,"KSE-360")==0)
-	{
-		stream=popen("3GInfo -d /dev/ttyUSB1 -m 0-31 ","r"); //-m signal range
-	}
-	else if(strcmp(pdev,"ZX-600")==0)
-	{
-		stream=popen("3GInfo -d /dev/ttyUSB2 -m 0-31 ","r"); //-m signal range
+		if (fgets(buff, sizeof(buff), fp) != NULL) {
+			pos = strchr(buff, ',');
+			if((pos != NULL) && (*pos == ','))
+			{
+				fclose(fp);
+				sprintf(pos, ",(0-31)");
+				return websWrite(wp, buff);
+			}
+		}
+		fclose(fp);
 	}
 	
-         else if(strcmp(pdev,"SIERRA-MC8785")==0)
-        {
-                stream=popen("3GInfo -d /dev/ttyUSB3 -m 0-31 ","r"); //-m signal range
-
-        }
-
-	else 
+    return websWrite(wp, "No Signal");
+    /*
+    pos = get3gSignal_not_web(buff, sizeof(buff));
+	if(pos != NULL)
 	{
-		stream=popen("3GInfo -d /dev/ttyUSB2","r");
+		printf("%s:%s\r\n", buff, pos);
+		return websWrite(wp, buff);
 	}
-
-    fread( buf, sizeof(char), sizeof(buf), stream); //将刚刚FILE* stream的数据流读取到buf�?  
-	  pclose( stream );  
-
-/*	
-//	if((buf[0] == NULL)||(strlen(buf)>7))
-	if((buf[0] == NULL)||(strlen(buf)>7))
-	{
-		strcpy(buf, T("&nbsp;"));
-	}
-*/
-    return websWrite(wp, buf);
+ 
+	return websWrite(wp, "No Signal");
+	*/
 }
 
 static int getSimState(int eid, webs_t wp, int argc, char_t **argv)
 {
-	FILE   *stream;
-	char   buf[128];
+	char   buff[256];
+	char *pos;
 
-	buf[0] = 0;
-	stream=popen("comgt -d /dev/yh -s /etc_ro/ppp/3g/sim.scr","r");
-	if(stream)
+	FILE *fp = fopen("/var/sim", "r");
+	if(fp)
 	{
-		fread( buf, sizeof(char), sizeof(buf), stream); 
-		pclose( stream ); 
+		if (fgets(buff, sizeof(buff), fp) != NULL) {
+			return websWrite(wp, buff);
+		}
+		fclose(fp);
 	}
-
-	if((buf[0] == NULL)||(strlen(buf)>20))
+	return websWrite(wp, "Not Ready");
+	/*
+	pos = get3gSignal_not_web(buff, sizeof(buff));
+	if(pos != NULL)
 	{
-		strcpy(buf, T("Not Ready"));
+		printf("%s:%s\r\n", buff, pos);
+		return websWrite(wp, buff);
 	}
-	
-	return websWrite(wp, buf);
+ 
+	return websWrite(wp, "No Signal");
+	*/
 }
+
 
 static int get3gAttachState(int eid, webs_t wp, int argc, char_t **argv)
 {
@@ -1394,14 +1325,22 @@ static int getDeviceID(int eid, webs_t wp, int argc, char_t **argv)
 	
 	FILE*fp;
 	char buf[20];
+
+	system("");
+	if((fp=popen("comgt -d /dev/yh -s /etc_ro/ppp/3g/imei","r"))==NULL){
 		
-	if((fp=popen("get_dev_id","r"))==NULL){
-		
-		return websWrite(wp, T(""));
+		return websWrite(wp, T("can not read"));
 	}	
 	memset(buf,0,sizeof(buf));
-	fgets(buf,sizeof(buf),fp);
-	if(fp) pclose(fp);
+	while(fgets(buf,sizeof(buf),fp) != NULL)
+	{
+		if(!isspace(buf[0]))
+		{
+			break;
+		}
+	}
+	if(fp) 
+		pclose(fp);
     return websWrite(wp, buf);
 }
 
@@ -2014,6 +1953,110 @@ static void dynamicRouting(webs_t wp, char_t *path, char_t *query)
 	websDone(wp, 200);
 }
 
+static char* get3gSignal_not_web(char *buf, int buflen)
+{
+	FILE   *stream;
+	char*pdev;
+
+    pdev = nvram_bufget(RT2860_NVRAM, "wan_3g_dev"); 
+    memset( buf, '\0', buflen );//初始化buf,以免后面写如乱码到文件中
+ //   stream = popen( "comgt -d /dev/ttyUSB2 -s /etc_ro/ppp/3g/signal.scr", "r" ); //将�?�ls －l”命令的输出 通过管道读取（�?�r”参数）到FILE* stream
+
+
+	if((strcmp(pdev,"MC5728")==0)||(strcmp(pdev,"SIMCOM-SIM700")==0)||(strcmp(pdev,"GTM681W")==0)){
+		return NULL;
+	}
+
+	if(strcmp(pdev, "HUAWEI-EM560") == 0)
+	{
+	//	stream=popen("3GInfo -d /dev/ttyACM2 -s","r");
+		//stream=popen("comgt -d /dev/ttyACM2 -s /etc_ro/ppp/3g/signal.scr","r");
+		stream=popen("3GInfo -d /dev/ttyACM2 ","r");
+	}
+	else if(strcmp(pdev, "HUAWEI-EM660") == 0)
+	{
+		stream=popen("3GInfo -d /dev/ttyUSB2 -m 0-31","r");
+	}
+	else if(strcmp(pdev, "IE901D") == 0)
+        {
+                stream=popen("3GInfo -d /dev/ttyUSB1 -m 0-31","r");
+        }
+
+	else if(strcmp(pdev, "HUAWEI-EM770") == 0)
+	{
+		stream=popen("3GInfo -d /dev/ttyUSB2 -m 0-31","r");
+	}
+	else if(strcmp(pdev,"THINKWILL-MI600")==0)
+	{
+		//stream=popen("comgt -d /dev/ttyUSB4 -s /etc_ro/ppp/3g/signal.scr","r");
+		stream=popen("3GInfo -d /dev/ttyUSB4 -m 0-31","r"); //-m signal range
+	}
+	else if(strcmp(pdev,"SYNCWISER-801/401")==0)
+	{
+		stream=popen("3GInfo -d /dev/ttyUSB2 -c AT*ST*INFO? -m 1-5 ","r"); //-m signal range
+	}
+	else if(strcmp(pdev,"LONGSUNG-C5300")==0)
+	{
+		stream=popen("3GInfo -d /dev/ttyUSB3  -m 0-31 ","r"); //-m signal range
+	}
+	else if(strcmp(pdev,"LONGSUNG-U6300/U5300")==0)
+	{
+		stream=popen("3GInfo -d /dev/ttyUSB1  -m 0-31 ","r"); //-m signal range
+	}
+	else if(strcmp(pdev,"GAORAN-280")==0)
+	{
+		stream=popen("3GInfo -d /dev/ttyUSB3  -m 0-31 ","r"); //-m signal range
+	}
+	else if(strcmp(pdev,"TW-W1M100")==0)
+	{
+		stream=popen("3GInfo -d /dev/ttyUSB1  -m 0-31 ","r"); //-m signal range
+	}
+	else if(strcmp(pdev,"ZTE-MU301")==0)
+	{
+		stream=popen("3GInfo -d /dev/ttyUSB2","r"); //-m signal range
+	}
+	else if(strcmp(pdev,"ZTE-MF210V")==0)
+	{
+		//stream=popen("3GInfo -d /dev/ttyUSB2  -m 0-31 ","r"); //-m signal range MF210V
+		stream=popen("3GInfo -d /dev/ttyUSB1  -m 0-31 ","r"); //-m signal range  MF210
+	}
+	else if(strcmp(pdev,"KSE-360")==0)
+	{
+		stream=popen("3GInfo -d /dev/ttyUSB1 -m 0-31 ","r"); //-m signal range
+	}
+	else if(strcmp(pdev,"ZX-600")==0)
+	{
+		stream=popen("3GInfo -d /dev/ttyUSB2 -m 0-31 ","r"); //-m signal range
+	}
+	
+         else if(strcmp(pdev,"SIERRA-MC8785")==0)
+        {
+                stream=popen("3GInfo -d /dev/ttyUSB3 -m 0-31 ","r"); //-m signal range
+
+        }
+
+	else 
+	{
+		stream=popen("3GInfo -d /dev/ttyUSB2","r");
+	}
+
+    fread( buf, sizeof(char), sizeof(buf), stream); //将刚刚FILE* stream的数据流读取到buf�?  
+	  pclose( stream );  
+	printf("%s\r\n", buf);
+	if((buf[0] < '0') || (buf[0] > '9'))
+	{
+		return NULL;
+	}
+
+/*	
+//	if((buf[0] == NULL)||(strlen(buf)>7))
+	if((buf[0] == NULL)||(strlen(buf)>7))
+	{
+		strcpy(buf, T("&nbsp;"));
+	}
+*/
+    return buf;
+}
 /*
  * description: setup internet according to nvram configurations
  *              (assume that nvram_init has already been called)
@@ -2027,7 +2070,58 @@ int initInternet(void)
 #if defined CONFIG_RT2860V2_STA || defined CONFIG_RT2860V2_STA_MODULE
 	char *opmode;
 #endif
+	char   buf[128];
+/*
+	int times = 3;
+	while(times--)
+	{
+		FILE   *stream;
+		
 
+		memset(buf, 0, sizeof(buf));
+		stream=popen("comgt -d /dev/yh -s /etc_ro/ppp/3g/sim.scr","r");
+		if(stream)
+		{
+			fread( buf, sizeof(char), sizeof(buf), stream); 
+			printf("Get result when ask for sim card status:%s\r\n", buf);
+			pclose( stream ); 
+		}
+
+		if((buf[0] != NULL)&&(!strcmp(buf, "Inserted")))
+		{
+			break;
+		}
+	}
+
+	if(times == 0)
+	{
+		strcpy(wan_3g_sim, "Not Ready");
+		strcpy(wan_3g_signal, "No Signal");
+		//nvram_bufset(RT2860_NVRAM, "wan_3g_signal", "No Signal");
+		printf("no sim card inserted\r\n");
+	}
+	else
+	{
+		char *psignal = NULL;
+		strcpy(wan_3g_sim, "Inserted");
+		times = 3;
+		while(times--)
+		{
+			psignal = get3gSignal_not_web(buf, sizeof(buf));
+		}
+
+		if(!psignal)
+		{
+			printf("no signal!!!!!\r\n");
+			strcpy(wan_3g_signal, "No signal");
+			//return -1;
+		}
+		else
+		{
+			strcpy(wan_3g_signal, buf);
+		}
+	}
+*/
 	doSystem("internet.sh");
 
 	//automatically connect to AP according to the active profile
@@ -2627,7 +2721,8 @@ static void setWan(webs_t wp, char_t *path, char_t *query)
 		nvram_bufset(RT2860_NVRAM, "wan_3g_dev", g3dev);
 		nvram_bufset(RT2860_NVRAM, "g3_sim_pin", pin);
         	nvram_bufset(RT2860_NVRAM, "wan_3g_opmode", g3opmode);
-		nvram_bufset(RT2860_NVRAM, "wanConnectionMode", ctype);      
+		nvram_bufset(RT2860_NVRAM, "wanConnectionMode", ctype);   
+		initDeviceName();   
 	}
 #endif
 	else {

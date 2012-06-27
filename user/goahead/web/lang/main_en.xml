@@ -1,4 +1,7 @@
 <po>
+	
+	<message msgid="opmode opmode_direc" msgstr="Choose working mode. Default setting is 3G Gateway." />
+	<message msgid="help help_head" msgstr="Help more" />
   <message msgid="main disable" msgstr="Disable" />
   <message msgid="main enable" msgstr="Enable" />
   <message msgid="main apply" msgstr="Apply" />
@@ -11,7 +14,7 @@
   <message msgid="overview management link" msgstr="Management" />
   <message msgid="treeapp openall" msgstr="open all" />
   <message msgid="treeapp closeall" msgstr="close all" />
-  <message msgid="treeapp Forwell" msgstr="3G Router" />
+  <message msgid="treeapp Yinghua" msgstr="3G Router" />
   <message msgid="treeapp operation mode" msgstr="Operation Mode" />
   <message msgid="treeapp internet settings" msgstr="Internet Settings" />
   <message msgid="treeapp wan" msgstr="WAN" />
