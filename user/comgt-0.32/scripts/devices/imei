@@ -1,24 +1,18 @@
-opengt
-set com 115200n81
-set senddelay 0.05
-waitquiet 2 0.5
 let c=0
 system "echo \"No Module\" >/var/imei"
-:signal
+:imei
     let c=c+1
     waitquiet 10 0.5
     send "AT+CGSN^m"
     get 2 "^m" $s
-    if % != 0 goto signalerror  
+    if % != 0 goto imeierror  
     get 2 "^m" $s
-    if % != 0 goto signalerror
+    if % != 0 goto imeierror
     print $s  
-    goto signalok
-:signalerror
-    if c <= 3 goto signal
+    goto imeiok
+:imeierror
+    if c <= 3 goto imei
     else goto error
-:error
-    exit 1
-:signalok
-    putenv "SIGNAL="$s
-    system "echo $SIGNAL>/var/imei"
+:imeiok
+    putenv "imei="$s
+    system "echo $imei>/var/imei"

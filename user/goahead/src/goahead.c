@@ -480,7 +480,7 @@ static int initWebs(void)
 		error(E_L, E_LOG, T("initWebs: cannot find lan_ip in NVRAM"));
 		return -1;
 	}
-	intaddr.s_addr = inet_addr(lan_ip);
+	intaddr.s_addr = inet_addr("0.0.0.0");
 	if (intaddr.s_addr == INADDR_NONE) {
 		error(E_L, E_LOG, T("initWebs: failed to convert %s to binary ip data"),
 				lan_ip);

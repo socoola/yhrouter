@@ -391,7 +391,7 @@ static void setipsec_config(webs_t wp, char_t *path, char_t *query)
 	nvram_commit(RT2860_NVRAM);
 
 	/* 完成转到ipsec 配置页面*/
-	websRedirect(wp, "internet/ipsec.asp");
+	websRedirect(wp, "html/ipsecVpn.asp");
 
 
 	if(sign_edit==1){
@@ -1104,7 +1104,7 @@ static void IpsecAction(webs_t wp, char_t *path, char_t *query)
 
 		free(actArray); //release memory
 	
-	websRedirect(wp, "internet/ipsec.asp");
+	websRedirect(wp, "html/ipsecVpn.asp");
 	
 	/* make config  file */
 	ipsec_run();
@@ -1120,7 +1120,7 @@ end:
 		websRedirect(wp, "internet/ipsconfig_edit.asp");
 	}
 	else	
-		websRedirect(wp, "internet/ipsec.asp");
+		websRedirect(wp, "html/ipsecVpn.asp");
 	return;
 }
 

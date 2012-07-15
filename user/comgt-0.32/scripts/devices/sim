@@ -5,5 +5,4 @@ send "AT+CPIN?"
 waitfor 5 "READY","ERR"
 if % != 0 goto error
 putenv  "SIMSTATE=Inserted"
-system "echo $SIMSTATE >/var/sim"
-
+system "echo $SIMSTATE >/var/sim" 

@@ -3,7 +3,8 @@ cd /flash/web
 cd adm
 rm -rf *
 ln -s ../html/management.asp ./management.asp
-ln -s ../html/reboot.asp ./reboot.asp
+ln -s ../html/restart.asp ./restart.asp
+ln -s ../html/ICMP.asp ./ICMP.asp
 ln -s ../html/settings.asp ./settings.asp
 ln -s ../html/statistic.asp ./statistic.asp
 ln -s ../html/status.asp ./status.asp
@@ -23,7 +24,7 @@ cd internet
 rm -rf *
 ln -s ../html/dhcpcliinfo.asp ./dhcpcliinfo.asp
 ln -s ../html/dtu.asp ./dtu.asp
-ln -s ../html/ipsec.asp ./ipsec.asp
+ln -s ../html/ipsecVpn.asp ./ipsec.asp
 ln -s ../html/lan.asp ./lan.asp
 ln -s ../html/linkbackup.asp ./linkbackup.asp
 ln -s ../html/routing.asp ./routing.asp

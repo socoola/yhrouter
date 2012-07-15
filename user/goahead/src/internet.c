@@ -1322,26 +1322,76 @@ static int getHrdVersion(int eid, webs_t wp, int argc, char_t **argv)
 
 static int getDeviceID(int eid, webs_t wp, int argc, char_t **argv)
 {
-	
-	FILE*fp;
-	char buf[20];
 
-	system("");
-	if((fp=popen("comgt -d /dev/yh -s /etc_ro/ppp/3g/imei","r"))==NULL){
+    char   buff[256];
+    char data[256];
+	char *pos;
+	int startFlag = 0;
+    int i = 0;
+    int index = 0;
+	FILE *fp = fopen("/var/imei", "r");
+		if(fp)
+		{
+			if (fgets(buff, sizeof(buff), fp) != NULL) 
+            {
+				 for(i = 0;i < sizeof(buff);i++)
+                 {
+                        if(startFlag == 0)
+                        {
+                            if(buff[i] == ':') 
+                                 startFlag = 1;//find the start
+                        }
+                        else
+                            data[index++] = buff[i];
+                }
+                
+                if(startFlag == 1)
+                    return websWrite(wp, data);
+                else
+                    return websWrite(wp, buff);
+			}
+            else
+            {
+             
+			    fclose(fp);
+                return websWrite(wp, "no file");
+            }
+		}
 		
-		return websWrite(wp, T("can not read"));
-	}	
+		return websWrite(wp, "error");
+
+	
+	 
+	  /*  char buf[20];
+    char data[20];
+    int startFlag = 0;
+    int i = 0;
+    int index = 0;
+
+	FILE *fp = fopen("/var/imei", "r");
 	memset(buf,0,sizeof(buf));
-	while(fgets(buf,sizeof(buf),fp) != NULL)
+	while(fgets(buf, sizeof(buf), fp) != NULL)
 	{
+ 
 		if(!isspace(buf[0]))
 		{
 			break;
-		}
+		} 
 	}
 	if(fp) 
 		pclose(fp);
-    return websWrite(wp, buf);
+
+    for(i = 0;i < 20;i++)
+    {
+        if(startFlag == 0)
+        {
+            if(buf[i] == ':') 
+                 startFlag = 1;//afind the start
+        }
+        else
+            data[index++] = buf[i];
+    }
+    return websWrite(wp, data);*/
 }
 
 #define DD printf("%d\n", __LINE__);fflush(stdout);
@@ -2844,6 +2894,8 @@ static void Operators(webs_t wp, char_t *path, char_t *query)
 
     if(!password)
 		return;
+
+
     if(!localip)
 		return;
 
@@ -3167,6 +3219,10 @@ static int showNetworkTypeASP(int eid, webs_t wp, int argc, char_t **argv)
 	  else if((strcmp(pSubDev,"SIERRA-MC8785")==0) || (strcmp(pSubDev,"GTM681W")==0)){
                 websWrite(wp, T("<option value=0>AUTO</option>\n"));
         }
+    else
+    {
+        websWrite(wp, T("<option value=0>AUTO</option>\n"));
+    }
 
 }
 

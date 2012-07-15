@@ -252,8 +252,8 @@ function PageInit()
 			
 			function getModelType(){
 				var dev_3g = "<% getCfgGeneral(1, "wan_3g_dev"); %>";
-			//	document.getElementById("MoType").innerHTML;
-			if (dev_3g == "HUAWEI-EM560")
+			    //	document.getElementById("MoType").innerHTML;
+			    if (dev_3g == "HUAWEI-EM560")
 					document.getElementById("MoType").innerHTML = "HUAWEI-EM560";
 				else if (dev_3g == "HUAWEI-EM660")
 					document.getElementById("MoType").innerHTML = "HUAWEI-EM660";
@@ -269,11 +269,13 @@ function PageInit()
 					document.getElementById("MoType").innerHTML = "Ericsson F3607gw";
 				else if (dev_3g == "ZTE-MF210V")
 					document.getElementById("MoType").innerHTML = "ZTE-MF210V";
-		    else if (dev_3g == "SIERRA-MC8785")
-		    	document.getElementById("MoType").innerHTML = "SIERRA-MC8785";
-		    else if (dev_3g == "MC8785")
-		    	document.getElementById("MoType").innerHTML = "Serria MC8785";
-				else
+		        else if (dev_3g == "SIERRA-MC8785")
+		    	    document.getElementById("MoType").innerHTML = "SIERRA-MC8785";
+		        else if (dev_3g == "MC8785")
+		    	    document.getElementById("MoType").innerHTML = "Serria MC8785";
+                else if (dev_3g == "AD3812")
+		    	    document.getElementById("MoType").innerHTML = "ZTE-AD3812";
+			    else
 					document.getElementById("MoType").innerHTML = "NO MODEM";
 				}
 		</script>

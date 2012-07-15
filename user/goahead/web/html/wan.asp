@@ -1156,7 +1156,7 @@ function initValue()
 <tr align="center">
   <td><b id="wConnectionType"></b>&nbsp;&nbsp;&nbsp;&nbsp;</td>
   <td>
-    <select name="connectionType" size="1" onChange="connectionTypeSwitch();">
+    <select name="connectionType" size="1"  onChange="connectionTypeSwitch();">
       <option value="STATIC" id="wConnTypeStatic">Static Mode (fixed IP)</option>
       <option value="DHCP" id="wConnTypeDhcp">DHCP (Auto Config)</option>
       <option value="PPPOE" id="wConnTypePppoe">PPPOE (ADSL)</option>

@@ -527,6 +527,7 @@ static void revise_mbss_value(int old_num, int new_num)
 /* goform/wirelessBasic */
 static void wirelessBasic(webs_t wp, char_t *path, char_t *query)
 {
+    char_t	*radioStatus;
 	char_t	*wirelessmode;
 	char_t	*ssid, *mssid_1, *mssid_2, *mssid_3, *mssid_4, *mssid_5, *mssid_6,
 			*mssid_7, *bssid_num, *hssid, *isolated_ssid, *mbssidapisolated;
@@ -542,17 +543,18 @@ static void wirelessBasic(webs_t wp, char_t *path, char_t *query)
 	if (!strncmp(radio, "0", 2)) {
 		doSystem("iwpriv ra0 set RadioOn=0");
 		nvram_set(RT2860_NVRAM, "RadioOff", "1");
-		websRedirect(wp, "wireless/basic.asp");
-		return;
+		//websRedirect(wp, "wireless/basic.asp");
+		//return;
 	}
 	else if (!strncmp(radio, "1", 2)) {
 		doSystem("iwpriv ra0 set RadioOn=1");
 		nvram_set(RT2860_NVRAM, "RadioOff", "0");
-		websRedirect(wp, "wireless/basic.asp");
-		return;
+		//websRedirect(wp, "wireless/basic.asp");
+		//return;
 	}
 
 	//fetch from web input
+    radioStatus =  websGetVar(wp, T("radioStatus"), T("")); //9: bgn mode
 	wirelessmode = websGetVar(wp, T("wirelessmode"), T("9")); //9: bgn mode
 	ssid = websGetVar(wp, T("ssid"), T("")); 
 	mssid_1 = websGetVar(wp, T("mssid_1"), T("")); 
@@ -840,6 +842,9 @@ static void wirelessBasic(webs_t wp, char_t *path, char_t *query)
 
 	//debug print
 	websHeader(wp);
+
+    websWrite(wp, T("<h2>radioStatus: %s</h2><br>\n"), radioStatus);
+
 	websWrite(wp, T("<h2>mode: %s</h2><br>\n"), wirelessmode);
 	websWrite(wp, T("ssid: %s, bssid_num: %s<br>\n"), ssid, bssid_num);
 	websWrite(wp, T("mssid_1: %s, mssid_2: %s, mssid_3: %s<br>\n"),

@@ -238,7 +238,7 @@ void pptp_run(int sign)
 	nvram_commit(RT2860_NVRAM);
 
 
-	websRedirect(wp,"internet/ipsec.asp");
+	websRedirect(wp,"html/pptp.asp");
 
 	pptp_run(run_sign);
 

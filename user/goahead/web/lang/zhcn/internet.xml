@@ -1,1 +1,314 @@
-../internet_cn.xml
+﻿<po>
+  <message msgid="inet apply" msgstr="确定" />
+  <message msgid="inet cancel" msgstr="取消" />
+  <message msgid="inet enable" msgstr="启用" />
+  <message msgid="inet disable" msgstr="停用" />
+
+  <message msgid="inet mac" msgstr="MAC 地址" />
+  <message msgid="inet ip" msgstr="IP 地址" />
+  <message msgid="inet server" msgstr="服务器 IP" />
+  <message msgid="inet netmask" msgstr="子网掩码" />
+  <message msgid="inet lan2" msgstr="局域网 2" />
+  <message msgid="inet lan2 ip" msgstr="局域网 2 IP 地址" />
+  <message msgid="inet lan2 netmask" msgstr="局域网 2 子网掩码" />
+  <message msgid="inet gateway" msgstr="默认网关" />
+  <message msgid="inet pri dns" msgstr="首选 DNS 服务器" />
+  <message msgid="inet sec dns" msgstr="备用 DNS 服务器" />
+  <message msgid="inet user" msgstr="使用者名称" />
+  <message msgid="inet password" msgstr="口令" />
+  <message msgid="inet pass2" msgstr="确认口令" />
+  <message msgid="inet hostname" msgstr="网络名称" />
+
+  <message msgid="wan title" msgstr="广域网络设置" />
+  <message msgid="wan introduction" msgstr="您可以依您的环境选择适当的联机模式，并针对不同的联机模式设置参数。" />
+  <message msgid="wan connection type" msgstr="广域网络联机模式:" />
+  <message msgid="wan connection type static" msgstr="静态 (固定 IP)" />
+  <message msgid="wan connection type dhcp" msgstr="动态 (自动取得)" />
+  <message msgid="wan connection type pppoe" msgstr="PPPoE (ADSL)" />
+  <message msgid="wan connection type l2tp" msgstr="L2TP" />
+  <message msgid="wan connection type pptp" msgstr="PPTP" />
+  <message msgid="wan protocol opmode" msgstr="运行模式" />
+  <message msgid="wan protocol opmode keepalive" msgstr="永久连线" />
+  <message msgid="wan protocol opmode ondemand" msgstr="动态需求" />
+  <message msgid="wan protocol opmode manual" msgstr="手动" />
+  <message msgid="wan protocol opmode ontime" msgstr="按时拨号" />
+
+  <message msgid="wan static mode" msgstr="静态模式" />
+  <message msgid="wan dhcp mode" msgstr="DHCP 模式" />
+  <message msgid="wan pppoe mode" msgstr="PPPoE 模式" />
+  <message msgid="wan l2tp mode" msgstr="L2TP 模式" />
+  <message msgid="wan pptp mode" msgstr="PPTP 模式" />
+  <message msgid="wan 3G mode" msgstr="3G 模式" />
+  <message msgid="wan 3G modem" msgstr="3G 调制解调器" />
+  <message msgid="wan 3G PIN" msgstr="PIN码" />
+  <message msgid="wan 3G opmode" msgstr="运行模式" />
+  <message msgid="wan 3G mspparam" msgstr="移动运营商参数" />
+  <message msgid="wan 3G mspname" msgstr="移动运营商名" />
+  <message msgid="wan 3G nettype" msgstr="网络类型" />
+  <message msgid="wan 3G dialnum" msgstr="拨号号码" />
+  <message msgid="wan 3G cmdstr" msgstr="初始化AT命令" />
+  <message msgid="wan 3G username" msgstr="用户名" />
+  <message msgid="wan 3G password" msgstr="密码" />
+  <message msgid="wan 3G curMSPs" msgstr="移动运营商列表" />
+  <message msgid="wan 3G selMSP" msgstr="选中移动运营商" />
+  <message msgid="wan 3G AuthType" msgstr="验证类型" />
+  <message msgid="wan 3G OtherOptions" msgstr="软件压缩" />
+  <message msgid="wan 3G UseComp" msgstr="Enable" />
+  <message msgid="wan 3G AddMSP" msgstr="添加到列表" />
+  <message msgid="wan 3G SelDft" msgstr="提交" />
+  <message msgid="wan 3G DelMSP" msgstr="删除" />
+  <message msgid="wan 3G mspdel" msgstr="操作" />
+  <message msgid="wan address mode" msgstr="IP 地址模式" />
+  <message msgid="wan address mode static" msgstr="静态" />
+  <message msgid="wan address mode dynamic" msgstr="动态 " />
+  
+
+  <message msgid="wan mac clone" msgstr="MAC 复制" />
+
+  <message msgid="lan title" msgstr="局域网设置" />
+  <message msgid="lan introduction" msgstr="您可以启用/停止以及设置所有的网络功能。" />
+  <message msgid="lan setup" msgstr="局域网设置" />
+  <message msgid="lan dhcp type" msgstr="DHCP 类型" />
+  <message msgid="lan dhcp type server" msgstr="服务器" />
+  <message msgid="lan dhcp start" msgstr="起始 IP 地址" />
+  <message msgid="lan dhcp end" msgstr="结束 IP 地址" />
+  <message msgid="lan dhcp lease" msgstr="过期时间" />
+  <message msgid="lan dhcp static" msgstr="静态指定" />
+  <message msgid="lan stp" msgstr="802.1d Spanning Tree" />
+  <message msgid="lan lltd" msgstr="LLTD" />
+  <message msgid="lan igmpp" msgstr="IGMP Proxy" />
+  <message msgid="lan upnp" msgstr="UPNP" />
+  <message msgid="lan radvd" msgstr="Router Advertisement" />
+  <message msgid="lan pppoer" msgstr="PPPoE Relay" />
+  <message msgid="lan dnsp" msgstr="DNS Proxy" />
+
+  <message msgid="dhcp title" msgstr="DHCP 客户端列表" />
+  <message msgid="dhcp introduction" msgstr="查看所有 DHCP 客户端。" />
+  <message msgid="dhcp clients" msgstr="DHCP 客户端" />
+  <message msgid="dhcp expire" msgstr="过期" />
+
+  <message msgid="vpn title" msgstr="VPN Passthrough" />
+  <message msgid="vpn introduction" msgstr="VPN passthrought 设置，包含: L2TP, IPSec, 以及 PPTP passthrough" />
+  <message msgid="vpn pass thru" msgstr="VPN Pass Through" />
+  <message msgid="vpn l2tp pass thru" msgstr="L2TP Passthrough" />
+  <message msgid="vpn ipsec pass thru" msgstr="IPSec Passthrough" />
+  <message msgid="vpn pptp pass thru" msgstr="PPTP Passthrough" />
+
+  <message msgid="routing title" msgstr="静态路由配置" />
+  <message msgid="routing Introduction" msgstr="您可以在此新增/移除订制的静态路由规则,或者启用动态路由规则交换协议" />
+  <message msgid="routing add rule" msgstr="新增静态路由规则" />
+  <message msgid="routing routing dest" msgstr="目标IP住址" />
+  <message msgid="routing range" msgstr="类型" />
+  <message msgid="routing netmask" msgstr="子网掩码" />
+  <message msgid="routing gateway" msgstr="闸道器IP住址" />
+  <message msgid="routing interface" msgstr="网络接口" />
+  <message msgid="routing custom" msgstr="自定义" />
+  <message msgid="routing comment" msgstr="注解" />
+  <message msgid="routing submit" msgstr="提交" />
+  <message msgid="routing reset" msgstr="重置" />
+  <message msgid="routing Number" msgstr="編号" />
+  <message msgid="routing del title" msgstr="当前的路由规则" />
+  <message msgid="routing del dest" msgstr="目标IP住址" />
+  <message msgid="routing del netmask" msgstr="子网掩码" />
+  <message msgid="routing del gateway" msgstr="网关IP住址" />
+  <message msgid="routing del flags" msgstr="跃点" />
+  <message msgid="routing del metric" msgstr="路由度量" />
+  <message msgid="routing del ref" msgstr="参照" />
+  <message msgid="routing del use" msgstr="使用" />
+  <message msgid="routing del interface" msgstr="网络接口" />
+  <message msgid="routing del comment" msgstr="备注" />
+  <message msgid="routing del" msgstr="删除" />
+  <message msgid="routing del reset" msgstr="重置" />
+  <message msgid="routing host" msgstr="主机" />
+  <message msgid="routing net" msgstr="网络" />
+  <message msgid="routing LAN" msgstr="局域网" />
+  <message msgid="routing WAN" msgstr="广域网" />    
+
+  <message msgid="routing dynamic Title" msgstr="动态路由配置" />
+  <message msgid="routing dynamic Title2" msgstr="动态路由协议" />
+  <message msgid="routing dynamic rip disable" msgstr="停用" />
+  <message msgid="routing dynamic rip enable" msgstr="启用" />
+  <message msgid="routing dynamic rip apply" msgstr="确定" />
+  <message msgid="routing dynamic rip reset" msgstr="取消" />
+
+  <message msgid="qos title" msgstr="服务质量(QoS)" />
+  <message msgid="qos intro" msgstr="您可以此新增/移除服务质量(QoS)的规则,确保为每种流量提供的不同的带宽和优先权" />
+  <message msgid="qos setup" msgstr="服务质量(QoS)配置" />
+  <message msgid="qos str" msgstr="服务质量(QoS)" />
+  <message msgid="qos disable" msgstr="禁用" />
+  <message msgid="qos enable" msgstr="启用" />
+  <message msgid="qos dscpmarkeronly" msgstr="DSCP only" />
+  <message msgid="qos upload bandwidth" msgstr="上传带宽:" />
+  <message msgid="qos bandwidth custom" msgstr="自定义" />
+  <message msgid="qos download bandwidth" msgstr="下载带宽:" />
+  <message msgid="qos setup submit" msgstr="提交" />
+  <message msgid="qos setup reset" msgstr="重置" />
+  <message msgid="qos group" msgstr="群组" />
+  <message msgid="qos group attr" msgstr="属性" />
+  <message msgid="qos group modify" msgstr="修改" />
+  <message msgid="qos rule no" msgstr="编号" />
+  <message msgid="qos rule name" msgstr="名称" />
+  <message msgid="qos rule prio" msgstr="所属群组" />
+  <message msgid="qos rule info" msgstr="信息" />
+  <message msgid="qos rule add" msgstr="新增" />
+  <message msgid="qos rule del" msgstr="选择删除" />
+  <message msgid="qos loaddefault" msgstr="装载系统默认值" />
+  <message msgid="qos Rate" msgstr="保证最小带宽:" />
+  <message msgid="qos Ceil" msgstr="可借用最大带宽:" />
+  <message msgid="qos AF Name" msgstr="群组名称" />
+  <message msgid="qos AF Upload Bandwidth" msgstr="% 的上传带宽" />
+
+  <message msgid="qos classifier title" msgstr="QoS规则設置" />
+  <message msgid="qos classifier name" msgstr="名称" />
+  <message msgid="qos classifier group" msgstr="所属群组" />
+  <message msgid="qos classifier mac" msgstr="MAC地址" />
+  <message msgid="qos classifier dip" msgstr="目的端IP地址" />
+  <message msgid="qos classifier sip" msgstr="来源端IP地址" />
+  <message msgid="qos classifier pktlen" msgstr="封包長度" />
+  <message msgid="qos classifier dscp" msgstr="DSCP" />
+  <message msgid="qos classifier proto" msgstr="协定" />
+  <message msgid="qos classifier dport" msgstr="目的端端口" />
+  <message msgid="qos classifier sport" msgstr="来源端端口" />
+  <message msgid="qos classifier l7" msgstr="应用" />
+  <message msgid="qos classifier remark" msgstr="重标志DSCP为:" />
+  <message msgid="qos classifier auto" msgstr="自动" />
+
+  <message msgid="dtu setting" msgstr="DTU 设置" />
+  <message msgid="dtu status table" msgstr="DTU 状态项" />
+  <message msgid="dtu status" msgstr="DTU 状态" />
+  <message msgid="option off" msgstr="停用" />
+  <message msgid="option on" msgstr="启用" />
+  <message msgid="id dtu serial table" msgstr="DTU 串口设置项" />
+  <message msgid="dtu bandrate" msgstr="波特率" />
+  <message msgid="dtu parity" msgstr="奇偶校验" />
+  <message msgid="option none" msgstr="无校验" />
+  <message msgid="option odd" msgstr="奇校验" />
+  <message msgid="option even" msgstr="偶校验" />
+  <message msgid="dtu databits" msgstr="数据位" />
+  <message msgid="dtu stopbits" msgstr="停止位" />
+  <message msgid="dtu flowcontrol" msgstr="流控" />
+  <message msgid="option n" msgstr="无" />
+  <message msgid="option h" msgstr="硬件" />
+  <message msgid="option s" msgstr="软件" />
+  <message msgid="dtu config" msgstr="DTU 设置项" />
+  <message msgid="dtu linktype" msgstr="连接方式" />
+  <message msgid="option server" msgstr="服务端" />
+  <message msgid="option client" msgstr="客户端" />
+  <message msgid="dtu socktype" msgstr="网络类型" />
+  <message msgid="dtu center 1" msgstr="服务端1" />
+  <message msgid="dtu center 2" msgstr="服务端2" />
+  <message msgid="dtu center 3" msgstr="服务端3" />
+  <message msgid="dtu center 4" msgstr="服务端4" />
+  <message msgid="dtu heart time" msgstr="心跳时间" />
+  <message msgid="dtu heart info" msgstr="心跳信息" />
+  <message msgid="dtu send data time" msgstr="发送数据超时时间" />
+<message msgid="dtu off heart after nodata select" msgstr="当没接收到串口数据停止发心跳" />
+ <message msgid="dtu off heart delay time" msgstr="停止发心跳延时时间" /> 
+
+  <message msgid="dtu apply" msgstr="确定" />
+
+
+  <message msgid="msg setting novoi" msgstr="短信命令配置" />
+  <message msgid="msg status table novoi" msgstr="短信功能设置" />
+  <message msgid="msg status novoi" msgstr="短信功能状态" />
+
+  <message msgid="msg setting" msgstr="短信/语音命令配置" />
+  <message msgid="msg status table" msgstr="短信/语音功能设置" />
+  <message msgid="msg status" msgstr="短信/语音功能状态" />
+  <message msgid="msg status option off" msgstr="关" />
+  <message msgid="msg status option on" msgstr="开" />
+  <message msgid="msg send ack" msgstr="发送应答短信" />
+  <message msgid="msg send ack option off" msgstr="关" />
+  <message msgid="msg send ack option on" msgstr="开" />
+  <message msgid="msg telephone config" msgstr="电话号码设置" />
+  <message msgid="msg num1" msgstr="号码1" />
+  <message msgid="msg num2" msgstr="号码2" />
+  <message msgid="msg num3" msgstr="号码3" />
+  <message msgid="msg num4" msgstr="号码4" />
+  <message msgid="msg num5" msgstr="号码5" />
+  <message msgid="msg num6" msgstr="号码6" />
+  <message msgid="msg num7" msgstr="号码7" />
+  <message msgid="msg num8" msgstr="号码8" />
+  <message msgid="msg num9" msgstr="号码9" />
+  <message msgid="msg num10" msgstr="号码10" />
+  <message msgid="msg cmd table" msgstr="命令设置" />
+  <message msgid="msg cmd 1" msgstr="3G 上线命令" />
+  <message msgid="msg cmd 2" msgstr="3G 下线命令" />
+        <message msgid="msg voice cmd id" msgstr="语音命令" />
+        <message msgid="msg voice cmd option off" msgstr="关" />
+        <message msgid="msg voice cmd option 3gup" msgstr="3G 上线" />
+        <message msgid="msg voice cmd option 3gdown" msgstr="3G 下线" />
+        <message msgid="msg voice cmd option 3gupdown" msgstr="3G 上线或下线" />
+
+  <message msgid="msg apply" msgstr="确定" />
+	
+
+
+
+        <message msgid="sr setting" msgstr="状态报告配置" />
+        <message msgid="sr status table" msgstr="状态报告功能设置项" />
+        <message msgid="sr status" msgstr="状态报告功能选择" />
+        <message msgid="sr option off" msgstr="关" />
+        <message msgid="sr option normal" msgstr="开-普通模式" />
+        <message msgid="sr option special" msgstr="开-特殊模式" />
+        <message msgid="sr option advanced" msgstr="开-高级模式" />
+        <message msgid="sr test host" msgstr="检测主机" />
+        <message msgid="sr report table" msgstr="状态报告设置项" />
+        <message msgid="sr report host and port" msgstr="发送报告主机：端口" />
+        <message msgid="sr report interval time" msgstr="间隔时间" />
+        <message msgid="sr report status1 str" msgstr="在线信息" />
+        <message msgid="sr report status2 str" msgstr="离线信息" />
+        <message msgid="sr apply" msgstr="确定" />
+
+
+    <message msgid="lbk_id_linkbackup" msgstr="路由备份" />
+        <message msgid="lbk_id_linkbackup_operation_mode" msgstr="功能设置" />
+        <message msgid="lbk_id_link_backup_status" msgstr="启用/停用" />
+        <message msgid="lbk_id_back_to_main" msgstr="主线路可用时切换回主线路" />
+        <message msgid="lbk_id_linkbackup_router_priority_setting" msgstr="优先级设置" />
+        <message msgid="lbk_high_prio" msgstr="高优先级" />
+        <message msgid="lbk_low_prio" msgstr="低优先级" />
+        <message msgid="lbk_id_wan_mode_cellular" msgstr="蜂窝网络" />
+        <message msgid="lbk_id_linkbackup_connectivity_check" msgstr="链路检测" />
+        <message msgid="lbk_id_linkbackup_check_count" msgstr="检测计数" />
+        <message msgid="lbk_id_linkbackup_wan1_check_method" msgstr="检测方法" />
+        <message msgid="lbk_id_link_backup_apply" msgstr="确定" />
+
+  <message msgid="id gps settings" msgstr="GPS 设置" />
+  <message msgid="id gps active" msgstr="启用 GPS" />
+  <message msgid="id gps send to" msgstr="GPS 信息发往" />
+  <message msgid="id message to serial" msgstr="串口" />
+  <message msgid="id gps to serial settings" msgstr="GPS 信息发往本地串口设置" />
+  <message msgid="id serial baudrate" msgstr="波特率" />
+  <message msgid="id serial parity" msgstr="奇偶校验" />
+  <message msgid="id serial databits" msgstr="数据位" />
+  <message msgid="id serial stopbits" msgstr="停止位" />
+  <message msgid="id serial flowcontrol" msgstr="流控" />
+  <message msgid="id gps to net settings" msgstr="GPS 信息发往TCP/IP设置" />
+  <message msgid="id gps socktype" msgstr="网络类型" />
+  <message msgid="id gps server ip" msgstr="服务器域名/IP" />
+  <message msgid="id gps server port" msgstr="端口" />
+  <message msgid="id gps comment" msgstr="注：当GPS信息发往串口时，不要使用DTU功能!" />
+  <message msgid="id gps apply" msgstr="确定" />
+
+  <message msgid="id snmp settings" msgstr="SNMP 设置" />
+    <message msgid="id snmp active" msgstr="启用 SNMP" />
+      <message msgid="id snmp contact info" msgstr="联系" />
+        <message msgid="id snmp location" msgstr="位置" />
+          <message msgid="id snmp v2 settings" msgstr="SNMP V1和V2c设置" />
+            <message msgid="id snmp v2 user" msgstr="用户" />
+              <message msgid="id snmp v2 host lan" msgstr="主机/网段" />
+                <message msgid="id snmp v2 writable" msgstr="可写" />
+                  <message msgid="id snmp v3 settings" msgstr="SNMP V3 设置" />
+                    <message msgid="id snmp v3 user" msgstr="用户" />
+                      <message msgid="id snmp v3 host lan" msgstr="主机/网段" />
+                        <message msgid="id snmp v3 writable" msgstr="可写" />
+                          <message msgid="id snmp v3 security mode" msgstr="安全模式" />
+                            <message msgid="id snmp v3 authentication str" msgstr="认证方式" />
+                              <message msgid="id snmp v3 encryption str" msgstr="加密方式" />
+                                <message msgid="id snmp v3 authentication password" msgstr="认证密码" />
+                                  <message msgid="id snmp v3 encryption password" msgstr="加密密码" />
+                                    <message msgid="id snmp apply" msgstr="确定" />
+
+
+</po>

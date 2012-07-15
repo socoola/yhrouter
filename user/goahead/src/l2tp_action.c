@@ -238,7 +238,7 @@ void l2tp_run(int sign)
 	nvram_commit(RT2860_NVRAM);
 
 
-	websRedirect(wp,"internet/ipsec.asp");
+	websRedirect(wp,"html/l2tp.asp");
 
 	l2tp_run(run_sign);
 

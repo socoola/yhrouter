@@ -11,7 +11,7 @@
 
 <script language="JavaScript" type="text/javascript">
 Butterlate.setTextDomain("wireless");
-
+var radiooff = '<% getCfgZero(1, "RadioOff"); %>';
 var PhyMode  = '<% getCfgZero(1, "WirelessMode"); %>';
 var HiddenSSID  = '<% getCfgZero(1, "HideSSID"); %>';
 var APIsolated = '<% getCfgZero(1, "NoForwarding"); %>';
@@ -511,8 +511,8 @@ function initTranslation()
 
 	e = document.getElementById("basicWirelessNet");
 	e.innerHTML = _("basic wireless network");
-	e = document.getElementById("basicRadioButton");
-	e.innerHTML = _("basic radio button");
+	<!--//e = document.getElementById("basicRadioButton");
+	//e.innerHTML = _("basic radio button");-->
 	e = document.getElementById("basicNetMode");
 	e.innerHTML = _("basic network mode");
 	e = document.getElementById("basicSSID");
@@ -653,8 +653,7 @@ function initTranslation()
 	e = document.getElementById("wifiDisable");
 	e.innerHTML = _("basic wifiDisable");
 
-	e = document.getElementById("basicApply");
-	e.value = _("wireless apply");
+	
 	e = document.getElementById("basicCancel");
 	e.value = _("wireless cancel");
 	
@@ -1199,12 +1198,7 @@ function initValue()
 	document.wireless_basic.rx_stream.options.selectedIndex = rx_stream_idx - 1;
 	document.wireless_basic.tx_stream.options.selectedIndex = tx_stream_idx - 1;
 
-	if (1*radio_off == 1)
-		document.wireless_basic.radioButton.value = "RADIO ON";
-	else
-		document.wireless_basic.radioButton.value = "RADIO OFF";
 	
-	rmbWifiSelect();
 }
 
 function wirelessModeChange()
@@ -1463,17 +1457,7 @@ function CheckValue()
 	return true;
 }
 
-function RadioStatusChange(rs)
-{
-	if (rs == 1) {
-		document.wireless_basic.radioButton.value = "RADIO OFF";
-		document.wireless_basic.radiohiddenButton.value = 0;
-	}
-	else {
-		document.wireless_basic.radioButton.value = "RADIO ON";
-		document.wireless_basic.radiohiddenButton.value = 1;
-	}
-}
+
 </script>
 </head>
 
@@ -1503,37 +1487,18 @@ function RadioStatusChange(rs)
   </tr>
   <tr> 
     <td class="head" id="basicRadioButton">Radio On/Off</td>
-    <td >
-      <input type="button" name="radioButton"  value="RADIO ON"
-      onClick="if (this.value.indexOf('OFF') >= 0) RadioStatusChange(1); else RadioStatusChange(0); document.wireless_basic.submit();"> &nbsp; &nbsp;
-      <input type=hidden name=radiohiddenButton value="2">
-    </td>
+    
     <td>
-   <script type="text/javascript">
-		function wifiSelect(){
-			var wifiSel = document.getElementById('selectWifi');
-			if(wifiSel.options[0].selected){
-				RadioStatusChange(0);
-			}
-			else if(wifiSel.options[1].selected){
-				RadioStatusChange(1);
-			}
-		}
+   
 		
-		function rmbWifiSelect(){
-			if(document.wireless_basic.radioButton.value =="RADIO OFF")
-				document.getElementById('selectWifi').options[0].selected = true;
-			else 
-				document.getElementById('selectWifi').options[1].selected = true;
-		}
-	</script>
-	<select id="selectWifi" onchange="wifiSelect()">
+	<select id="radioStatus" name="radioStatus" value="<% getCfgGeneral(1, "RadioOff"); %>" onchange="wifiSelect()">
 			<option id="wifiEnable">Enable</option>
 			<option id="wifiDisable">Disable</option>
 	</select>
     </td>
     
   </tr>
+  
   <tr> 
     <td class="head" id="basicNetMode">Network Mode</td>
     <td>
@@ -1834,7 +1799,7 @@ function RadioStatusChange(rs)
 <table width = "540" border = "0" cellpadding = "2" cellspacing = "1">
   <tr align="center">
     <td>
-    	<input type="button" value="Apply" id="basicApply" onclick="submitPage()" />
+    	<!--<input type="button" value="Apply" id="basicApply" onclick="submitPage()" />-->
       <span ><input type=submit  value="Apply" id="basicApplyold" /></span> &nbsp; &nbsp;
       <input type=reset   value="Cancel" id="basicCancel" onClick="window.location.reload()">
     </td>
@@ -1842,7 +1807,7 @@ function RadioStatusChange(rs)
 </table>
 </form>  
 <script type="text/javascript">
-	function submitPage(){
+	/*function submitPage(){
 		//alert("submitPage");
 		if(document.wireless_basic.radiohiddenButton.value==1||document.wireless_basic.radiohiddenButton.value==0){
 			document.wireless_basic.radioButton.click();
@@ -1852,7 +1817,7 @@ function RadioStatusChange(rs)
 			document.wireless_basic.radiohiddenButton.value = 2;
 			document.wireless_basic.submit();
 		}
-	}
+	}*/
 </script>
 </td></tr></table>
 

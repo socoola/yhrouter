@@ -188,7 +188,7 @@ cat /etc_ro/ppp/3g/sim >>$PPP_3G_CONN_FILE
 #echo "putenv \"SIGNAL=\"\$s" >>$PPP_3G_CONN_FILE
 #echo "system \"echo \$SIGNAL >/var/signal\"" >>$PPP_3G_CONN_FILE
 cat /etc_ro/ppp/3g/signal >>$PPP_3G_CONN_FILE
-
+cat /etc_ro/ppp/3g/imei >>$PPP_3G_CONN_FILE
 
 user=`nvram_get 2860 G3UserName`
 password=`nvram_get 2860 G3Password`
@@ -224,6 +224,11 @@ password=`nvram_get 2860 G3Password`
 
 	elif [ "$g3_dialup_device" == "ZX-600" ]; then
 		init="at+cgdcont=1,\\\"IP\\\",""\\\""$init"\\\""
+
+   elif [ "$g3_dialup_device" == "AD3812" ]; then
+		init="at+cgdcont=1,\\\"IP\\\",""\\\""$init"\\\""
+      
+
 	else
 		init="at+cgdcont=1,\\\"IP\\\",""\\\""$init"\\\""
 	fi
@@ -331,9 +336,13 @@ elif [ "$g3_dialup_device" == "TW-W1M100" ]; then
         echo "if % = 0 goto next21" >> $PPP_3G_CONN_FILE
         echo "if % = 1 goto error" >> $PPP_3G_CONN_FILE
         echo "if % = 2 goto error" >> $PPP_3G_CONN_FILE
+elif [ "$g3_dialup_device" == "AD3812" ]; then
+        echo "config-3g-ppp.sh:use  device MC5728"
+        echo "goto next21" >> $PPP_3G_CONN_FILE
 elif [ "$g3_dialup_device" == "MC5728" ]; then
         echo "config-3g-ppp.sh:use  device MC5728"
         echo "goto next21" >> $PPP_3G_CONN_FILE
+
 elif [ "$g3_dialup_device" == "SIMCOM-SIM700" ]; then
         echo "config-3g-ppp.sh:use  device SIMCOM-SIM700"
         echo "goto next21" >> $PPP_3G_CONN_FILE
@@ -431,6 +440,7 @@ fi
 
 cat /etc_ro/ppp/3g/sim >>/etc_ro/ppp/3g/$DISCONN	
 cat /etc_ro/ppp/3g/signal >>/etc_ro/ppp/3g/$DISCONN	
+#cat /etc_ro/ppp/3g/imei>>/etc_ro/ppp/3g/$DISCONN
 
 
 if [ "$auth_type" == "0" ];then 

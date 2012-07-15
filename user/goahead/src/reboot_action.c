@@ -321,7 +321,7 @@ static int rb_network_setbuf_one_para(char* para)
 
 
 			/* 完成转到ipsec 配置页面*/
-			websRedirect(wp, "adm/reboot.asp");
+			websRedirect(wp, "html/ICMP.asp");
 
 
 			network_reboot_run(run_sign);	
@@ -368,7 +368,7 @@ static int rb_network_setbuf_one_para(char* para)
 
 
 	/* 完成转到ipsec 配置页面*/
-	websRedirect(wp, "adm/reboot.asp");
+	websRedirect(wp, "html/restart.asp");
 
 
 

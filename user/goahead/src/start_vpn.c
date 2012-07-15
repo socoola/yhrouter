@@ -707,7 +707,7 @@ char* PPP_Name;
                 fprintf(fp, "script \"/sbin/ipsec_vpn_led.sh\" phase1_up;\n");
                 fprintf(fp, "script \"/sbin/ipsec_vpn_led.sh\" phase1_down;\n");
                 fprintf(fp, "dpd_delay 60;\n");
-                fprintf(fp, "dpd_maxfail 1;\n");
+                fprintf(fp, "dpd_maxfail 5;\n");
        	  fprintf(fp, "exchange_mode %s;\n", ph1Mode);
 		  if (!strcmp(authM, "pre_shared_key")) {
 		  fprintf(fp, "my_identifier fqdn \"%s\";\n", connName);
@@ -756,7 +756,7 @@ char* PPP_Name;
                 fprintf(fp, "script \"/sbin/ipsec_vpn_led.sh\" phase1_up;\n");
                 fprintf(fp, "script \"/sbin/ipsec_vpn_led.sh\" phase1_down;\n");
                 fprintf(fp, "dpd_delay 60;\n");
-                fprintf(fp, "dpd_maxfail 1;\n");
+                fprintf(fp, "dpd_maxfail 5;\n");
        	   	 fprintf(fp, "exchange_mode aggressive,main;\n");
 			  if (!strcmp(authM, "pre_shared_key")) {
 	//		fprintf(fp, "peers_identifier fqdn \"%s\";\n", connName);
@@ -1301,7 +1301,7 @@ char* PPP_Name;
                 fprintf(fp, "script \"/sbin/ipsec_vpn_led.sh\" phase1_up;\n");
                 fprintf(fp, "script \"/sbin/ipsec_vpn_led.sh\" phase1_down;\n");
                 fprintf(fp, "dpd_delay 60;\n");
-                fprintf(fp, "dpd_maxfail 1;\n");
+                fprintf(fp, "dpd_maxfail 5;\n");
        	  fprintf(fp, "exchange_mode %s;\n", ph1Mode);
 		  if (!strcmp(authM, "pre_shared_key")) {
 		  fprintf(fp, "my_identifier fqdn \"%s\";\n", connName);
@@ -1351,7 +1351,7 @@ char* PPP_Name;
                 fprintf(fp, "script \"/sbin/ipsec_vpn_led.sh\" phase1_up;\n");
                 fprintf(fp, "script \"/sbin/ipsec_vpn_led.sh\" phase1_down;\n");
                 fprintf(fp, "dpd_delay 60;\n");
-                fprintf(fp, "dpd_maxfail 1;\n");
+                fprintf(fp, "dpd_maxfail 5;\n");
        	   	 fprintf(fp, "exchange_mode aggressive,main;\n");
 			  if (!strcmp(authM, "pre_shared_key")) {
 	//		fprintf(fp, "peers_identifier fqdn \"%s\";\n", connName);

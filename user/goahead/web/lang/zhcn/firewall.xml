@@ -1,1 +1,177 @@
-../firewall_cn.xml
+﻿<po>
+  <message msgid="Ipsec Current Rule" msgstr="IPSEC VPN 列表" />
+  <message msgid="firewall disable" msgstr="停用" />
+  <message msgid="firewall enable" msgstr="启用" />
+  <message msgid="firewall apply" msgstr="确定" />
+  <message msgid="firewall reset" msgstr="重设" />
+  <message msgid="firewall cancel" msgstr="取消" />
+  <message msgid="firewall del select" msgstr="选择删除" />
+  <message msgid="firewall no" msgstr="编号" />
+  <message msgid="firewall protocol" msgstr="协议" />
+  <message msgid="firewall comment" msgstr="注解" />
+  <message msgid="firewall default drop" msgstr="默认抛弃" />
+  <message msgid="firewall default accept" msgstr="默认接受" />
+
+  <message msgid="port title" msgstr="MAC/IP/Port过滤设置 " />
+  <message msgid="port introduction" msgstr=" 您可以建立防火墙规则来保护您的网路远离Internet病毒蠕虫恶意攻击。" />
+  <message msgid="port basic setting" msgstr="基本设置" />
+  <message msgid="port basic filter" msgstr="MAC/IP/Port过滤" />
+  <message msgid="port basic default policy" msgstr="默认原则 -- 未符合规则的数据包将被：" />
+  <message msgid="port basic default policy accepted" msgstr="接受" />
+  <message msgid="port basic default policy dropped" msgstr="抛弃" />
+  <message msgid="port filter setting" msgstr="MAC/IP/Port过滤设置" />
+  <message msgid="port filter macaddr" msgstr="MAC地址" />
+  <message msgid="port filter source ipaddr" msgstr="来源端IP地址" />
+  <message msgid="port filter port range" msgstr="端口范围" />
+  <message msgid="port filter dest ipaddr" msgstr="目的端IP地址" />
+  <message msgid="port filter action" msgstr="执行动作" />
+  <message msgid="port filter action drop" msgstr="抛弃" />
+  <message msgid="port filter action accept" msgstr="接受" />
+  <message msgid="port current filter" msgstr="当前系统的MAC/IP/Port过滤规则： " />
+  <message msgid="port filter source port range" msgstr="来源端端口范围" />
+  <message msgid="port filter dest port range" msgstr="目的端端口范围" />
+  <message msgid="port filter packetcount" msgstr="数据包计数" />
+
+  <message msgid="firewall del" msgstr="删除" />
+  <message msgid="trigger info selected action" msgstr="对已选项进行：" />
+  <message msgid="forward title" msgstr="端口映射设置 " />
+  <message msgid="forward introduction" msgstr=" 您可以建立端口映射来提供网络服务。" />
+  <message msgid="forward virtual server" msgstr="端口映射设置" />
+  <message msgid="forward virtual server setting" msgstr="端口映射设置" />
+  <message msgid="forward virtual server ipaddr" msgstr="IP地址" />
+  <message msgid="forward virtual server port range" msgstr="端口范围" />
+  <message msgid="forward current virtual server" msgstr="当前系统的端口映射列表: " />
+
+  <message msgid="dmz title" msgstr=" DMZ设置 " />
+  <message msgid="dmz introduction" msgstr=" 您可以建立一个隔离区（DMZ）来区分内部网络与Internet。" />
+  <message msgid="dmz setting" msgstr="DMZ设置" />
+  <message msgid="dmz ipaddr" msgstr="DMZ IP地址" />
+  
+  <message msgid="content filter title" msgstr="内容过滤设置" />
+  <message msgid="content filter introduction" msgstr="您可以设置内容过滤规则来限制不适当的网页。" />
+  <message msgid="content filter webs content filter" msgstr="网页内容过滤" />
+  <message msgid="content filter webs content filter filter" msgstr="过滤" />
+  <message msgid="content filter webs content filter apply" msgstr="确定" />
+  <message msgid="content filter webs content filter reset" msgstr="重设" />
+  <message msgid="content filter webs URL filter title" msgstr="网页 URL过滤设置" />
+  <message msgid="content filter webs url filter current" msgstr="当前系统的网页 URL过滤规则：" />
+  <message msgid="content filter webs url fitler No" msgstr="编号" />
+  <message msgid="content filter webs url fitler url" msgstr="URL" />
+  <message msgid="content filter webs url fitler del" msgstr="删除" />
+  <message msgid="content filter webs url fitler reset" msgstr="重设" />
+  <message msgid="content filter webs url fitler add title" msgstr="新增URL过滤规则" />
+  <message msgid="content filter webs url fitler add" msgstr="新增" />
+  <message msgid="content filter webs url fitler reset" msgstr="重设" />
+  <message msgid="content filter webs host fitler title" msgstr="网页主机过滤设置" />
+  <message msgid="content filter webs host fitler current" msgstr="当前系统的网页主机过滤规则" />
+  <message msgid="content filter webs host fitler no" msgstr="编号" />
+  <message msgid="content filter webs host fitler host" msgstr="主机名(关键字)" />
+  <message msgid="content filter webs host fitler del" msgstr="删除" />
+  <message msgid="content filter webs host fitler reset" msgstr="重设" />
+  <message msgid="content filter webs host fitler add title" msgstr="当前系统的网页主机过滤规则：" />
+  <message msgid="content filter webs host fitler keyword" msgstr="关键字" />
+  <message msgid="content filter webs host fitler add" msgstr="新增" />
+  <message msgid="content filter webs host fitler reset" msgstr="重设" />
+  
+  <message msgid="sysfw title" msgstr="系统安全设置" />
+  <message msgid="sysfw introduction" msgstr="您可以透过设置系统防火墙来保护路由器或无线接入点本身。" />
+  <message msgid="sysfw remote management title" msgstr="远程管理" />
+  <message msgid="sysfw remote management head" msgstr="远程管理 (經由广域网络)" />
+  <message msgid="sysfw allow" msgstr="允許" />
+  <message msgid="sysfw deny" msgstr="禁止" />
+  <message msgid="sysfw wanping title" msgstr="过滤广域网路的PING封包" />
+  <message msgid="sysfw wanping head" msgstr="过滤广域网路的PING封包" />
+  <message msgid="sysfw spi title" msgstr="数据包状态检测 (SPI)" />
+  <message msgid="sysfw spi head" msgstr="SPI 防火墙" />
+  <message msgid="sysfw apply" msgstr="确定" />
+  <message msgid="sysfw reset" msgstr="重设" />
+  <message msgid="Ipsec title" msgstr="Ipsec VPN" />  
+  <message msgid="Ipsec introduction" msgstr="采用IPSec协议来实现远程接入的VPN技术" />  
+  <message msgid="IPSEC states" msgstr="状态" />  
+  <message msgid="IPSEC name" msgstr="名称" />  
+  <message msgid="IPSEC remotgw" msgstr="远程网关" />  
+  <message msgid="IPSEC localAdd" msgstr="本地IP地址" />  
+  <message msgid="IPSEC remoteAdd" msgstr="远程IP地址" />  
+  <message msgid="Ipsec append" msgstr="增加应用" />  
+  
+  <message msgid="button edit" msgstr="编辑" />  
+  <message msgid="option service" msgstr="服务端" />  
+  <message msgid="option client" msgstr="客户端" />  
+  <message msgid="Ipseccfg servicesel" msgstr="服务模式" />  
+  <message msgid="Ipseccfg title" msgstr="Ipsec VPN 配置" />  
+  <message msgid="Ipseccfg introduction" msgstr="您可以在这里对新建连接进行相应的配置" />  
+  <message msgid="Ipseccfg connName" msgstr="IPSec 连接名" />  
+  <message msgid="Ipseccfg remoteGWAddr" msgstr="远程 IPSec 网关" />  
+  <message msgid="Ipseccfg localIPMode" msgstr="本地 IP 地址" />  
+  <message msgid="Ipseccfg localIP" msgstr="VPN IP 地址" />    
+  <message msgid="Ipseccfg localMask" msgstr="IP 子网掩码" />  
+  <message msgid="Ipseccfg remoteIPMode" msgstr="远程IP地址" />  
+  <message msgid="Ipseccfg remoteIP" msgstr="VPN IP地址" />  
+  <message msgid="Ipseccfg remoteMask" msgstr="IP 子网掩码" />  
+  <message msgid="Ipseccfg keyExM" msgstr="Key Exchange 方法" />  
+  <message msgid="Ipseccfg authM" msgstr="认证 方法" />      
+  <message msgid="Ipseccfg psk" msgstr="Pre-Shared 密钥" />  
+  <message msgid="Ipseccfg perfectFSEn" msgstr="Perfect Forward Secrecy" />  
+  <message msgid="Ipseccfg certificateName" msgstr="Certificates" />  
+  <message msgid="Ipseccfg advSWButton" msgstr="高级 IKE 设置" />  
+  <message msgid="Ipseccfg hide" msgstr="隐藏高级设置" />  
+  <message msgid="Ipseccfg show" msgstr="显示高级设置" />      
+  <message msgid="Ipseccfg manualEncryptionAlgo" msgstr="加密算法" />  
+  <message msgid="Ipseccfg manualEncryptionKey" msgstr="加密密钥" />  
+  <message msgid="Ipseccfg manualAuthAlgo" msgstr="认证算法" />  
+  <message msgid="Ipseccfg manualAuthKey" msgstr="认证密钥" />  
+  <message msgid="Ipseccfg ph1Mode" msgstr="模式" />  
+  <message msgid="Ipseccfg ph1EncryptionAlgo" msgstr="加密算法" />      
+  <message msgid="Ipseccfg ph1IntegrityAlgo" msgstr="完整性算法" />  
+  <message msgid="Ipseccfg ph1DHGroup" msgstr="选择 Diffie-Hellman 密钥交换" />  
+  <message msgid="Ipseccfg ph1KeyTime" msgstr="Key 生命期" />  
+  <message msgid="connection name can not be empty" msgstr="连接名不能为空！" />  
+  <message msgid="invalid connection name" msgstr="无效的连接名！" />  
+  <message msgid="invalid remoteGWAddr" msgstr="无效的远程 IPSec 网关地址！" />      
+  <message msgid="invalid localIP" msgstr="无效的本地 VPN IP 地址！" />  
+  <message msgid="invalid localMask" msgstr="无效的本地 IP 子网掩码！" />  
+  <message msgid="invalid remoteIP" msgstr="无效的远程 VPN IP 地址！" />  
+  <message msgid="invalid remoteMask" msgstr="无效的远程 IP 子网掩码！" />  
+  <message msgid="invalid ph1KeyTime" msgstr="无效的 Phase 1 Key 生命期！" />  
+  <message msgid="invalid ph2KeyTime" msgstr="无效的 Phase 2 Key 生命期！" />      
+  <message msgid="invalid certificateName" msgstr="无法获取认证证书，请添加证书或者选择其他加密方式！" />     
+  <message msgid="invalid manualEncryptionKey" msgstr="无效的 Manual 加密密钥！" />  
+  <message msgid="invalid manualAuthKey" msgstr="无效的 Manual 认证密钥！" />     
+  <message msgid="invalid rules_num" msgstr="连接数目已经达到最大允许数目" />  
+   
+  <message msgid="vpn_status_disable_display" msgstr="停用" />     
+  <message msgid="vpn_status_enable_display" msgstr="启用" />     
+  <message msgid="vpn name help1" msgstr="可以输入DEV+设备ID+[...] 的格式以绑定设备" />     
+  <message msgid="vpn name help2" msgstr="如:DEV281250D52F2A1452.vpn1.com" />     
+  <message msgid="id policies remote lan" msgstr="访问网段" />
+
+
+  <message msgid="id pptp settings" msgstr="PPTP VPN 设置" />                    
+    <message msgid="id pptp active" msgstr="启动PPTP" />     
+      <message msgid="id pptp user" msgstr="PPTP 用户名" />         
+        <message msgid="id pptp password" msgstr="PPTP 密码" />
+          <message msgid="id pptp server" msgstr="PPTP 服务器" />     
+            <message msgid="id pptp lan mask" msgstr="对方网段/掩码" />
+            <message msgid="id pptp option dhcp" msgstr="动态IP" />
+            <message msgid="id pptp option static" msgstr="静态IP" />
+              <message msgid="id pptp local ip" msgstr="本地 PPTP IP" />   
+                <message msgid="id pptp mppe encryption" msgstr="MPPE 加密" />
+                  <message msgid="id pptp mppe 40" msgstr="40位加密(默认128位)" /> 
+                    <message msgid="id pptp refuse stateless" msgstr="拒绝Stateless加密" />         
+                      <message msgid="id pptp apply" msgstr="确定" /> 
+
+
+  <message msgid="id l2tp settings" msgstr="L2TP VPN 设置" />                    
+    <message msgid="id l2tp active" msgstr="启动L2TP" />     
+      <message msgid="id l2tp user" msgstr="L2TP 用户名" />         
+        <message msgid="id l2tp password" msgstr="L2TP 密码" />
+          <message msgid="id l2tp server" msgstr="L2TP 服务器" />     
+            <message msgid="id l2tp lan mask" msgstr="对方网段/掩码" />
+            <message msgid="id l2tp option dhcp" msgstr="动态IP" />
+            <message msgid="id l2tp option static" msgstr="静态IP" />
+              <message msgid="id l2tp local ip" msgstr="本地 L2TP IP" />   
+                <message msgid="id l2tp mppe encryption" msgstr="MPPE 加密" />
+                  <message msgid="id l2tp mppe 40" msgstr="40位加密(默认128位)" /> 
+                    <message msgid="id l2tp refuse stateless" msgstr="拒绝Stateless加密" />         
+                      <message msgid="id l2tp apply" msgstr="确定" /> 
+</po>

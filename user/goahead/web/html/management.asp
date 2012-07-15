@@ -618,7 +618,9 @@ function set_greenap()
 function setLanguage()
 {
 	refreshMenuFrame();
-	document.cookie="language="+document.Lang.langSelection.value+"; path=/";
+	var expiresDate = new Date();
+	expiresDate.setDate(expiresDate.getDate()+1000);
+	document.cookie="language=" + document.Lang.langSelection.value + ";expires="+expiresDate.toGMTString()+";path=/";
 	//parent.menu.location.reload();
 
 	return true;
