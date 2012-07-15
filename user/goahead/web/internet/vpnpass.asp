@@ -1,1 +1,0 @@
-../html/vpnpass.asp

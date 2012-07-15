@@ -1,1 +1,0 @@
-../html/qosaf.asp

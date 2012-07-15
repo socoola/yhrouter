@@ -1,1 +1,0 @@
-../html/ipsconfig_edit.asp

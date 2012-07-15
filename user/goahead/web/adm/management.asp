@@ -1,1 +1,0 @@
-../html/management.asp

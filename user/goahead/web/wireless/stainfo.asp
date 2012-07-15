@@ -1,1 +1,0 @@
-../html/stainfo.asp
