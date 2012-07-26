@@ -92,7 +92,7 @@ CONF_H	= $(ROOTDIR)/$(LINUXDIR)/include/linux/autoconf.h
 UCONF_H	= $(ROOTDIR)/config/autoconf.h
 BUSYCONF_H = $(ROOTDIR)/user/busybox/include/autoconf.h
 
-all:	$(NAME) wpsledpbc start_vpn get_dev_id host_to_ip
+all:	$(NAME) wpsledpbc start_vpn get_dev_id host_to_ip check_vpn
 
 #
 #	Primary link
@@ -109,11 +109,14 @@ get_dev_id:get_dev_id.o
 	$(CC) -o $@ $^ 
 start_vpn:start_vpn.o
 	$(CC) -o $@ $^  $(LDFLAGS) $(EXTRALIBS) $(LDLIBS)
-	
+check_vpn:check_vpn.o
+	$(CC) -o $@ $^  $(LDFLAGS) $(EXTRALIBS) $(LDLIBS)
+
 romfs:
 	$(ROMFSINST) /bin/$(NAME)
 	$(ROMFSINST) /bin/wpsledpbc
 	$(ROMFSINST) /bin/start_vpn
+	$(ROMFSINST) /bin/check_vpn
 	$(ROMFSINST) /bin/get_dev_id
 	$(ROMFSINST) /bin/host_to_ip
 	$(ROMFSINST) /bin/vpn_dns_ip_check_for_restart
@@ -124,7 +127,7 @@ ifeq ("$(CONFIG_USER_GOAHEAD_SSL)", "y")
 endif
 
 clean:
-	rm -f $(NAME) *.o wpsledpbc start_vpn get_dev_id host_to_ip
+	rm -f $(NAME) *.o wpsledpbc start_vpn get_dev_id host_to_ip check_vpn
 
 clean_inet:
 	rm -f internet.o

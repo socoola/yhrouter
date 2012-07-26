@@ -78,7 +78,7 @@ void	formDefineUserMgmt(void);
  *	Change configuration here
  */
 
-static char_t		*rootWeb = T("/flash/web");		/* Root web directory */
+static char_t		*rootWeb = T("/etc_ro/web");		/* Root web directory */
 static char_t		*password = T("");				/* Security password */
 static int			port = 80;						/* Server port */
 static int			retries = 5;					/* Server port retries */
@@ -201,6 +201,8 @@ void initDeviceName()
 	system("rm -f /dev/yh");
 	sprintf(szBuf, "ln -s %s /dev/yh", buf);
 	system(szBuf);
+	sprintf(szBuf, "%s/mklink.sh", rootWeb);
+	system(szBuf);
 
 }
 /*********************************** Code *************************************/
@@ -225,6 +227,7 @@ int main(int argc, char** argv)
 		return -1;
 
 	initDeviceName();
+	
 /*
  *	Initialize the web server
  */

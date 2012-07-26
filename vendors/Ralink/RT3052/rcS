@@ -4,21 +4,22 @@ mkdir -p /var/run
 mdev -s
 #add v2.4.0 by zsf ,mount flash partition
 mk_flash_dir.sh 
-rm -rf /flash/web
-if [ -d /flash/web ];then
-	echo ""
-else
-	cp -r /etc_ro/web /flash/
-	chmod +x /flash/web/mklink.sh
-	/flash/web/mklink.sh
-fi
 
-udpsvd -E 0 9069 tftpd -c /flash/web/lang&
-udpsvd -E 0 10069 tftpd -c /flash/web/html&
-udpsvd -E 0 20069 tftpd -c /flash/web/js&
-udpsvd -E 0 30069 tftpd -c /flash/web/image&
-udpsvd -E 0 40069 tftpd -c /flash/web/css&
-udpsvd -E 0 50069 tftpd -c /flash/web/&
+#rm -rf /flash/web
+#if [ -d /flash/web ];then
+#	echo ""
+#else
+#	cp -r /etc_ro/web /flash/
+#	chmod +x /flash/web/mklink.sh
+#	/flash/web/mklink.sh
+#fi
+
+#udpsvd -E 0 9069 tftpd -c /flash/web/lang&
+#udpsvd -E 0 10069 tftpd -c /flash/web/html&
+#udpsvd -E 0 20069 tftpd -c /flash/web/js&
+#udpsvd -E 0 30069 tftpd -c /flash/web/image&
+#udpsvd -E 0 40069 tftpd -c /flash/web/css&
+#udpsvd -E 0 50069 tftpd -c /flash/web/&
 
 gpio l 12 4000 0 1 1 4000 #gpio12=0 for dtu dcd=0
 #gpio l 21 7 1 1 1 1 #gpio 21 for simcom700 igt, >500ms we set 700ms

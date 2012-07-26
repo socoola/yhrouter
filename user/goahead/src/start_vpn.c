@@ -14,7 +14,7 @@
 #include    <string.h>
 #include    <dirent.h>
 //#include 	<winsock.h>
-
+#include<syslog.h>
 #include	"internet.h"
 #include	"nvram.h"
 #include	"webs.h"
@@ -24,6 +24,23 @@
 #include	"linux/autoconf.h"  //kernel config
 #include	"config/autoconf.h" //user config
 #include	"user/busybox/include/autoconf.h" //busybox config
+
+#include<sys/types.h>
+#include<signal.h>
+#include<unistd.h>
+#include <stdio.h>
+#include <signal.h>
+#include <errno.h>
+#include <ucontext.h>
+
+/* According to POSIX.1-2001 */
+#include <sys/select.h>
+
+/* According to earlier standards */
+#include <sys/time.h>
+#include <sys/types.h>
+#include <unistd.h>
+
 
 #define IPSEC_MAX_RULES 20	
 #define CERT_PATH "/var/cert"
@@ -53,7 +70,7 @@ static int isIpValid(char *str)
 		return 1;
 
 	if(! (inet_aton(str, &addr))){
-		printf("isIpValid(): %s is not a valid IP address.\n", str);
+		syslog(LOG_INFO, "isIpValid(): %s is not a valid IP address.\n", str);
 		return 0;
 	}
 	return 1;
@@ -389,6 +406,8 @@ char* PPP_Name;
   		 }
    		fprintf(fp, "path pre_shared_key \"/var/psk.txt\";\n");
    		fprintf(fp, "path certificate \"%s\";\n\n", CERT_PATH);
+   		
+   		fprintf(fp, "timer\n{\n\tcounter 5;\n\tphase1 15 sec;\n\tphase2 15 sec;\n}\n");
 		fclose(fp);//close file
 
 
@@ -864,12 +883,17 @@ char* PPP_Name;
 	system("chmod 600 /var/psk.txt");
 	system("chmod 640 /var/setkey.conf");
 	system("chmod 640 /var/racoon.conf");
+    system("racoonctl flush-sa ipsec");
 	system("killall racoon");
 	system("setkey -f var/setkey.conf");
 	system("racoon -f var/racoon.conf");
 
-	sleep(1);
+	sleep(5);
 	system("ping_ipsec.sh&");
+    system("kill_pingany.sh&");//kill ping_any 
+     system("kill_pingany.sh&");//kill ping_any 
+    sleep(2);
+      system("ping_any.sh&");//
 	
 
 	sign_link_up=1;
@@ -999,6 +1023,8 @@ char* PPP_Name;
   		 }
    		fprintf(fp, "path pre_shared_key \"/var/psk.txt\";\n");
    		fprintf(fp, "path certificate \"%s\";\n\n", CERT_PATH);
+   		
+   		fprintf(fp, "timer\n{\n\tcounter 5;\n\tphase1 15 sec;\n\tphase2 15 sec;\n}\n");
 		fclose(fp);//close file
 
 
@@ -1530,11 +1556,31 @@ int get_dns_change_sign(void)
 	else return 0;
 }
 */
-int main(void)
+int main(int argc, char** argv)
 {
     char *vpn_link_sign;
 	int dns_change_sign=0;
 	int ping_ipsec_count=0;
+
+   /* int i;
+    struct sigaction s;
+    s.sa_flags = SA_SIGINFO;
+    s.sa_sigaction = (void *)myhandler;
+    for(i = 1; i < 32; i++)
+    {
+        if(sigaction (i,&s,(struct sigaction *)NULL)) {
+            printf("Sigaction returned error = %d\n", errno);
+            //exit(0);
+        }
+    }*/
+
+
+
+    /* ignore SIGPIPE (send if transmitting to closed sockets) */
+    signal(SIGPIPE, SIG_IGN);
+signal(SIGUSR1, SIG_IGN);
+signal(SIGUSR2, SIG_IGN);
+
 
   //  nvram_bufset(RT2860_NVRAM, "VpnLinkSign","linkdown");
 
@@ -1550,7 +1596,11 @@ int main(void)
 			if(sign_havelink==1){
 				return 0; //exit
 			}
-		}else{
+		}
+/*
+        else{
+
+             system("echo \"success\">>/var/vpn.log");
 			//exit(0);	
 	//		dns_change_sign=get_dns_change_sign();
 	//		if(dns_change_sign==1)
@@ -1565,10 +1615,11 @@ int main(void)
 			
 		
 		}
+*/
 		sleep(10);
 	}
 
-
+    return 0;
 	
 }
 

@@ -1,4 +1,4 @@
-cd /flash/web
+cd /etc_ro/web
 
 cd adm
 rm -rf *

@@ -7,3 +7,4 @@ sleep 1
 
 ps |grep -v grep | grep ping |grep br0 |sed 's/ *//' | sed 's/ .*//' |sed 's/^/kill /' > /tmp/.ping_ipsec
 ./tmp/.ping_ipsec
+
