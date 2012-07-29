@@ -672,7 +672,7 @@ function applyClick() {
   
 </head>
 
-<body onLoad="formLoad()">
+<body onload="formLoad()">
 
 <h1 id="Ipseccfgtitle">IPSEC   Settings </h1>
 <p id="Ipseccfgintroduce"> IPSEC</p>

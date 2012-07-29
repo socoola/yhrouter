@@ -162,7 +162,7 @@ function PageInit()
 		//document.getElementById("div_ethtool").style.display = "none";
 	}	
 	
-	getModelType();
+	//getModelType();
 }
 </script>
 </head>
@@ -250,7 +250,7 @@ function PageInit()
 		
 		<script type="text/javascript">
 			
-			function getModelType(){
+		/*	function getModelType(){
 				var dev_3g = "<% getCfgGeneral(1, "wan_3g_dev"); %>";
 			    //	document.getElementById("MoType").innerHTML;
 			    if (dev_3g == "HUAWEI-EM560")
@@ -276,7 +276,7 @@ function PageInit()
                 else if (dev_3g == "AD3812")
 		    	    document.getElementById("MoType").innerHTML = "ZTE-AD3812";
 			    else
-					document.getElementById("MoType").innerHTML = "NO MODEM";
+					document.getElementById("MoType").innerHTML = "NO MODEM";*/
 				}
 		</script>
 		

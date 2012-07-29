@@ -1,0 +1,83 @@
+#!/bin/sh
+
+# place the commands to run after the pppd dial up successfully.
+
+
+if [ $# -eq 6 ];then
+#	echo "pptp $6  gw $5 interface $1  up" > /dev/console
+	remotelan=`echo $6 |sed 's/.*://'`
+#	echo $remotelan > /dev/console
+#	echo "debug	ip route add $remotelan via $5 dev $1 " > /dev/console
+	ip route add $remotelan via $5 dev $1
+	exit 0
+	
+	
+else 
+
+
+
+
+PPPUSB=`echo $2 | grep USB`
+PPPACM=`echo $2 | grep ACM`
+
+if [ -n "$PPPUSB" -o -n "$PPPACM" ];then
+        PPPIF=3G
+else
+        PPPIF=PPPOE
+fi
+
+
+
+
+if [ $PPPIF = "3G" ];then
+	echo "3g_link_up" > /tmp/3G_LINK
+	echo "3g_link_up and 3g led on by ip-up" > /dev/ttyS1
+	./sbin/3gdialup_led.sh on  &
+fi
+
+
+if [ -x /bin/qos_run ]; then
+	echo "/bin/qos_run"
+	/bin/qos_run
+fi
+
+if [ -x /sbin/ddns.sh ]; then
+	echo "/sbin/ddns.sh"
+	/sbin/ddns.sh
+fi
+
+if [ -x /sbin/config-udhcpd.sh ]; then
+	echo "/sbin/config-udhcpd.sh $DNS1 $DNS2"
+	/sbin/config-udhcpd.sh -k
+	/sbin/config-udhcpd.sh -d $DNS1 $DNS2
+#	/sbin/config-udhcpd.sh -r 10
+	/sbin/config-udhcpd.sh -r 0
+fi
+
+
+sleep 2
+
+
+
+#ddns for 3322.org
+srv=`nvram_get 2860 DDNSProvider`
+if [ "$srv" = "3322.org" ];then
+
+ddns=`nvram_get 2860 DDNS`
+u=`nvram_get 2860 DDNSAccount`
+pw=`nvram_get 2860 DDNSPassword`
+ez-ipupdate -i $1 -h $ddns -S qdns -u $u:$pw &
+
+fi
+	./bin/restart_dtu_in_ip_up&
+#	restart_gps_in_ip_up&
+fi
+
+echo "start_vpn in ip_up">>/var/vpn.log
+
+#killall start_vpn
+#killall racoon
+#check_vpn&
+#echo "5">/var/stop_check_vpn.log
+start_vpn&
+echo "end_vpn in ip_up">>/var/vpn.log

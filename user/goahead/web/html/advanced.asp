@@ -763,7 +763,7 @@ function ieee80211h_switch()
 <table width = "540" border = "0" cellpadding = "2" cellspacing = "1">
   <tr align="center">
     <td>
-      <input type=submit  value="Apply" id="advApply"> &nbsp; &nbsp;
+      <input type=button  value="Apply" id="advApply" onclick="document.wireless_advanced.submit();parent.mainFrame.location.reload();"> &nbsp; &nbsp;
       <input type=reset   value="Cancel" id="advCancel" onClick="window.location.reload()">
     </td>
   </tr>

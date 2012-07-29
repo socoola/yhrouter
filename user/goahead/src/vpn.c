@@ -1117,7 +1117,7 @@ end:
 	if(edit_sign==1)
 	{
 		vpn_edit_load_para();
-		websRedirect(wp, "internet/ipsconfig_edit.asp");
+		websRedirect(wp, "html/ipsconfig_edit.asp");
 	}
 	else	
 		websRedirect(wp, "html/ipsecVpn.asp");

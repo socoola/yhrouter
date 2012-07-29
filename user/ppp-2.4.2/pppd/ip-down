@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# place the commands to run after the pppd dial down successfully.
+#echo $* > /dev/console
+
+if [ $# -ne 6 ];then
+PPPUSB=`echo $2 | grep USB`
+PPPACM=`echo $2 | grep ACM`
+
+if [ -n "$PPPUSB" -o -n "$PPPACM" ];then
+        PPPIF=3G
+else
+        PPPIF=PPPOE
+fi
+
+
+if [ $PPPIF = "3G" ];then
+
+	echo "3g_link_down" > /tmp/3G_LINK
+	echo "3g_link_down and 3g led off by ip-down" > /dev/ttyS1
+	./sbin/3gdialup_led.sh off  &
+fi
+
+
+	
+	echo "DTU DCD pin set low by ip-down" > /dev/ttyS1
+	gpio l 12 4000 0 1 1 4000  &
+
+
+fi
+kill_pingany.sh&
+#kill_trigger.sh&
+#killall check_vpn
+echo "1">/var/stop_check_vpn.log
+#killall sh
+killall start_vpn

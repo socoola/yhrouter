@@ -228,3 +228,4 @@ reboot_para=off,1440
 RemoteManagement=1
 WANPingFilter=0
 SPIFWEnable=0
+RadioOff=1

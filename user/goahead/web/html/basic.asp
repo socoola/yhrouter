@@ -11,7 +11,7 @@
 
 <script language="JavaScript" type="text/javascript">
 Butterlate.setTextDomain("wireless");
-var radiooff = '<% getCfgZero(1, "RadioOff"); %>';
+
 var PhyMode  = '<% getCfgZero(1, "WirelessMode"); %>';
 var HiddenSSID  = '<% getCfgZero(1, "HideSSID"); %>';
 var APIsolated = '<% getCfgZero(1, "NoForwarding"); %>';
@@ -676,6 +676,7 @@ function initValue()
 	if (countrycode == '')
 		countrycode = 'NONE';
 
+    document.getElementById('radioStatus').value = radio_off;
 	document.getElementById("div_11a_channel").style.visibility = "hidden";
 	document.getElementById("div_11a_channel").style.display = "none";
 	document.wireless_basic.sz11aChannel.disabled = true;
@@ -1492,8 +1493,8 @@ function CheckValue()
    
 		
 	<select id="radioStatus" name="radioStatus" value="<% getCfgGeneral(1, "RadioOff"); %>" onchange="wifiSelect()">
-			<option id="wifiEnable">Enable</option>
-			<option id="wifiDisable">Disable</option>
+			<option value="0" id="wifiEnable">Enable</option>
+			<option value="1" id="wifiDisable">Disable</option>
 	</select>
     </td>
     
@@ -1800,7 +1801,7 @@ function CheckValue()
   <tr align="center">
     <td>
     	<!--<input type="button" value="Apply" id="basicApply" onclick="submitPage()" />-->
-      <span ><input type=submit  value="Apply" id="basicApplyold" /></span> &nbsp; &nbsp;
+      <span ><input type=button  value="Apply" id="basicApplyold" onclick="document.wireless_basic.submit();parent.mainFrame.location.reload();"/></span> &nbsp; &nbsp;
       <input type=reset   value="Cancel" id="basicCancel" onClick="window.location.reload()">
     </td>
   </tr>

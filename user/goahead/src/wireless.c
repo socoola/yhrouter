@@ -539,14 +539,14 @@ static void wirelessBasic(webs_t wp, char_t *path, char_t *query)
 	char	hidden_ssid[16], noforwarding[16];
 	int i = 0, is_n = 0, new_bssid_num, old_bssid_num = 1;
 
-	radio = websGetVar(wp, T("radiohiddenButton"), T("2"));
-	if (!strncmp(radio, "0", 2)) {
+	radio = websGetVar(wp, T("radioStatus"), T("2"));
+	if (!strncmp(radio, "1", 2)) {
 		doSystem("iwpriv ra0 set RadioOn=0");
 		nvram_set(RT2860_NVRAM, "RadioOff", "1");
 		//websRedirect(wp, "wireless/basic.asp");
 		//return;
 	}
-	else if (!strncmp(radio, "1", 2)) {
+	else if (!strncmp(radio, "0", 2)) {
 		doSystem("iwpriv ra0 set RadioOn=1");
 		nvram_set(RT2860_NVRAM, "RadioOff", "0");
 		//websRedirect(wp, "wireless/basic.asp");

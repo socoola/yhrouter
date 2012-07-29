@@ -1334,6 +1334,14 @@ static int getDeviceID(int eid, webs_t wp, int argc, char_t **argv)
 		{
 			if (fgets(buff, sizeof(buff), fp) != NULL) 
             {
+                for(i = 0; i < sizeof(buff); i++)
+                {
+                    if((buff[i] == 0x0d) || (buff[i] == 0x0a) || (buff[i] == 0x00))
+                    {
+                        break;
+                    }
+                }
+                buff[i] = 0;
 				 for(i = 0;i < sizeof(buff);i++)
                  {
                         if(startFlag == 0)
@@ -2240,6 +2248,7 @@ static void setLan(webs_t wp, char_t *path, char_t *query)
 	char	*opmode = nvram_bufget(RT2860_NVRAM, "OperationMode");
 	char	*wan_ip = nvram_bufget(RT2860_NVRAM, "wan_ipaddr");
 	char	*ctype = nvram_bufget(RT2860_NVRAM, "connectionType");
+    char *lanip_raw = nvram_bufget(RT2860_NVRAM, "lan_ipaddr");
 
 	ip = websGetVar(wp, T("lanIp"), T(""));
 	nm = websGetVar(wp, T("lanNetmask"), T(""));
@@ -2344,12 +2353,13 @@ static void setLan(webs_t wp, char_t *path, char_t *query)
 	nvram_bufset(RT2860_NVRAM, "pppoeREnabled", pppoer_en);
 	nvram_bufset(RT2860_NVRAM, "dnsPEnabled", dnsp_en);
 	nvram_commit(RT2860_NVRAM);
-
-	initInternet();
+    if(strcmp(lanip_raw, ip) == 0)
+	    initInternet();
 
 	//debug print
 	websHeader(wp);
 	websWrite(wp, T("<h3>LAN Interface Setup</h3><br>\n"));
+    
 #ifdef GA_HOSTNAME_SUPPORT
 	websWrite(wp, T("Hostname: %s<br>\n"), host);
 #endif
@@ -2381,8 +2391,17 @@ static void setLan(webs_t wp, char_t *path, char_t *query)
 	websWrite(wp, T("UPNP enable: %s<br>\n"), upnp_en);
 	websWrite(wp, T("RADVD enable: %s<br>\n"), radvd_en);
 	websWrite(wp, T("DNS proxy enable: %s<br>\n"), dnsp_en);
+    if(strcmp(lanip_raw, ip) != 0)
+    {
+        websWrite(wp, T("\nLan Ip Address changed, reboot now......<br>\n"));
+    }
+
 	websFooter(wp);
 	websDone(wp, 200);
+    if(strcmp(lanip_raw, ip) != 0)
+    {        
+        system("sleep 5&&reboot&");        
+    }
 }
 
 /* goform/setVpnPaThru */

@@ -119,7 +119,7 @@ echo "if % = 1 goto error" >> $PPP_3G_CONN_FILE
 echo "if % = 2 goto error" >> $PPP_3G_CONN_FILE
 
 echo ":next11" >> $PPP_3G_CONN_FILE
-echo "send \"ATE0\"" >> $PPP_3G_CONN_FILE
+echo "send \"ATE1\"" >> $PPP_3G_CONN_FILE
 echo "waitfor 10 \"OK\",\"ERR\",\"ERROR\"" >> $PPP_3G_CONN_FILE
 echo "if % = -1 goto timeerror" >>$PPP_3G_CONN_FILE
 echo "if % = 0 goto next1" >> $PPP_3G_CONN_FILE
@@ -175,6 +175,7 @@ echo ":next1" >> $PPP_3G_CONN_FILE
 #	"putenv  \"SIMSTATE=Inserted\"\n"\
 #	"system \"echo \$SIMSTATE >/var/sim\"\n"\
 #	>>$PPP_3G_CONN_FILE	
+cat /etc_ro/ppp/3g/imei >>$PPP_3G_CONN_FILE
 cat /etc_ro/ppp/3g/sim >>$PPP_3G_CONN_FILE	
 
 #echo "waitquiet 1 0.1">>$PPP_3G_CONN_FILE
@@ -188,7 +189,6 @@ cat /etc_ro/ppp/3g/sim >>$PPP_3G_CONN_FILE
 #echo "putenv \"SIGNAL=\"\$s" >>$PPP_3G_CONN_FILE
 #echo "system \"echo \$SIGNAL >/var/signal\"" >>$PPP_3G_CONN_FILE
 cat /etc_ro/ppp/3g/signal >>$PPP_3G_CONN_FILE
-cat /etc_ro/ppp/3g/imei >>$PPP_3G_CONN_FILE
 
 user=`nvram_get 2860 G3UserName`
 password=`nvram_get 2860 G3Password`
