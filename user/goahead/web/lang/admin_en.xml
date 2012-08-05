@@ -1,5 +1,5 @@
 <po>
-	<message msgid="status imei" msgstr="Model IMEI" />
+	<message msgid="status imei" msgstr="Module IMEI" />
 	<message msgid="status status_direc" msgstr="Show status of the device." />
 	
 	<message msgid="syslog syslog_direc" msgstr="System running logs." />
@@ -16,8 +16,8 @@
 	<message msgid="help help_head" msgstr="Help more" />
 	
 	<message msgid="status modelType" msgstr="Module Type" />
-	<message msgid="status lanmac" msgstr="WAN MAC Address" />
-  <message msgid="status wanmac" msgstr="LAN MAC Address" />
+	<message msgid="status lanmac" msgstr="LAN MAC Address" />
+  <message msgid="status wanmac" msgstr="WAN MAC Address" />
 	<message msgid="router S/N" msgstr="Router" />
 	<message msgid="menuFrame status" msgstr="Status" />
 	<message msgid="menuFrame opmode" msgstr="Operation Mode" />

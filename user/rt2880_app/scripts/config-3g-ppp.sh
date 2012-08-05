@@ -374,7 +374,7 @@ fi
 echo ":next21" >> $PPP_3G_CONN_FILE
 echo "system \"3gdialup_led.sh fast\"" >> $PPP_3G_CONN_FILE
 echo "send \"ATD$conn_num\"" >> $PPP_3G_CONN_FILE
-echo "waitfor 10 \"CONNECT\",\"ERR\",\"ERROR\"" >> $PPP_3G_CONN_FILE
+echo "waitfor 20 \"CONNECT\",\"ERR\",\"ERROR\"" >> $PPP_3G_CONN_FILE
 echo "if % = -1 goto timeerror" >> $PPP_3G_CONN_FILE
 echo "if % = 0 goto next3" >> $PPP_3G_CONN_FILE
 echo "if % = 1 goto error" >> $PPP_3G_CONN_FILE
@@ -446,6 +446,10 @@ cat /etc_ro/ppp/3g/signal >>/etc_ro/ppp/3g/$DISCONN
 if [ "$auth_type" == "0" ];then 
 	rm -rf /etc_ro/ppp/chap-secrets
 	rm -rf /etc_ro/ppp/pap-secrets
+    echo "$user_for_auth * $pwd_for_auth  " > /etc_ro/ppp/pap-secrets
+	chmod 700 /etc_ro/ppp/pap-secrets
+    echo "$user_for_auth * $pwd_for_auth  " > /etc_ro/ppp/chap-secrets
+	chmod 700 /etc_ro/ppp/chap-secrets
 elif [ "$auth_type" == "2" ];then 
 	rm -rf /etc_ro/ppp/chap-secrets
 	echo "$user_for_auth * $pwd_for_auth  " > /etc_ro/ppp/pap-secrets

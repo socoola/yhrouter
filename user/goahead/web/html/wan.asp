@@ -1804,7 +1804,7 @@ function initValue()
   		<input type="text" maxlength=30 size=30 name="G3LocalIp" value="<% getCfgGeneral(1, "G3LocalIp"); %>">
 	</td>
 </tr>
-<tr style="display:none">
+<tr>
 	<td class="head" id="id_G3AuthProtocol">
 		Auth protocol
 	</td>

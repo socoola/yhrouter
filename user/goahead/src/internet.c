@@ -1011,6 +1011,8 @@ static int get3gSignal(int eid, webs_t wp, int argc, char_t **argv)
 			{
 				fclose(fp);
 				sprintf(pos, ",(0-31)");
+                if(strncmp(buff, "99", 2) == 0)
+                    system("comgt -d /dev/yh -s /etc_ro/ppp/3g/signal.scr");
 				return websWrite(wp, buff);
 			}
 		}
@@ -2371,6 +2373,7 @@ static void setLan(webs_t wp, char_t *path, char_t *query)
 	if (!strncmp(opmode, "0", 2)) {
 		websWrite(wp, T("Gateway: %s<br>\n"), gw);
 		websWrite(wp, T("PriDns: %s<br>\n"), pd);
+
 		websWrite(wp, T("SecDns: %s<br>\n"), sd);
 	}
 	websWrite(wp, T("DHCP type: %s<br>\n"), dhcp_tp);

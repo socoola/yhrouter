@@ -7,7 +7,7 @@ system "echo \"No signal\" >/var/signal"
 :signal
     let c=c+1
     waitquiet 10 0.5
-    send "AT+CSQ?^m"
+    send "AT+CSQ^m"
     get 2 ":" $s
     if % != 0 goto signalerror
     let a=len($s)

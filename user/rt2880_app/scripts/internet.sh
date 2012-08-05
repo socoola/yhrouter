@@ -245,22 +245,24 @@ addRaL02Br0()
 
 genSysFiles()
 {
-	#login=`nvram_get 2860 Login`
-	#pass=`nvram_get 2860 Password`
-	#if [ "$login" != "" -a "$pass" != "" ]; then
-	#echo "$login::0:0:Adminstrator:/:/bin/sh" > /etc/passwd
-	#echo "$login:x:0:$login" > /etc/group
-	#	chpasswd.sh $login $pass
-	#fi
+    if [ "$CONFIG_TELNET_USE_HTTP_USER" == "y" ]; then
+        
+	    login=`nvram_get 2860 Login`
+	    pass=`nvram_get 2860 Password`
+	    if [ "$login" != "" -a "$pass" != "" ]; then
+	    echo "$login::0:0:Adminstrator:/:/bin/sh" > /etc/passwd
+	    echo "$login:x:0:$login" > /etc/group
+    		chpasswd.sh $login $pass
+	    fi
+    else
 
-
-	echo "r8_admin_user::0:0:Adminstrator:/:/bin/sh" > /etc/passwd
-	echo "r8_admin_user:x:0:r8_admin_user" > /etc/group
-	chpasswd.sh r8_admin_user r8_pwd
-
-	echo "r8_user::1000:1000:Adminstrator:/:/bin/sh" >> /etc/passwd
-	echo "r8_user:x:1000:r8_user">> /etc/group
-	chpasswd.sh r8_user r8_123
+	    echo "admin868::0:0:Adminstrator:/:/bin/sh" > /etc/passwd
+	    echo "admin868:x:0:lylq-268" > /etc/group
+	    chpasswd.sh admin868 lylq-268
+    fi
+	#echo "r8_user::1000:1000:Adminstrator:/:/bin/sh" >> /etc/passwd
+	#echo "r8_user:x:1000:r8_user">> /etc/group
+	#chpasswd.sh r8_user r8_123
 	
 	chmod 751 /etc/passwd
 	chmod 751 /etc/passwd-

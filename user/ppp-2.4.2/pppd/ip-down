@@ -33,4 +33,5 @@ kill_pingany.sh&
 #killall check_vpn
 echo "1">/var/stop_check_vpn.log
 #killall sh
+setkey -F
 killall start_vpn

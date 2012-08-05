@@ -883,7 +883,7 @@ char* PPP_Name;
 	system("chmod 600 /var/psk.txt");
 	system("chmod 640 /var/setkey.conf");
 	system("chmod 640 /var/racoon.conf");
-    system("racoonctl flush-sa ipsec");
+    system("setkey -F&&setkey -FP");
 	system("killall racoon");
 	system("setkey -f var/setkey.conf");
 	system("racoon -f var/racoon.conf");
