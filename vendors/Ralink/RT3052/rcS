@@ -30,7 +30,7 @@ sleep 1
 gpio l 6 4000 0 1 1 4000 #gpio6=1 
 
 
-
+mdev -smknod   /dev/watchdog      c       10      130
 sleep 1 
 gpio l 21 7 1 1 1 1 #gpio 21 for simcom700 igt, >500ms we set 700ms
 
@@ -56,7 +56,7 @@ telnetd
 
 #echo 1-1 0:0 660 @usb_modeswitch -v 0x12d1 -p 0x1001 - H 1 > /etc/mdev.conf
 echo /sbin/mdev > /proc/sys/kernel/hotplug
-mdev -s
+
 
 
 #add 2010-10-30

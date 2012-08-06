@@ -16,6 +16,10 @@
 			Butterlate.setTextDomain("admin");
 			function initTranslation()
 			{
+				var support_dtu = "<% DtuIsSupport(); %>";
+				var support_linkbackup = "<% LinkbackupIsSupport(); %>";
+				var support_wifi = "<% WifiIsSupport(); %>";
+				var support_yinghua = "<% YinghuaIsSupport(); %>";
 				var e = document.getElementById("status");
 				e.innerHTML = _("menuFrame status");
 						
@@ -44,24 +48,34 @@
 				e.innerHTML = _("menuFrame pptp");
 				e = document.getElementById("l2tp");
 				e.innerHTML = _("menuFrame l2tp");
-				e = document.getElementById("dtu");
-				e.innerHTML = _("menuFrame dtu");
-				e = document.getElementById("linkbackup");
-				e.innerHTML = _("menuFrame linkbackup");
+				if(support_dtu == "y")
+				{
+					e = document.getElementById("dtu");
+					e.innerHTML = _("menuFrame dtu");
+				}
+				
+				if(support_linkbackup == "y")
+				{
+					e = document.getElementById("linkbackup");
+					e.innerHTML = _("menuFrame linkbackup");
+				}
 				
 				
-				e = document.getElementById("wire_less");
-				e.innerHTML = _("menuFrame wire_less");
-				e = document.getElementById("basic");
-				e.innerHTML = _("menuFrame basic");
-				e = document.getElementById("security");
-				e.innerHTML = _("menuFrame security");
-				e = document.getElementById("advanced");
-				e.innerHTML = _("menuFrame advanced");
-				e = document.getElementById("wds");
-				e.innerHTML = _("menuFrame wds");
-				e = document.getElementById("stainfo");
-				e.innerHTML = _("menuFrame stainfo");
+				if(support_wifi == "y")
+				{
+					e = document.getElementById("wire_less");
+					e.innerHTML = _("menuFrame wire_less");
+					e = document.getElementById("basic");
+					e.innerHTML = _("menuFrame basic");
+					e = document.getElementById("security");
+					e.innerHTML = _("menuFrame security");
+					e = document.getElementById("advanced");
+					e.innerHTML = _("menuFrame advanced");
+					e = document.getElementById("wds");
+					e.innerHTML = _("menuFrame wds");
+					e = document.getElementById("stainfo");
+					e.innerHTML = _("menuFrame stainfo");
+				}
 				
 				
 				e = document.getElementById("firewall");
@@ -94,8 +108,11 @@
 				e.innerHTML = _("menuFrame statistic");
 				e = document.getElementById("syslog");
 				e.innerHTML = _("menuFrame syslog");
-				e = document.getElementById("yinghua");
-				e.innerHTML = _("menuFrame yinghua");
+				if(support_yinghua == "y")
+				{
+					e = document.getElementById("yinghua");
+					e.innerHTML = _("menuFrame yinghua");
+				}
 				
 			}
 		</script>
@@ -121,11 +138,14 @@
 				<a id="pptp" href="pptp.asp" target="mainFrame">PPTP</a>
 				<a id="l2tp" href="l2tp.asp" target="mainFrame">L2TP</a>
 			</div>
-						
-			<a id="dtu" class="dot" href="dtu.asp" target="mainFrame">DTU</a>
-				
-			<a id="linkbackup" class="dot" href="linkbackup.asp" target="mainFrame">路由备份</a>	
 			
+			<script type="text/javascript">if("<% DtuIsSupport(); %>" != "y")document.write("<!--");</script>			
+			<a id="dtu" class="dot" href="dtu.asp" target="mainFrame">DTU</a>
+			<script type="text/javascript">if("<% DtuIsSupport(); %>" != "y")document.write("-->");</script>
+			<script type="text/javascript">if("<% LinkbackupIsSupport(); %>" != "y")document.write("<!--");</script>				
+			<a id="linkbackup" class="dot" href="linkbackup.asp" target="mainFrame">路由备份</a>
+			<script type="text/javascript">if("<% LinkbackupIsSupport(); %>" != "y")document.write("-->");</script>
+			<script type="text/javascript">if("<% WifiIsSupport(); %>" != "y")document.write("<!--");</script>				
 			<a id="wire_less" class="plus" href="BASIC_CONFIG.html" target="mainFrame">无线设置</a>	
 			<div class="subMenu">
 				<a id="basic" href="basic.asp" target="mainFrame">基本设置</a>
@@ -133,7 +153,9 @@
 				<a id="advanced" href="advanced.asp" target="mainFrame">无线高级设置</a>
 				<a id="wds" href="wds.asp" target="mainFrame">WDS</a>
 				<a id="stainfo" href="stainfo.asp" target="mainFrame">主机状态</a>
-			</div><!--end of submenu-->	
+			</div>
+			<script type="text/javascript">if("<% WifiIsSupport(); %>" != "y")document.write("-->");</script>
+			<!--end of submenu-->	
 			
 			<a id="firewall" class="plus" href="FILTER.html" target="mainFrame">防火墙</a>	
 			<div class="subMenu">
@@ -161,7 +183,9 @@
 
                 <a id="statistic" href="statistic.asp" target="mainFrame">流量统计</a>
                 <a id="syslog" href="syslog.asp" target="mainFrame">系统日志</a>
+				<script type="text/javascript">if("<% YinghuaIsSupport(); %>" != "y")document.write("<!--");</script>				
                 <a id="yinghua" href="http://www.yinghuatn.com" target="_blank">盈华科技其他产品</a>
+				<script type="text/javascript">if("<% YinghuaIsSupport(); %>" != "y")document.write("-->");</script>				
 			</div><!--end of submenu-->	
 		</div><!--end of menu-->
 	</body>

@@ -259,7 +259,7 @@ function msg()
 </table>
 <p />
 <center>
-<input type="button"  value="Apply" id="oApply" onClick="msg(); document.opmode.submit(); parent.menu.location.reload();">&nbsp;&nbsp;
+<input type="button" value="Apply" id="oApply" onClick="msg();document.opmode.submit();<!--parent.mainFrame.location.reload();-->">&nbsp;&nbsp;
 <input type="reset"  value="Reset" id="oCancel" onClick="window.location.reload()">
 </center>
 </form>

@@ -56,7 +56,10 @@ static void setOpMode(webs_t wp, char_t *path, char_t *query);
 #if defined CONFIG_USB_STORAGE && defined CONFIG_USER_STORAGE
 static void ScanUSBFirmware(webs_t wp, char_t *path, char_t *query);
 #endif
-
+static int WifiIsSupport(int eid, webs_t wp, int argc, char_t **argv);
+static int LinkbackupIsSupport(int eid, webs_t wp, int argc, char_t **argv);
+static int DtuIsSupport(int eid, webs_t wp, int argc, char_t **argv);
+static int YinghuaIsSupport(int eid, webs_t wp, int argc, char_t **argv);
 /*********************************************************************
  * System Utilities
  */
@@ -595,6 +598,10 @@ void formDefineUtilities(void)
 	websAspDefine(T("getSysUptime"), getSysUptime);
 	websAspDefine(T("getPortStatus"), getPortStatus);
 	websAspDefine(T("isOnePortOnly"), isOnePortOnly);
+    websAspDefine(T("WifiIsSupport"), isOnePortOnly);
+    websAspDefine(T("LinkbackupIsSupport"), isOnePortOnly);
+    websAspDefine(T("DtuIsSupport"), isOnePortOnly);
+    websAspDefine(T("YinghuaIsSupport"), isOnePortOnly);
 	websFormDefine(T("forceMemUpgrade"), forceMemUpgrade);
 	websFormDefine(T("setOpMode"), setOpMode);
 #if defined CONFIG_USB_STORAGE && defined CONFIG_USER_STORAGE
@@ -602,6 +609,93 @@ void formDefineUtilities(void)
 #endif
 }
 
+static int YinghuaIsSupport(int eid, webs_t wp, int argc, char_t **argv)
+{
+	int type;
+	char_t *field;
+	char *value;
+
+#if CONFIG_YINGHUA_LOG > 0
+	value = "y";
+#else
+    value = "n";
+#endif
+	if (1 == type) {
+		if (NULL == value)
+			return websWrite(wp, T(""));
+		return websWrite(wp, T("%s"), value);
+	}
+	if (NULL == value)
+		ejSetResult(eid, "");
+	ejSetResult(eid, value);
+	return 0;
+}
+
+static int DtuIsSupport(int eid, webs_t wp, int argc, char_t **argv)
+{
+	int type;
+	char_t *field;
+	char *value;
+
+#if CONFIG_DTU_SUPPORT > 0
+	value = "y";
+#else
+    value = "n";
+#endif
+	if (1 == type) {
+		if (NULL == value)
+			return websWrite(wp, T(""));
+		return websWrite(wp, T("%s"), value);
+	}
+	if (NULL == value)
+		ejSetResult(eid, "");
+	ejSetResult(eid, value);
+	return 0;
+}
+
+static int LinkbackupIsSupport(int eid, webs_t wp, int argc, char_t **argv)
+{
+	int type;
+	char_t *field;
+	char *value;
+
+#if CONFIG_LINKBACKUP_SUPPORT > 0
+	value = "y";
+#else
+    value = "n";
+#endif
+	if (1 == type) {
+		if (NULL == value)
+			return websWrite(wp, T(""));
+		return websWrite(wp, T("%s"), value);
+	}
+	if (NULL == value)
+		ejSetResult(eid, "");
+	ejSetResult(eid, value);
+	return 0;
+}
+
+static int WifiIsSupport(int eid, webs_t wp, int argc, char_t **argv)
+{
+	int type;
+	char_t *field;
+	char *value;
+
+#if CONFIG_WIFI_SUPPORT > 0
+	value = "y";
+#else
+    value = "n";
+#endif
+	if (1 == type) {
+		if (NULL == value)
+			return websWrite(wp, T(""));
+		return websWrite(wp, T("%s"), value);
+	}
+	if (NULL == value)
+		ejSetResult(eid, "");
+	ejSetResult(eid, value);
+	return 0;
+}
 
 /* 
  * arguments: type - 0 = return the configuration of 'field' (default)

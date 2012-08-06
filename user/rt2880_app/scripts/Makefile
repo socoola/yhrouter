@@ -5,7 +5,7 @@ all:
 clean:
 
 romfs:
-	sed -e '/^#/d' ${ROOTDIR}/${CONFIG_LINUXDIR}/.config > .config
+	sed -e '/^#/d' ${ROOTDIR}/${CONFIG_LINUXDIR}/.config > .config&&sed -e '/^#/d' ${ROOTDIR}/config/.config >> .config    
 	chmod 755 .config
 	$(ROMFSINST) .config /sbin/config.sh
 	for i in $(SCRIPTS) ; do \

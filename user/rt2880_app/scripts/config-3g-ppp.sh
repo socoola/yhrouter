@@ -91,7 +91,7 @@ if [[ "$g3_dialup_device" == "HUAWEI-EM560" -o "$g3_dialup_device" == "ZTE-MU301
 	fi
 
 
-echo "send \"ATE0\"" >> $PPP_3G_CONN_FILE
+echo "send \"ATE1\"" >> $PPP_3G_CONN_FILE
 echo "waitfor 10 \"OK\",\"ERR\",\"ERROR\"" >> $PPP_3G_CONN_FILE
 echo "if % = -1 goto timeerror" >>$PPP_3G_CONN_FILE
 echo "if % = 0 goto next11" >> $PPP_3G_CONN_FILE

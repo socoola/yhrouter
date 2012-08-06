@@ -621,7 +621,7 @@ function setLanguage()
 	var expiresDate = new Date();
 	expiresDate.setDate(expiresDate.getDate()+1000);
 	document.cookie="language=" + document.Lang.langSelection.value + ";expires="+expiresDate.toGMTString()+";path=/";
-	//parent.menu.location.reload();
+	parent.mainFrame.location.reload(true);
 
 	return true;
 	
@@ -735,7 +735,7 @@ function greenap_action_switch(index)
 <table width="540" border="0" cellpadding="2" cellspacing="1">
   <tr align="center">
     <td>
-      <input type=submit  value="Apply" id="manLangApply" onClick="return setLanguage()"> &nbsp; &nbsp;
+      <input type=button  value="Apply" id="manLangApply" onClick="document.Lang.submit();setLanguage()"> &nbsp; &nbsp;
       <input type=reset   value="Cancel" id="manLangCancel" onClick="window.location.reload()">
     </td>
   </tr>

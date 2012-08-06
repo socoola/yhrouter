@@ -1,7 +1,8 @@
 <html>
 <head>
 <title>ipsec</title>
-<link rel="stylesheet" href="/style/normal_ws.css" type="text/css">
+<link rel="stylesheet" href="/css/normal_ws.css" type="text/css">
+<link rel="stylesheet" href="/css/boxStyle.css" type="text/css">
 <meta http-equiv="content-type" content="text/html;charset=gb2312" />
 <script type="text/javascript" src="/lang/b28n.js"></script>
 
@@ -201,8 +202,8 @@ function initTranslation()
         var e = document.getElementById("Ipseccfgtitle");
         e.innerHTML = _("Ipseccfg title");
 
-        e = document.getElementById("Ipseccfgintroduce");
-        e.innerHTML = _("Ipseccfg introduction");
+       // e = document.getElementById("Ipseccfgintroduce");
+        //e.innerHTML = _("Ipseccfg introduction");
 
         e = document.getElementById("Ipseccfg_connName");
         e.innerHTML = _("Ipseccfg connName");
@@ -674,11 +675,24 @@ function applyClick() {
 
 <body onload="formLoad()">
 
+<center id="boxes">
+	<div id="box">
+	<div id="head"></div>	<!--end of head-->	
+	<div id="content">
+
+<table id="layout_table" border="0"><!--start of layout_table-->
+<tr><!--start of layout tr-->
+<td class="tdwidth1" id="td1"><!--start of td1-->
+<div id="left"><!--start of left-->
+
+
+<table class="body"><tr><td>
+
 <h1 id="Ipseccfgtitle">IPSEC   Settings </h1>
-<p id="Ipseccfgintroduce"> IPSEC</p>
-<hr />
+<!--<p id="Ipseccfgintroduce"> IPSEC</p>--><br/>
+<hr /><br/>
 <form method=post name="ipsec_config" action="/goform/setipsec_config" onSubmit="return applyClick()">
-  <div><table border="0" cellpadding="0" cellspacing="2" width="640">
+  <div><table border="0" cellpadding="0" cellspacing="2" width="540">
     <tr>
       <td width="40%" id="Ipseccfg_connName"> IPSec 连接名( ID ) </td>
       <td> <input name="connName" size="20" maxlength="60" type="text"> </td>
@@ -711,7 +725,7 @@ function applyClick() {
 
 
    <div id="div_link_mode_sel">  
-     <table border="0" cellpadding="0" cellspacing="2" width="640">
+     <table border="0" cellpadding="0" cellspacing="2" width="540">
      <tr>
        <td width="40%" id="Ipseccfg_ph1Mode">模式</td>
        <td>
@@ -726,7 +740,7 @@ function applyClick() {
 
 
 <div id="div_remoteGWaddr">
-    <table border="0" cellpadding="0" cellspacing="2" width="640">
+    <table border="0" cellpadding="0" cellspacing="2" width="540">
             <tr>
                 <td width="40%" id="Ipseccfg_remoteGWAddr"> 远程 IPSec 网关地址</td>
                 <td><input name="remoteGWAddr" size="20" maxlength="255" type="text"></td>
@@ -736,7 +750,7 @@ function applyClick() {
 
 
 
-  <table border="0" cellpadding="0" cellspacing="2" width="640">
+  <table border="0" cellpadding="0" cellspacing="2" width="540">
    <tr><td>&nbsp;</td></tr>
     <tr>
       <td width="40%" id="Ipseccfg_localIPMode"> 本地IP 地址</td>
@@ -751,7 +765,7 @@ function applyClick() {
   </table>
   
   <div id = "IP11">
-  <table border="0" cellpadding="0" cellspacing="2" width="640">
+  <table border="0" cellpadding="0" cellspacing="2" width="540">
   
     <tr>
       <td width="40%" id="Ipseccfg_localIP"> VPN IP 地址</td>
@@ -763,7 +777,7 @@ function applyClick() {
    </div>
    <div id = "IP12">
    
-   <table border="0" cellpadding="0" cellspacing="2" width="640">
+   <table border="0" cellpadding="0" cellspacing="2" width="540">
       <tr>
         <td width="40%" id="Ipseccfg_localMask">&nbsp;&nbsp; IP 子网掩码</td>
         <td> <input name="localMask" type="text"> </td> 
@@ -773,7 +787,7 @@ function applyClick() {
    </div>
 
    
-   <table border="0" cellpadding="0" cellspacing="2" width="640">
+   <table border="0" cellpadding="0" cellspacing="2" width="540">
       <tr><td></td><td>&nbsp;</td></tr>
       <tr>
         <td width="40%" id="Ipseccfg_remoteIPMode"> 远程IP地址 </td>
@@ -786,20 +800,20 @@ function applyClick() {
         </td>
       </tr>
    </table>
-   <div id = "IP21"><table border="0" cellpadding="0" cellspacing="2" width="640">
+   <div id = "IP21"><table border="0" cellpadding="0" cellspacing="2" width="540">
     <tr>
       <td width="40%" id="Ipseccfg_remoteIP">&nbsp;&nbsp; VPN IP地址</td>
         <td> <input name="remoteIP" type="text"> </td>
     </tr>
    </table></div>
-   <div id = "IP22"><table border="0" cellpadding="0" cellspacing="2" width="640">
+   <div id = "IP22"><table border="0" cellpadding="0" cellspacing="2" width="540">
       <tr>
         <td width="40%" id="Ipseccfg_remoteMask">&nbsp;&nbsp; IP 子网掩码</td>
         <td> <input name="remoteMask" type="text"> </td>
       </tr>
     </table></div>
    <div id = "div_policies_remote_lan">
-           <table border="0" cellpadding="0" cellspacing="2" width="640">
+           <table border="0" cellpadding="0" cellspacing="2" width="540">
               <tr>                                                                                
                 <td width="40%" id="id_policies_remote_lan">remote lan for policies</td>
                 <td> <input name="policies_remote_lan"  maxlength=190 type="text"> </td>
@@ -819,7 +833,7 @@ function applyClick() {
 
 
     
-    <table border="0" cellpadding="0" cellspacing="2" width="640">
+    <table border="0" cellpadding="0" cellspacing="2" width="540">
     <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
      <tr> 
         <td width="40%" id="Ipseccfg_keyExM">Key Exchange 方法 </td>
@@ -832,7 +846,7 @@ function applyClick() {
         </td>
      </tr> 
      </table>
-    <div id="AutoKeyEx"><table border="0" cellpadding="0" cellspacing="2" width="640">
+    <div id="AutoKeyEx"><table border="0" cellpadding="0" cellspacing="2" width="540">
       <tr>
         <td width="40%" id="Ipseccfg_authM"> 认证 方法 </td>
         <td>
@@ -845,14 +859,14 @@ function applyClick() {
         </td>
       </tr>
     </table> 
-    <div id="PSK"><table border="0" cellpadding="0" cellspacing="2" width="640">
+    <div id="PSK"><table border="0" cellpadding="0" cellspacing="2" width="540">
        <tr>
         <td width="40%" id="Ipseccfg_psk">Pre-Shared 密钥</td>
         <td> <input type="password" name="psk"></td>
       </tr>
     </table></div>
     <div id="Certificate">
-      <table border="0" cellpadding="0" cellspacing="2" width="640">
+      <table border="0" cellpadding="0" cellspacing="2" width="540">
         <tr>
           <td width="40%" id="Ipseccfg_certificateName"> Certificates </td>
           <td><select name="certificateName">
@@ -861,7 +875,7 @@ function applyClick() {
       </table></div>
 
 
-     <table border="0" cellpadding="0" cellspacing="2" width="640">
+     <table border="0" cellpadding="0" cellspacing="2" width="540">
       <tr>
         <td width="40%" id="Ipseccfg_perfectFSEn">Perfect Forward Secrecy</td>
         <td align="left"> 
@@ -893,7 +907,7 @@ function applyClick() {
     </table></div>
 
     
-    <div id="ManualKey"> <table border="0" cellpadding="0" cellspacing="2" width="640">
+    <div id="ManualKey"> <table border="0" cellpadding="0" cellspacing="2" width="540">
        <tr>
         <td width="40%" id="Ipseccfg_manualEncryptionAlgo">加密算法</td>
         <td>
@@ -927,7 +941,7 @@ function applyClick() {
       </tr>      
     </table></div>
     <div id = "adv">
-    <table border="0" cellpadding="0" cellspacing="2" width="640">
+    <table border="0" cellpadding="0" cellspacing="2" width="540">
      <tr>
        <td> Phase 1</td>
      </tr>
@@ -1024,5 +1038,26 @@ function applyClick() {
 </p>
 
 </form>
+
+</div><!--end of left-->
+</td><!--end of td1-->
+
+<!--this td is to make space
+<td width="20">
+	<div style="width:35px"></div>
+</td>
+this td is to make space-->
+<td class="tdwidth2" id="td2" style="margin-top:0;padding-top:0;padding-left:0px" ><!--start of td2-->
+	<div id="right" style="margin-top:0;padding-top:0;margin-left:37px; width:40px"><!--start of right-->
+		<h2 id="help_head">Heeelp...</h2>
+		
+		<p id="help_content"><span id="status_direc"></span></p>
+	</div><!--end of right-->
+</td><!--end of td2-->
+</tr><!--end of layout tr-->
+</table><!--end of layout_table-->
+</div><!--end of content-->
+	</div>
+	</center>
 </body>
 </html>

@@ -1492,7 +1492,7 @@ function CheckValue()
     <td>
    
 		
-	<select id="radioStatus" name="radioStatus" value="<% getCfgGeneral(1, "RadioOff"); %>" onchange="wifiSelect()">
+	<select id="radioStatus" name="radioStatus" value="<% getCfgGeneral(1, "RadioOff"); %>">
 			<option value="0" id="wifiEnable">Enable</option>
 			<option value="1" id="wifiDisable">Disable</option>
 	</select>

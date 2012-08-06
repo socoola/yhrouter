@@ -212,6 +212,13 @@ void initDeviceName()
 void InitMfgTask();
 int main(int argc, char** argv)
 {
+    int wdt_fd = -1;
+    wdt_fd = open("/dev/watchdog", O_WRONLY);
+    if (wdt_fd == -1)
+    {
+        // fail to open watchdog device
+    }
+
 /*
  *	Initialize the memory allocator. Allow use of malloc and start 
  *	with a 60K heap.  For each page request approx 8KB is allocated.
@@ -254,6 +261,8 @@ int main(int argc, char** argv)
 		if (socketReady(-1) || socketSelect(-1, 1000)) {
 			socketProcess(-1);
 		}
+        if (wdt_fd != -1)
+            write(wdt_fd, "a", 1);
 		websCgiCleanup();
 		emfSchedProcess();
 	}
