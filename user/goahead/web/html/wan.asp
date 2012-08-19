@@ -1129,6 +1129,7 @@ function initValue()
 	rmbCurrMode();
 	rmbCurrRadioTime();
 	rmbCurrOnDmd();
+	selectAuthType();
 }
 </script>
 </head>
@@ -1810,12 +1811,25 @@ function initValue()
 	</td>
 	<td>
 		<select name="G3AuthProtocol" value="<% getCfgGeneral(1, "G3auth_type"); %>" style="width=150">
-   		<option value=0>AUTO</option>
-		<option value=1>CHAP</option>
-   		<option value=2>PAP</option>
+			<option value=0>AUTO</option>
+			<option value=1>CHAP</option>
+			<option value=2>PAP</option>
    		</select>&nbsp;&nbsp;
 	</td>
 </tr>
+<script type="text/javascript">
+	function selectAuthType(){
+		var authTypeValue = <% getCfgGeneral(1, "G3auth_type"); %>;
+		var authType = document.Operators.G3AuthProtocol;
+		//alert("authTypeValue == "+authTypeValue);
+		if(authTypeValue==2)
+			authType.options.selectedIndex = 2;
+		else if(authTypeValue==1)
+			authType.options.selectedIndex = 1;
+		else
+			authType.options.selectedIndex = 0;
+	}		
+</script>
 
 <tr style="display:none">
 	<td class="head" id="G3OtherOptions">

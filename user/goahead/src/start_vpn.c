@@ -890,10 +890,10 @@ char* PPP_Name;
 
 	sleep(5);
 	system("ping_ipsec.sh&");
-    system("kill_pingany.sh&");//kill ping_any 
-     system("kill_pingany.sh&");//kill ping_any 
-    sleep(2);
-      system("ping_any.sh&");//
+    //system("kill_pingany.sh&");//kill ping_any 
+    // system("kill_pingany.sh&");//kill ping_any 
+  //  sleep(2);
+    //  system("ping_any.sh&");//
 	
 
 	sign_link_up=1;
@@ -1616,7 +1616,10 @@ signal(SIGUSR2, SIG_IGN);
 		
 		}
 */
-		sleep(10);
+       
+        
+		sleep(11);
+       
 	}
 
     return 0;

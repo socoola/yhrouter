@@ -205,6 +205,48 @@ void initDeviceName()
 	system(szBuf);
 
 }
+
+void check_vpn()
+{
+    static time_t last =0;
+    time_t now;
+    char *rules;
+
+    time(&now);
+    // check vpn every 30 secs
+    if(now - last >= 30)
+    {
+        last = now;
+    }
+    else
+    {
+        return;
+    }
+    
+    rules = nvram_bufget(RT2860_NVRAM, "IPSECRules");
+    if(rules && (strstr(rules,"|1|") != NULL))
+    {
+        char if_addr[32];
+        //@TODO: temp use ppp0 as the default 3g interface name
+        if( getIfIp("ppp0", if_addr) != 0)
+        {
+            // 3g is down
+            return;
+        }
+    }
+    else
+    {
+        // ipsec is disabled
+        return;
+    }
+    
+    // check the ping_any.sh, if it is not started, start it
+    if(system("ps>/var/check_thread.log && cat /var/check_thread.log|grep \"ping_any\"") != 0)//is not found.
+    {
+        system("ping_any.sh&"); 
+    }
+}
+
 /*********************************** Code *************************************/
 /*
  *	Main -- entry point from LINUX
@@ -213,10 +255,13 @@ void InitMfgTask();
 int main(int argc, char** argv)
 {
     int wdt_fd = -1;
+    
     wdt_fd = open("/dev/watchdog", O_WRONLY);
     if (wdt_fd == -1)
     {
         // fail to open watchdog device
+        printf("can not open watchdog!!!!!!!!!!!!!!1\n");
+        exit(1);
     }
 
 /*
@@ -263,6 +308,8 @@ int main(int argc, char** argv)
 		}
         if (wdt_fd != -1)
             write(wdt_fd, "a", 1);
+       
+        check_vpn();
 		websCgiCleanup();
 		emfSchedProcess();
 	}

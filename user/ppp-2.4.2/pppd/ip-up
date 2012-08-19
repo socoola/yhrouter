@@ -79,5 +79,7 @@ echo "start_vpn in ip_up">>/var/vpn.log
 #killall racoon
 #check_vpn&
 #echo "5">/var/stop_check_vpn.log
+#ping_any.sh&
 start_vpn&
+
 echo "end_vpn in ip_up">>/var/vpn.log

@@ -397,7 +397,7 @@ echo $BAUD >> $PPP_3G_FILE
 echo $USERNAME >> $PPP_3G_FILE
 echo $PASSWORD >> $PPP_3G_FILE
 echo "debug" >> $PPP_3G_FILE
-echo "logfile /var/pppd.log" >> $PPP_3G_FILE
+echo "logfile /flash/pppd.log" >> $PPP_3G_FILE
 echo "modem" >> $PPP_3G_FILE
 echo "crtscts" >> $PPP_3G_FILE
 echo "noauth" >> $PPP_3G_FILE

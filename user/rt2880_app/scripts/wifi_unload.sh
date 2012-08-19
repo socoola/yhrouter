@@ -17,7 +17,7 @@
 . /sbin/global.sh
 
 kill_apps="udhcpd udhcpc syslogd klogd zebra ripd wscd rt2860apd rt61apd inadyn \
-iwevent stupid-ftpd smbd ated ntpclient lld2d igmpproxy dnsmasq telnetd check_vpn start_vpn"
+iwevent stupid-ftpd smbd ated ntpclient lld2d igmpproxy dnsmasq telnetd"
 
 bssidnum=`nvram_get 2860 BssidNum`
 is_ra0_in_br0=`brctl show | sed -n '/ra0/p'`

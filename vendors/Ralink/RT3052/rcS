@@ -57,7 +57,8 @@ telnetd
 
 #echo 1-1 0:0 660 @usb_modeswitch -v 0x12d1 -p 0x1001 - H 1 > /etc/mdev.conf
 echo /sbin/mdev > /proc/sys/kernel/hotplug
-
+mdev -s
+mknod   /dev/watchdog      c       10      130
 
 
 #add 2010-10-30
@@ -71,7 +72,7 @@ wpsledpbc&
 ddns.sh&
 
 #sleep 1 
-start_vpn&
+#start_vpn&
 #sleep 1 
 start_dtu&
 #sleep 1 
