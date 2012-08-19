@@ -145,9 +145,9 @@ int main(int argc, char** argv)
                  exit(1);
 			}
              sleep(1);
-             if((system("cat /var/spi1.log|grep \"spi=0(0x00000000)\"")==0))
+             if((system("cat /var/spi1.log|grep \"state=mature\"")!=0))
 			{
-                system("echo \"check vpn......6\">>/var/vpn1.log");
+                system("echo \"check vpn......8\">>/var/vpn1.log");
 				printf("can not establish ipsec tunnel, restart it\n");
 				//system("echo `setkey -D`>>/var/vpn.log");
                 exit(1);//test
