@@ -83,7 +83,7 @@ int main(int argc, char** argv)
         exit(255);
     }
  
-    system("echo \"check vpn\">>/var/vpn1.log");
+    system("echo \"check vpn\">/var/vpn1.log");
 	//while(1)
 	{
  

@@ -1135,7 +1135,7 @@ static int getSdkVersion(int eid, webs_t wp, int argc, char_t **argv)
 {
 	//char* version_str=nvram_get(RT2860_NVRAM,"VERSION_STR");
 //	return websWrite(wp, T("%s"), version_str);
-	return websWrite(wp, T("%s"), "S 1.1.2");
+	return websWrite(wp, T("%s"), "S 1.1.3");
 
 }
 
