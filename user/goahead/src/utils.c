@@ -17,7 +17,7 @@
 
 #include	"sdk_version.h"
 #include	"nvram.h"
-#include	"ralink_gpio.h"
+//#include	"ralink_gpio.h"
 #include	"linux/autoconf.h"  //kernel config
 #include	"config/autoconf.h" //user config
 
@@ -483,6 +483,7 @@ void stopTimer(void)
 static int gpioLedSet(int gpio, unsigned int on, unsigned int off,
 		unsigned int blinks, unsigned int rests, unsigned int times)
 {
+/*
 	int fd;
 	ralink_gpio_led_info led;
 
@@ -513,19 +514,24 @@ static int gpioLedSet(int gpio, unsigned int on, unsigned int off,
 		return -1;
 	}
 	close(fd);
+*/
 	return 0;
 }
 
 int ledAlways(int gpio, int on)
 {
+/*
 	if (on)
 		return gpioLedSet(gpio, RALINK_GPIO_LED_INFINITY, 0, 1, 1, RALINK_GPIO_LED_INFINITY);
 	else
 		return gpioLedSet(gpio, 0, RALINK_GPIO_LED_INFINITY, 1, 1, RALINK_GPIO_LED_INFINITY);
+*/
+	return 0;
 }
 
 int ledWps(int gpio, int mode)
 {
+/*
 	switch (mode) {
 		case WPS_LED_RESET:
 			return gpioLedSet(gpio, 0, RALINK_GPIO_LED_INFINITY, 1, 1, RALINK_GPIO_LED_INFINITY);
@@ -543,6 +549,7 @@ int ledWps(int gpio, int mode)
 			gpioLedSet(gpio, 3000, 1, 1, 1, 1);
 			break;
 	}
+*/
 	return 0;
 }
 

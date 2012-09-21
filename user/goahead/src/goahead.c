@@ -21,7 +21,9 @@
 #include	"uemf.h"
 #include	"wsIntrn.h"
 #include	"nvram.h"
+#ifndef RUN_ON_PC
 #include	"ralink_gpio.h"
+#endif
 #include	"internet.h"
 #if defined INIC_SUPPORT || defined INICv2_SUPPORT
 #include	"inic.h"
@@ -43,9 +45,9 @@
 #include	"linux/autoconf.h"
 #include	"config/autoconf.h" //user config
 #include    <pthread.h>
-
-
-
+#ifdef RUN_ON_PC
+#undef CONFIG_USB
+#endif
 #ifdef CONFIG_RALINKAPP_SWQOS
 #include      "qos.h"
 #endif
@@ -255,7 +257,9 @@ void InitMfgTask();
 int main(int argc, char** argv)
 {
     int wdt_fd = -1;
-    
+   
+ 
+#ifndef RUN_ON_PC
     wdt_fd = open("/dev/watchdog", O_WRONLY);
     if (wdt_fd == -1)
     {
@@ -263,7 +267,7 @@ int main(int argc, char** argv)
         printf("can not open watchdog!!!!!!!!!!!!!!1\n");
         exit(1);
     }
-
+#endif
 /*
  *	Initialize the memory allocator. Allow use of malloc and start 
  *	with a 60K heap.  For each page request approx 8KB is allocated.
@@ -371,6 +375,7 @@ static void goaSigHandler(int signum)
 }
 
 #ifndef CONFIG_RALINK_RT2880
+/*
 static void goaInitGpio()
 {
 	int fd;
@@ -403,6 +408,7 @@ ioctl_err:
 	close(fd);
 	return;
 }
+*/
 #endif
 
 static void dhcpcHandler(int signum)

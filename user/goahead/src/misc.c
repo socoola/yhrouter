@@ -58,7 +58,7 @@ enum flag {
 
 static int 	dsnprintf(char_t **s, int size, char_t *fmt, va_list arg,
 				int msize);
-static int	strnlen(char_t *s, unsigned int n);
+//static int	strnlen(char_t *s, unsigned int n);
 static void	put_char(strbuf_t *buf, char_t c);
 static void	put_string(strbuf_t *buf, char_t *s, int len,
 				int width, int prec, enum flag f);
@@ -424,7 +424,7 @@ static int dsnprintf(char_t **s, int size, char_t *fmt, va_list arg, int msize)
 /*
  *	Return the length of a string limited by a given length
  */
-
+/*
 static int strnlen(char_t *s, unsigned int n)
 {
 	unsigned int 	len;
@@ -432,7 +432,7 @@ static int strnlen(char_t *s, unsigned int n)
 	len = gstrlen(s);
 	return min(len, n);
 }
-
+*/
 /******************************************************************************/
 /*
  *	Add a character to a string buffer

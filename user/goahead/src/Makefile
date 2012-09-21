@@ -15,6 +15,9 @@ UMSW	= -DUSER_MANAGEMENT_SUPPORT
 # Digest Access switch
 # DASW	= -DDIGEST_ACCESS_SUPPORT
 
+ROOTDIR=../../..
+LINUXDIR=linux-2.6.21.x
+CFLAGS+=-DRUN_ON_PC 
 # SSL switches
 ifeq ("$(CONFIG_USER_GOAHEAD_SSL)", "y")
 SSLPATCHFILE = matrix_ssl.o sslSocket.o
@@ -84,6 +87,7 @@ CFLAGS	+= -DWEBS -DUEMF -DOS="LINUX" -DLINUX $(UMSW) $(DASW) $(SSLSW) $(IFMODSW)
 CFLAGS  += -Wall -fno-strict-aliasing
 CFLAGS	+= -I$(ROOTDIR)/lib/libnvram -I$(ROOTDIR)/$(LINUXDIR)/drivers/char -I$(ROOTDIR)/$(LINUXDIR)/include
 CFLAGS  += -I$(ROOTDIR)/$(LINUXDIR)/drivers/flash 
+CFLAGS += -I$(ROOTDIR)
 OTHERS	= -DB_STATS -DB_FILL -DDEBUG
 LDFLAGS	+= $(SSLLIB) $(IFMODLIB)
 LDLIBS	+= -lnvram -lpthread
