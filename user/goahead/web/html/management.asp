@@ -100,7 +100,6 @@ function isAllNum(str)
 }
 
 function AdmFormCheck()
-{
 	if (document.Adm.admuser.value == "") {
 		alert("Please specify the administrator account.");
 		return false;
@@ -196,6 +195,9 @@ function initTranslation()
 	e.innerHTML = _("man admin account");
 	e = document.getElementById("manAdmPasswd");
 	e.innerHTML = _("man admin passwd");
+	e = document.getElementById("manAdmPort");
+        e.innerHTML = _("man admin port");
+
 	e = document.getElementById("manAdmApply");
 	e.value = _("admin apply");
 	e = document.getElementById("manAdmCancel");
@@ -755,6 +757,10 @@ function greenap_action_switch(index)
   <tr>
     <td class="head" id="manAdmPasswd">Password</td>
     <td><input type="password" name="admpass" size="16" maxlength="32" value="<% getCfgGeneral(1, "Password"); %>"></td>
+  </tr>
+ <tr>
+    <td class="head" id="manAdmPort">Port</td>
+    <td><input type="text" name="admport" size="16" maxlength="32" value="<% getCfgGeneral(1, "Port"); %>"></td>
   </tr>
 </table>
 <table width="540" border="0" cellpadding="2" cellspacing="1">
