@@ -13,11 +13,11 @@ ifeq ("$(CONFIG_USER_PPPOECD)", "y")
 endif
 ifeq ("$(CONFIG_RT2860V2_AP_MESH)", "")
 ifeq ("$(CONFIG_RT2860V2_STA_MESH)", "")
-	rm $(ROMFSDIR)$(ROOT_DIRECTORY)/wireless/mesh.asp
+	rm -rf $(ROMFSDIR)$(ROOT_DIRECTORY)/wireless/mesh.asp
 endif
 endif
 ifeq ("$(CONFIG_RT2860V2_AP_WDS)", "")
-	rm $(ROMFSDIR)$(ROOT_DIRECTORY)/wireless/wds.asp
+	rm -rf $(ROMFSDIR)$(ROOT_DIRECTORY)/wireless/wds.asp
 endif
 ifeq ("$(CONFIG_RT2860V2_STA)", "")
 	rm -rf $(ROMFSDIR)$(ROOT_DIRECTORY)/station
@@ -71,10 +71,10 @@ ifneq ("$(CONFIG_USER_GOAHEAD_LANG_ZHCN)", "y")
 endif
 	for i in $(DIRS) ; do make -C $$i $@ ; done
 ifeq ("$(CONFIG_LOGREAD)", "")
-	rm $(ROMFSDIR)$(ROOT_DIRECTORY)/adm/syslog.asp
+	rm -rf $(ROMFSDIR)$(ROOT_DIRECTORY)/adm/syslog.asp
 else
 ifeq ("$(CONFIG_KLOGD)", "")
-	rm $(ROMFSDIR)$(ROOT_DIRECTORY)/adm/syslog.asp
+	rm -rf $(ROMFSDIR)$(ROOT_DIRECTORY)/adm/syslog.asp
 else
 endif
 endif

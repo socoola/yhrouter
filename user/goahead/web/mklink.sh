@@ -1,6 +1,5 @@
 
 mkdir -p /etc_ro/web
-cp -R ./* /etc_ro/web/
 
 cd /etc_ro/web
 mkdir -p adm

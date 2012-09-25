@@ -15,9 +15,7 @@ UMSW	= -DUSER_MANAGEMENT_SUPPORT
 # Digest Access switch
 # DASW	= -DDIGEST_ACCESS_SUPPORT
 
-ROOTDIR=../../..
-LINUXDIR=linux-2.6.21.x
-CFLAGS+=-DRUN_ON_PC 
+
 # SSL switches
 ifeq ("$(CONFIG_USER_GOAHEAD_SSL)", "y")
 SSLPATCHFILE = matrix_ssl.o sslSocket.o
@@ -103,7 +101,6 @@ all:	$(NAME) wpsledpbc start_vpn get_dev_id host_to_ip check_vpn
 #
 $(NAME): clean_inet $(DEPEND_FILES)
 	$(CC) -o $@ $(DEPEND_FILES) $(LDFLAGS) $(EXTRALIBS) $(LDLIBS)
-	$(STRIP) --remove-section=.note --remove-section=.comment $@
 
 wpsledpbc:wpsledpbc.o
 	$(CC) -o $@ $^  $(LDFLAGS) $(EXTRALIBS) $(LDLIBS)
@@ -118,7 +115,7 @@ check_vpn:check_vpn.o
 
 romfs:
 	$(ROMFSINST) /bin/$(NAME)
-	$(ROMFSINST) /bin/wpsledpbc
+	$(ROMFSINST) /bin/wpsledpbc	
 	$(ROMFSINST) /bin/start_vpn
 	$(ROMFSINST) /bin/check_vpn
 	$(ROMFSINST) /bin/get_dev_id
