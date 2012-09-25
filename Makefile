@@ -20,6 +20,7 @@ romfs: all
 	mkdir -p $(ROMFSDIR)/bin/
 	mkdir -p $(ROMFSDIR)/lib/
 	mkdir -p $(ROMFSDIR)/etc/
+	mkdir -p $(ROMFSDIR)/etc/nvram/
 	mkdir -p $(ROMFSDIR)/etc_ro/Wireless/RT2860AP/
 	for dir in $(DIRS); do [ ! -d $$dir ] || $(MAKEARCH) -C $$dir $@; done
 

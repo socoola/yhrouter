@@ -52,6 +52,10 @@ shared: all
 	$(INSTALL) -m 644 $(LIBNVRAM_SHARED_FULLNAME) $(TOPDIR)lib
 	$(LN) -sf $(LIBNVRAM_SHARED_FULLNAME) $(TOPDIR)lib/$(LIBNVRAM_SHARED)
 	$(LN) -sf $(LIBNVRAM_SHARED_FULLNAME) $(TOPDIR)lib/$(LIBNVRAM_SHARED).$(MAJOR_VERSION)
+	$(ROMFSINST) /etc/nvram/Config
+	$(ROMFSINST) /etc/nvram/Factory
+	$(ROMFSINST) /etc/nvram/Uboot
+
 
 $(LIBNVRAM) ar-target: $(OBJS)
 	$(AR) $(ARFLAGS) $(LIBNVRAM) $(OBJS)

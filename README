@@ -1,1 +1,4 @@
-test
+make romfs: compile and produce the romfs dir
+make install: cp the romfs into system dir
+
+first call nvram_dameon, then call app goahead
